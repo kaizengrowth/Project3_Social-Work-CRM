@@ -32,6 +32,10 @@ _SOCIAL WORKER_
 			       * Social worker can edit form
 			     *  Linkedin api integration
 		                 * Job tracker
+## Initial Database Structure
+<img scr="https://github.com/alee092017/Project3/blob/master/quickDB.jpg">
+
+
 
 ## Potential 3rd Party Extensions
 
