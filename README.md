@@ -1,4 +1,4 @@
-# Project3
+# Project3 Group 6 Kai, Andrea, Luz and Bartin
 
 ## DESCRIPTION
 Our project is a student resource dashboard for Per Scholas, a nonprofit organization based in the 
@@ -54,6 +54,9 @@ https://github.com/kaizenagility/Project3/projects/1
 * Amanda Ribeiro
 * Julio Gonzalez
 * Greg Kinlan
+
+WorkFlow
+<img src="https://github.com/kaizenagility/Project3/blob/master/Screen%20Shot%202017-11-17%20at%202.47.41%20PM.png" width="400px">
 
 <img src="https://github.com/kaizenagility/Project3/blob/master/wireframe_group.jpg" width="400px">
 
