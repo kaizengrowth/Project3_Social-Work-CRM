@@ -44,6 +44,7 @@ React Slack Chat: https://www.npmjs.com/package/react-slack-chat
 
 See our repository's project board:
 https://github.com/kaizenagility/Project3/projects/1
+<img src="https://github.com/kaizenagility/Project3/blob/master/Screen%20Shot%202017-11-17%20at%202.47.41%20PM.png" width="400px">
 
 
 ## Working with the UX Design Class
@@ -55,8 +56,8 @@ https://github.com/kaizenagility/Project3/projects/1
 * Julio Gonzalez
 * Greg Kinlan
 
-WorkFlow
-<img src="https://github.com/kaizenagility/Project3/blob/master/Screen%20Shot%202017-11-17%20at%202.47.41%20PM.png" width="400px">
+
+
 
 <img src="https://github.com/kaizenagility/Project3/blob/master/wireframe_group.jpg" width="400px">
 
