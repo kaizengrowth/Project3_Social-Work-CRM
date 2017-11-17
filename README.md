@@ -35,8 +35,6 @@ _SOCIAL WORKER_
 ## Initial Database Structure
 <img scr="https://github.com/alee092017/Project3/blob/master/quickDB.jpg">
 
-
-
 ## Potential 3rd Party Extensions
 
 Google Calendar API with React:  https://www.npmjs.com/package/react-google-calendar-events-list
