@@ -31,3 +31,14 @@ _SOCIAL WORKER_
 			       * Social worker can edit form
 			     *  Linkedin api integration
 		                 * Job tracker
+
+## Potential 3rd Party Extensions
+
+Google Calendar API with React:  https://www.npmjs.com/package/react-google-calendar-events-list
+React Slack Chat: https://www.npmjs.com/package/react-slack-chat
+
+## Project Board
+
+See our repository's project board:
+https://github.com/kaizenagility/Project3/projects/1
+
