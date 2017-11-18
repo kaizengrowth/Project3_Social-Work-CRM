@@ -1,4 +1,4 @@
-# Project3 Group 6 Kai, Andrea, Luz and Bartin
+# Project3 (Group 6: Andrea, Bartin, and Kai)
 
 ## DESCRIPTION
 Our project is a student resource dashboard for Per Scholas, a nonprofit organization based in the 
