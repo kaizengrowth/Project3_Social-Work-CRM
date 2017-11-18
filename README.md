@@ -9,8 +9,8 @@ check off to-do’s, and schedule an appointment.
 
 ## WIREFRAMES
 
-<img src="https://github.com/kaizenagility/Project3/blob/master/Screen%20Shot%202017-11-17%20at%201.18.11%20AM.png" width="400px">
-<img src="https://github.com/kaizenagility/Project3/blob/master/wireframe2.png" width="600px">
+<img src="https://github.com/kaizenagility/Project3/blob/master/client/public/images/wireframes/Screen%20Shot%202017-11-17%20at%201.18.11%20AM.png" width="400px">
+<img src="https://github.com/kaizenagility/Project3/blob/master/client/public/images/wireframes/wireframe2.png" width="600px">
 
 
 ## USER STORIES
@@ -33,7 +33,7 @@ _SOCIAL WORKER_
 			     *  Linkedin api integration
 		                 * Job tracker
 ## Initial Database Structure
-![initial db](https://github.com/alee092017/Project3/blob/master/quickDB.jpg)
+![initial db](https://github.com/alee092017/Project3/blob/master/client/public/images/wireframes/quickDB.jpg)
 
 ## Potential 3rd Party Extensions
 
@@ -44,12 +44,12 @@ React Slack Chat: https://www.npmjs.com/package/react-slack-chat
 
 See our repository's project board:
 https://github.com/kaizenagility/Project3/projects/1
-<img src="https://github.com/kaizenagility/Project3/blob/master/Screen%20Shot%202017-11-17%20at%202.47.41%20PM.png" width="400px">
+<img src="https://github.com/kaizenagility/Project3/blob/master/client/public/images/wireframes/Screen%20Shot%202017-11-17%20at%202.47.41%20PM.png" width="400px">
 
 
 ## Working with the UX Design Class
 
-<img src="https://github.com/kaizenagility/Project3/blob/master/teamwork.jpg" width="400px">
+<img src="https://github.com/kaizenagility/Project3/blob/master/client/public/images/wireframes/teamwork.jpg" width="400px">
 
 #### Wireframes generated with the UX Team:
 * Amanda Ribeiro
@@ -59,10 +59,10 @@ https://github.com/kaizenagility/Project3/projects/1
 
 
 
-<img src="https://github.com/kaizenagility/Project3/blob/master/wireframe_group.jpg" width="400px">
+<img src="https://github.com/kaizenagility/Project3/blob/master/client/public/images/wireframes/wireframe_group.jpg" width="400px">
 
 #### Go TEAM! 🦄🎉
 
-<img src="https://github.com/kaizenagility/Project3/blob/master/team_postits.jpg" width="400px">
+<img src="https://github.com/kaizenagility/Project3/blob/master/client/public/images/wireframes/team_postits.jpg" width="400px">
 
 
