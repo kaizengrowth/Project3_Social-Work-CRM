@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -19,22 +21,256 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
-  </head>
-  <body>
+    <title>Per Scholas: Student Resoures Site</title>
+</head>
+
+<body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <!-- ========= Top Navigation Bar ========= -->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <a href="index.html">
+        <nav id="topnav">
+            <div id="topnav_left">
+                <picture>
+                    <source srcset="images/logo_small.png" media="(max-width: 600px)">
+                    <source srcset="images/logo_header.svg">
+                    <img src="images/logo_header.svg" alt="Per Scholas Logo">
+                </picture>
+            </div>
+
+            <div id="topnav_right">
+                <a href="#modal_login ">Sign In</a>
+            </div>
+
+            <div id="modal_login" class="modal">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <h2>Sign In</h2><br>
+                    <form>
+                        Username: <input type="text" name="Username" value="Student"><br> Password: <input type=password placeholder="*******" pattern="\w{8}" title="8 character password">
+                        <a href="user.html"><button type="button">Log In</button></a>
+                    </form><br>
+                    <a href="register.html" class="register_link">Register for an Account.</a>
+                </div>
+            </div>
+        </nav>
+    </a>
+
+    <!-- ========= Main Nav Bar ========= -->
+
+    <nav id="main_nav">
+        <a href="resources.html">
+            <div id="nav_resources" class="nav_block">
+                Find <br> Resources
+            </div>
+        </a>
+
+        <a href="support.html">
+            <div id="nav_support" class="nav_block">
+                Get <br> Support
+            </div>
+        </a>
+
+        <a href="skills.html">
+            <div id="nav_skills" class="nav_block">
+                Share <br> Skills
+            </div>
+        </a>
+
+        <a href="network.html">
+            <div id="nav_network" class="nav_block">
+                Build <br> Network
+            </div>
+        </a>
+
+        <div id="nav_search" class="nav_block">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+
+    </nav>
+
+    <!-- ========= Banner ========= -->
+
+    <section id="banner">
+
+        <img src="images/home_banner.jpg">
+
+        <!--------- TO DO ---------
+ Cite image source: CNN.
+-->
+
+        <h1>Let's make it work.</h1>
+
+        <p>Building strong <br> connections is the <br> key to thriving.</p>
+
+        <button type="button"> See You In Success </button>
+
+        <!--------- TO DO ---------
+ Create jQuery scroll-down button.
+-->
+
+    </section>
+
+    <!-- ========= H1 Animation ========= -->
+
+    <section class="animation_header">
+
+        <div class="animation_header" id="resources_header">
+            <h3> We got you. </h3>
+            <h1> What do you need right now? </h1>
+        </div>
+    </section>
+
+    <!-- ========= Resources Buttons ========= -->
+
+    <section class="resources_sections">
+
+        <!-- === Housing Modal === -->
+
+        <div id="housing_banner">
+            <center>
+                <a href="housing.html"><img src="images/housing_icon.png" style="width: 250px"></a>
+                <h2>Housing</h2>
+                <a href="#modal_housing"><button type="button" id="housing_button">I'm worried about losing my home.</button></a>
+            </center>
+        </div>
+
+        <div id="modal_housing" class="modal">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Help with Housing</h2><br><br>
+                <p>My landlord is trying to evict me.</p>
+                <a href="#">Know your rights as a tenant. Get free or low-cost legal aid.</a><br><br>
+                <p>I am behind on rent and need help with making payments.</p>
+                <a href="#">Access short-term emergency funding for preventing homelessness.</a><br><br>
+                <p>I don't feel safe in my home.</p>
+                <a href="#">Get help for domestic violence.</a><br><br>
+                <p>I am homeless and in need of a place to sleep tonight.</p>
+                <a href="#">Emergency shelter and homeless services. </a>
+            </div>
+        </div>
+        <br>
+
+        <!-- === Food Modal === -->
+
+        <div id="income_banner">
+            <center><img src="images/food_icon.png" style="width: 250px">
+                <h2>Food & Income</h2>
+                <a href="#modal_income"><button type="button" id="income_button">I'm worried about issues with money.</button></a>
+            </center>
+        </div>
+
+        <div id="modal_income" class="modal">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Food and Income Support</h2><br><br>
+                <p>I can't afford to eat all the meals that I need to live healthfully.</p>
+                <a href="#">Access SNAP Benefits and find food pantries in the city.</a><br><br>
+                <p>I can't afford a metrocard to come to class.</p>
+                <a href="#">Sign up to receive a metrocard from Per Scholas</a><br><br>
+                <p>I need some help to cover basic living expenses right now.</p>
+                <a href="#">Access Temporary Assistance.</a><br><br>
+                <p>I am confused about my unemployment benefits.</p>
+                <a href="#">Get support on navigating your unemployment benefits while at Per Scholas.</a>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="resources_sections">
+
+        <!-- === Health Modal === -->
+
+        <div id="health_banner">
+            <center>
+                <a href="health.html"><img src="images/health_icon.png" style="width: 250px"></a>
+                <h2>Health & Counseling</h2>
+                <a href="#modal_health"><button type="button" id="health_button">I need affordable healthcare options.</button></a>
+            </center>
+        </div>
+
+        <div id="modal_health" class="modal">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Health & Counseling</h2><br><br>
+                <p>I don't have medical insurance.</p>
+                <a href="#">Apply for medicaid and get help with medical bills.</a><br><br>
+                <p>I need psychological support.</p>
+                <a href="#">Connect with a free or low-cost mental health professional.</a><br><br>
+                <p>I need disability services.</p>
+                <a href="#">Get information on disability rights and services in NYC.</a><br><br>
+                <p>I need long-term supportive housing.</p>
+                <a href="#">Access supportive housing for disability.</a>
+            </div>
+        </div>
+        <br>
+
+        <!-- === Community Modal === -->
+
+        <div id="community_banner">
+            <center><img src="images/community_icon.png" style="width: 250px">
+                <h2>Community Orgs <br> & Other Resources</h2>
+                <a href="#modal_community"><button type="button" id="community_button">I have other concerns.</button></a>
+            </center>
+        </div>
+
+        <div id="modal_community" class="modal">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <h2>Community Orgs and Other Resources</h2><br><br>
+                <p>I need affordable childcare and/or elder care.</p>
+                <a href="#">Find financial assistance for childcare and elder care.</a><br><br>
+                <p>I need a business suit for inverviews.</p>
+                <a href="#">Access funds at Per Scholas for interview attire.</a><br><br>
+                <p>I have issues with immigration.</p>
+                <a href="#">Connect to legal aid and immigration services.</a><br><br>
+                <p>I'd like to find out about other community resources.</p>
+                <a href="#">Connect with other local organizations.</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========= Footer ========= -->
+
+    <footer>
+
+        <div id="footer_contact">
+            <img src="images/logo_header.svg">
+            <h3>NEW YORK</h3>
+            <p>804 E 138th St Bronx, NY 10454 <br> 630 Flushing Ave Brooklyn, NY 11206</p>
+        </div>
+
+        <div id="footer_links">
+            <a href="resources.html">Find Resources.</a><br>
+            <a href="support.html">Get Support.</a><br>
+            <a href="skills.html">Share Skills.</a><br>
+            <a href="network.html">Build Network.</a><br>
+            <div id="footer_copyright">
+                <!--
+                <p>By <a href="https://spiritkaizen.org">Kai Lin Zhang</a>, CodeBridge Cohort #6. <br>
+                Original <a href="https://perscholas.org">Per Scholas</a> website design by <a href="https://familiar-studio.com">Familiar</a>.</p>
+-->
+            </div>
+        </div>
+
+        <div id="footer_social">
+            <a href="http://cfp-dc.org/nonprofits/1621/Per-Scholas"><img src="images/cfp.png" style="width:65px;"></a>
+            <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12043#.Vmm6GRorLvs"><img src="images/charityNavigator.png"></a>
+            <br>
+            <img src="images/Blank_Space.png" style="height:35px;">
+            <a href="https://twitter.com/perscholas"><img src="images/twitter.png" style="width: 50px"></a>
+            <a href="https://www.facebook.com/PerScholas"><img src="images/facebook.png" style="width: 51px"></a>
+            <a href="https://www.instagram.com/perscholas/"><img src="images/instagram.png" style="width: 52px"></a>
+        </div>
+        <br>
+
+    </footer>
+
+</body>
+
 </html>

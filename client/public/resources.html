@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset= utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Per Scholas: Support Portal</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </head>
+    
+    <body>
+        
+<!-- ========= Top Navigation Bar ========= -->
+        <a href="index.html">
+            <nav id="topnav">
+                <div id="topnav_left">
+                    <picture> 
+                        <source srcset="images/logo_small.png" media="(max-width: 600px)">
+                        <source srcset="images/logo_header.svg">
+                        <img src="images/logo_header.svg" alt="Per Scholas Logo">
+                    </picture> 
+                </div>
+                
+                <div id="topnav_right">
+                    <a href="#modal_login ">Sign In</a>
+                </div>
+                
+                <div id="modal_login" class="modal">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <h2>Sign In</h2><br>
+                    <form>
+                        Username: <input type="text" name="Username" value="Student"><br>
+                        Password: <input type=password placeholder = "*******" pattern="\w{8}" title="8 character password">
+                        <a href="user.html"><button type="button">Log In</button></a>
+                    </form><br>
+                    <a href="register.html" class="register_link">Register for an Account.</a>
+                    </div>
+                </div>
+            </nav>
+        </a>
+ 
+<!-- ========= Main Nav Bar ========= -->
+        
+        <nav id="main_nav">
+            <div class = "nav_selected" id="navlink_selected">
+                    <p>Find <br> Resources</p>
+            </div>
+            
+            <a href="support.html"><div id="nav_support" class="nav_block">
+                Get <br> Support
+            </div></a>
+            
+            <a href="skills.html"><div id="nav_skills" class="nav_block">
+                Share <br> Skills
+            </div></a>
+            
+            <a href="network.html"><div id="nav_network" class="nav_block">
+                Build <br> Network
+            </div></a>
+            
+            <div id="nav_search" class="nav_block">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            
+        </nav>
+
+<!-- ========= H1 Animation ========= -->
+       
+        <section class= "animation_header">
+            
+            <div class = "animation_header" id = "resources_header">
+                <h3> We got you. </h3>    
+                <h1> What do you need right now? </h1>    
+            </div>
+        </section>
+        
+<!-- ========= Side Nav Bar ========= -->
+            <nav class="sidenav">
+                
+                <h2>Resources</h2>
+            
+                <a href="#housing"><div class="sidenav-item">
+                    Housing
+                </div></a>
+
+                <a href="#food"><div class="sidenav-item">
+                    Food
+                </div></a>
+
+                <a href="#health"><div class="sidenav-item">
+                    Health
+                </div></a>
+
+                <a href="#family"><div class="sidenav-item">
+                    Family
+                </div></a>
+                
+                <a href="#community"><div class="sidenav-item">
+                    Community
+                </div></a>
+                
+                <a href="support.html"><button type = "button"> Get Support </button></a>
+            
+            </nav>
+
+<!-- ========= Body Content ========= -->
+            
+            <div class = "main_content">
+                <center>
+                <div class = "resource_icons">
+                    <a href="#housing"><img src="images/housing_icon.png" style="width: 100px"></a> 
+                    <a href="#food"><img src="images/food_icon.png" style="width: 100px"></a>
+                    <a href="#health"><img src="images/health_icon.png" style="width: 100px"></a>
+                    <a href="#family"><img src="images/community_icon.png" style="width: 100px"></a>
+                </div>
+                </center>
+
+                <a name="housing"><article id="housing">
+                    <h3>Housing</h3></a>
+                    
+                    <button class="accordion">Is your landlord threatening you with eviction?</button>
+                        <div class="panel">
+                            <p>Know your <a href="http://oag.state.ny.us/sites/default/files/pdfs/publications/Tenant_Rights_2011.pdf">Tenant's Rights</a>. New York Housing Courts are pro-tenant. Harassment by an owner is illegal, including withholding of services or any form of intimidation. You may be able to fight off an eviction for at least six months. If you are living in a rent-controlled or rent-stabilized apartment, you can contact the New York State Homes and Community Renewal (HRC) or call (718)739-6400. </p><br>
+                            <p>You can call 311 and get help from HPD's Fair Housing Counselors. You can also get lawyers to answer your questions at the Housing Court Answers hotline: (212)962-4795. You may qualify for free legal assistance from the <a href="http://www.legal-aid.org/">Legal Aid Society</a>.</p>
+                    </div>
+                    
+                    <button class="accordion">Are you in danger of losing your apartment due to late rental payments?</button>
+                        <div class="panel">
+                            <p>The "One Shot Deal" emergency assistance program helps people who are temporarily unable pay their rent due to unexpected circumstances. You can contact HRA's Infoline at (718)557-1399 for more information.</p><br>
+                            <p>You can also visit <a href="http://www1.nyc.gov/site/dhs/prevention/homebase.page">Homebase </a> for services to prevent eviction, obtain public benefits, short-term financial assistance, resources for relocation, financial counseling, and assistance in finding employment. </p>
+                        </div>
+                    
+                        <button class="accordion">Do you need emergency shelter services?</button>
+                        <div class="panel">
+                            <p>If you are a single adult, you can visit the <a href="http://www1.nyc.gov/site/dhs/shelter/singleadults/single-adults-applying.page">following locations</a> to apply for emergency shelter. </p><br>
+                            <p>If you are an adult family, you can visit the <a href="http://www1.nyc.gov/site/dhs/shelter/families/adult-families-applying.page">Adult Family Intake Center (AFIC)</a> at 400-430 East 30th Street, open 24 hours per day, including weekends and holidays. </p><br>
+                            <p>If you are currently living in the shelter system and need additional support while completing coursework at Per Scholas, you can speak with our social worker <a href="https://perscholas.org/about/people/claire-cuno">Claire Cuno</a>by requesting an appointment at the <a href="support.html">Get Support</a> section of this website.</p>
+                        </div>
+                    
+                        <button class="accordion">Are you searching for long-term affordable housing options?</button>
+                        <div class="panel">
+                            <p>If you are a youth aging out of the foster care system in need of permanent housing, you may qualify for the <a href="http://www.newdestinyhousing.org/get-help/acs-housing-subsidy">ACS Housing Susbidy</a> Program. The program pays up to $300 a month in rent, a broker's fee, security deposit, and arrears up to $1800. You may also qualify if your family has an open ACS case where housing is the main obstacle to reuniting with children in foster care.</p><br>
+                            <p>Getting long-term affordable and/or subsidized housing in NYC is a difficult process. The waiting list for NYCHA Section 8 housing has been closed since December 2009. There are a few project-based Section 8 programs open to those in special circumstances. <a href="http://nyhousingsearch.gov/Resources.html">More information</a>.
+                            </p>
+                        </div>
+                    
+
+                <a name="#food"><article id="food">
+                    <h3>Food & Income</h3></a>
+                    
+                    <button class="accordion">Where are the nearest food pantries and soup kitchens?</button>
+                    <div class="panel">
+                            <p> You can get information about the food pantries and soup kitchens near you by calling the Emergency FoodLine at (866)888-8777.
+                            </p><br>
+                            <p>This comprehensive list of places serving food has schedules and times.</p>
+                            <p>You can also use this map of community kitchens near you: <a href="http://foodhelp.nyc/locations-en/">FoodHelp.nyc</a>.</p>
+                    </div>
+                    <button class="accordion">How do I apply for SNAP to help pay for the cost of groceries?</button>
+                    <div class="panel"><p>The Supplemental Nutrition Assistance Program (formerly known as "food stamps") provides food assistance for nearly 1.8 million low-income New Yorkers, including families, the elderly, and the disabled. For support in applying for SNAP, you can <a href="support.html"></a>make an appointment</a> with a social worker at Per Scholas or apply directly online at <a href="https://a069-access.nyc.gov/ACCESSNYC/application.do">Access HRA</a>.</p>
+                    </div>
+                
+                    <button class="accordion">How do I apply for cash assistance to pay for basic necessities?</button>
+                    <div class="panel">
+                        <p>If you are a resident of New York, and you are unable to work or cannot find a job, or your job does not pay enough for your basic needs, the Temporary Assistance program may be able to help you pay for your expenses.</p><br><p>For support in applying for TA, you can <a href="support.html"></a>make an appointment</a> with a social worker at Per Scholas or apply directly online at <a href="https://www.benefits.gov/benefits/benefit-details/1673">Access HRA</a>. </p>
+                    </div>
+                    <button class="accordion">Can you explain to me how my unemployment benefits work while I'm at Per Scholas?</button>
+                    <div class="panel">
+                        <p>Unemployment Insurance is temporary income for eligible workers who lose their jobs through no fault of their own. You may qualify for extended unemployment insurance while you are going through this career training program.</p><br>
+                        <p>For support in understanding and/or applying for unemployment insurance, you can <a href="support.html"></a>make an appointment</a> with a social worker at Per Scholas, or apply directly online <a href="https://labor.ny.gov/unemploymentassistance.shtm">here</a>.</p>
+                    </div>
+                    
+                </article>
+                    
+                </article>
+
+                <a name="health"><article id="health">
+                    <h3>Health</h3></a>
+                    <button class="accordion">I am in crisis. How do I find low-cost mental health services in the city?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">What about other health services? Where can I go for that?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">I don't have health insurance. How do I register for what's left of Obamacare?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                </article>
+                
+                <a name="family"><article id="family">
+                    <h3>Family</h3></a>
+                    <button class="accordion">I need help with childcare. Where can I find resources for childcare while I study at Per Scholas?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">I need help with child support payments. Where can I find legal assistance and information?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">I need help navigating my ACS case and the foster care system. Where can I go for help?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">I am in a situation of domestic violence. Where can I go for help?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                </article>
+                
+                <a name="community"><article id="community"></a>
+                    <h3>Community</h3>
+                    <button class="accordion">I am concerned about issues related to my immigration status. Where can I go for help?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">I feel like I have been taken advantage of at my last job. Where can I go for support with a labor dispute?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">Per Scholas is not working out for me. What are some other job training programs in NYC that I can apply to?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                    <button class="accordion">What are some community organizations that I can connect to for ongoing support?</button>
+                    <div class="panel"><p>Here is a list of free or low-cost mental health providers in NYC:</p></div>
+                </article>
+                
+            </div>
+        </section>
+    
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+                var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].onclick = function(){
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+        </script>
+
+<!-- ========= Footer ========= -->
+        
+        <footer>
+            
+            <div id="footer_contact">
+                <a href="index.html"><img src="images/logo_header.svg"></a>
+                <h3>NEW YORK</h3>
+                <p>804 E 138th St Bronx, NY 10454 <br> 630 Flushing Ave Brooklyn, NY 11206</p>
+            </div>
+            
+            <div id="footer_links">
+                <a href="resources.html">Find Resources.</a><br>
+                <a href="support.html">Get Support.</a><br>
+                <a href="skills.html">Share Skills.</a><br>
+                <a href="network.html">Build Network.</a><br>
+<!--
+                <div id = "footer_copyright">
+                <p>By <a href="https://spiritkaizen.org">Kai Lin Zhang</a>, CodeBridge Cohort #6. <br>
+                Original <a href="https://perscholas.org">Per Scholas</a> website design by <a href="https://familiar-studio.com">Familiar</a>.</p>
+            </div>
+-->
+            </div>
+            
+            <div id = "footer_social">
+                <a href="http://cfp-dc.org/nonprofits/1621/Per-Scholas"><img src="images/cfp.png" style="width:65px;"></a>
+                <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12043#.Vmm6GRorLvs"><img src="images/charityNavigator.png"></a>
+                <br>
+                <img src="images/Blank_Space.png" style="height:35px;">
+                <a href="https://twitter.com/perscholas"><img src="images/twitter.png" style="width: 50px"></a>
+                <a href="https://www.facebook.com/PerScholas"><img src="images/facebook.png" style="width: 51px"></a>
+                <a href="https://www.instagram.com/perscholas/"><img src="images/instagram.png" style="width: 52px"></a>
+            </div>
+
+        </footer>
+        
+    </body>
+</html>
