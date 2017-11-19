@@ -28,13 +28,13 @@ class StudentList extends React.Component{
 
   render(){
     return (
-      <div className = 'studentList'>
+      <div className = 'student_list'>
 
         {this.props.studentDataLoaded ?
           {/* Did the data load? If so render the two types of list below*/}
 
         {/* List of students that are a priority */}
-        (<ul className = 'isPriority'>
+        (<ul className = 'is_priority'>
           {this.props.studentList.map(student => {
             return (
               {/* This will return li items for only students that are a priority. The key of each li will be the student's id and
@@ -50,7 +50,7 @@ class StudentList extends React.Component{
         </ul>
 
         {/* List of students that are not a priority */}
-        <ul className = 'notPriority'>
+        <ul className = 'not_priority'>
           {this.props.studentList.map(student => {
             return (
               {/* To check if they are not a priority. */}
