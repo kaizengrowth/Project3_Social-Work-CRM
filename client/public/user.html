@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Per Scholas: Support Portal</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <style>
+            table, th, td {
+                border: 1px solid gray;
+                margin: 15px;
+                padding: 10px;
+            }
+            h2 {
+                margin: 14px;
+                padding: 15px;
+            }
+            p {
+                font-size: 14px;
+            }
+            span {
+                font-size: 11px;
+            }
+            h5 {
+                color: #f68832;
+                font-size: 18px;
+            }
+            h6 {
+                color: #0079c0;
+            }
+            .user_container {
+                margin: 50px;
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                display: inline;
+            }
+            .user_info {
+                float: left;
+                display: inline-block;
+            }
+            .inbox {
+                flex: 1;
+                display: inline-block;
+            }
+            .user_info table {
+                width: 100%;
+                height: auto;
+            }
+            
+            .inbox table {
+                width: 760px;
+                height: auto;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+<!-- ========= Top Navigation Bar ========= -->
+        <a href="index.html">
+            <nav id="topnav">
+                <div id="topnav_left">
+                    <picture> 
+                        <source srcset="images/logo_small.png" media="(max-width: 600px)">
+                        <source srcset="images/logo_header.svg">
+                        <img src="images/logo_header.svg" alt="Per Scholas Logo">
+                    </picture>
+                </div>
+                
+                <div id="topnav_right">
+                    <a href="#modal_login ">Sign In</a>
+                </div>
+                
+                <div id="modal_login" class="modal">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <h2>Sign In</h2><br>
+                    <form>
+                        Username: <input type="text" name="Username" value="Student"><br>
+                        Password: <input type=password placeholder = "*******" pattern="\w{8}" title="8 character password">
+                        <button type="submit">Log In</button>
+                    </form><br>
+                    <a href="register.html" class="register_link">Register for an Account.</a>
+                    </div>
+                </div>
+            </nav>
+        </a>
+ 
+<!-- ========= Main Nav Bar ========= -->
+        
+        <nav id="main_nav">
+            <a href="resources.html">
+                <div id="nav_resources" class="nav_block">
+                    <a href="#">Find <br> Resources</a>
+                </div>
+            </a>
+            
+            <a href="support.html"><div id="nav_support" class="nav_block">
+                Get <br> Support
+            </div></a>
+            
+            <a href="skills.html"><div id="nav_skills" class="nav_block">
+                Share <br> Skills
+            </div></a>
+            
+            <a href="network.html"><div id="nav_network" class="nav_block">
+                Build <br> Network
+            </div></a>
+            
+            <div id="nav_search" class="nav_block">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            
+        </nav>
+
+<!-- ========= User Page ========= -->
+<div class="user_container">
+    
+    <div class="user_info">
+        <h2>User Page</h2>
+        
+        <table>
+            <tr>
+                <th><h5>First Name</h5></th>
+                <td><p>Kai</p></td>   
+            </tr>
+            <tr>
+                <th><h5>Last Name</h5></th> 
+                <td><p>Zhang</p></td>
+            </tr>
+            <tr>
+                <th><h5>Per Scholas Year</h5></th> 
+                <td><p>2017</p></td>
+            </tr>
+            <tr>
+                 <th><h5>Cycle Number</h5></th>
+                 <td><p>18</p></td>
+            </tr>
+            <tr>
+                <th><h5>Email Address</h5x></th> 
+                <td><p>kai@spiritkaizen.org</p></td>
+            </tr>
+        </table>
+    </div>
+    
+    <img src="images/profile%20pic.png" style="width: 350px">
+        
+    <div class = "inbox">
+        <table>
+            <tr>
+                <td>
+                 <h2> Messages </h2>   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h6>Hey Claire!</h6><span>9/3/17 6:53pm</span>
+                <p>I'd like to set up an appointment with you. I mentioned in my form the housing issues that I'm dealing with right now. I'm wondering if you could help me...</p>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                <h6 style="color:#76b7db;">Appointment Times</h6><span>9/4/17 9:01am</span>
+                <p>Thanks for taking the time to fill out the form. I hear what you're going through. How does next Tuesday at 2pm sound for you? I can come pull you out of class...</p>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                <h6>Referrals You Mentioned</h6>
+                <span>9/6/17 3:06pm</span>
+                <p>It was great to meet with you! Thanks for all the advice and direction you gave about my situation. Could you give me the name of that place you referred to me to again...</p>
+                </td> 
+            </tr>
+             <tr>
+                <td>
+                <h6 style="color:#76b7db;">Address and Contact</h6>
+                <span>9/6/17 3:15pm</span>
+                <p>Sure! Great to meet with you as well! Here's the contact info for the person I mentioned...</p>
+                </td> 
+            </tr>
+        </table>    
+    </div>
+</table>
+</div>
+    
+<div class = "inbox">
+    <table>
+            <tr>
+                <td>
+                 <h2> Resources and Referrals </h2>   
+                </td>
+            </tr>
+            <tr>
+                <td><p>Suggested sections...</p></td>
+            </tr>
+            <tr>
+                <td><p>Resources...</p></td>
+            </tr>
+            <tr>
+                <td><p>Contacts...</p></td>
+            </tr>
+    </table>
+                
+</div>
+
+<!-- ========= Footer ========= -->
+        
+        <footer>
+            
+            <div id="footer_contact">
+                <a href="index.html"><img src="images/logo_header.svg"></a>
+                <h3>NEW YORK</h3>
+                <p>804 E 138th St Bronx, NY 10454 <br> 630 Flushing Ave Brooklyn, NY 11206</p>
+            </div>
+            
+            <div id="footer_links">
+                <a href="resources.html">Find Resources.</a><br>
+                <a href="support.html">Get Support.</a><br>
+                <a href="skills.html">Share Skills.</a><br>
+                <a href="network.html">Build Network.</a><br>
+<!--
+                <div id = "footer_copyright">
+                <p>By <a href="https://spiritkaizen.org">Kai Lin Zhang</a>, CodeBridge Cohort #6. <br>
+                Original <a href="https://perscholas.org">Per Scholas</a> website design by <a href="https://familiar-studio.com">Familiar</a>.</p>
+-->
+            </div>
+            </div>
+            
+            <div id = "footer_social">
+                <a href="http://cfp-dc.org/nonprofits/1621/Per-Scholas"><img src="images/cfp.png" style="width:65px;"></a>
+                <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12043#.Vmm6GRorLvs"><img src="images/charityNavigator.png"></a>
+                <br>
+                <img src="images/Blank_Space.png" style="height:35px;">
+                <a href="https://twitter.com/perscholas"><img src="images/twitter.png" style="width: 50px"></a>
+                <a href="https://www.facebook.com/PerScholas"><img src="images/facebook.png" style="width: 51px"></a>
+                <a href="https://www.instagram.com/perscholas/"><img src="images/instagram.png" style="width: 52px"></a>
+            </div>
+
+        </footer>
+        
+    </body>
+</html>

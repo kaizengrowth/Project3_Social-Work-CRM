@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Per Scholas: Support Portal</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <style>
+            .slide_text {
+                position: relative;
+                bottom: 0;
+                left: 0;
+                width: 700px;
+                padding: 20px;
+                background: rgba(0,0,0,0.1);
+                z-index: 99;
+            }
+            .slide_text p {
+                padding-top: 25px;
+                font-size: 16px;
+                font-family: Arial;
+                color: #434343;
+            }
+            .slide_text button {
+                background-color: #f68832;
+                padding: 10px 12px;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        
+<!-- ========= Top Navigation Bar ========= -->
+        <a href="index.html">
+            <nav id="topnav">
+                <div id="topnav_left">
+                    <picture> 
+                        <source srcset="images/logo_small.png" media="(max-width: 600px)">
+                        <source srcset="images/logo_header.svg">
+                        <img src="images/logo_header.svg" alt="Per Scholas Logo">
+                    </picture>
+                </div>
+                
+                <div id="topnav_right">
+                    <a href="#modal_login ">Sign In</a>
+                </div>
+                
+                <div id="modal_login" class="modal">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <h2>Sign In</h2><br>
+                    <form>
+                        Username: <input type="text" name="Username" value="Student"><br>
+                        Password: <input type=password placeholder = "*******" pattern="\w{8}" title="8 character password">
+                        <a href="user.html"><button type="button">Log In</button></a>
+                    </form><br>
+                    <a href="register.html" class="register_link">Register for an Account.</a>
+                    </div>
+                </div>
+            </nav>
+        </a>
+ 
+<!-- ========= Main Nav Bar ========= -->
+        
+        <nav id="main_nav">
+            <a href="resources.html">
+                <div id="nav_resources" class="nav_block">
+                    <a href="#">Find <br> Resources</a>
+                </div>
+            </a>
+            
+            <div id="nav_support" class="nav_block">
+                <a href="support.html">Get <br> Support</a>
+            </div>
+            
+            <div class="nav_selected" id="navlink_selected">
+                <p>Share <br> Skills</p>
+            </div>
+            
+            <div id="nav_network" class="nav_block">
+                <a href="network.html">Build <br> Network</a>
+            </div>
+            
+            <div id="nav_search" class="nav_block">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </div>
+            
+        </nav>
+
+<!-- ========= H1 Animation ========= -->
+       
+        <section class= "animation_header">
+            
+            <div class = "animation_header" id = "resources_header">
+                <h3> Teach to Learn. </h3>    
+                <h1> Peer tutoring with alumni. </h1>    
+            </div>
+        </section>
+
+<!-- ========= Teach to Learn Slideshow ========= -->
+        
+        <section class = "Slideshow">
+            <div id="slide 1" class="mySlides">
+                 <img src="images/pomodoro.jpg">
+                 <div class="slide_text">
+                     <h3>"ABC" - Log your hours.</h3>
+                     <p>"Always Be Coding" - when you graduate from Bootcamp, continue practicing daily by logging and setting the pomodoro timer in your profile. It takes around 10,000 hours of practice to reach mastery.</p>
+                 </div>
+            </div>
+            <div id="slide 2" class="mySlides">
+                 <img src="images/mozilla.png">
+                <img src="images/OpenBadges.png">
+            </div>
+            <div id="slide 3" class="mySlides">
+                <img src="images/OpenBadges_earn.png">
+            </div>
+            <div id="slide 4" class="mySlides">
+                <img src="images/OpenBadges_display.png">
+            </div>
+            <div id="slide 5" class="mySlides">
+                  <img src="images/AddtoLinkedIn.png">
+            </div>
+           
+            <button class = "button" onclick = "plusDivs(-1)">&#10094;</button>
+            
+            <button class="button" onclick="plusDivs(+1)"> &#10095; </button>
+        
+        
+        </section>
+
+<!-- ========= Footer ========= -->
+        
+        <footer>
+            
+            <div id="footer_contact">
+                <a href="index.html"><img src="images/logo_header.svg"></a>
+                <h3>NEW YORK</h3>
+                <p>804 E 138th St Bronx, NY 10454 <br> 630 Flushing Ave Brooklyn, NY 11206</p>
+            </div>
+            
+            <div id="footer_links">
+                <a href="resources.html">Find Resources.</a><br>
+                <a href="support.html">Get Support.</a><br>
+                <a href="skills.html">Share Skills.</a><br>
+                <a href="network.html">Build Network.</a><br>
+                <div id = "footer_copyright">
+                <p>By <a href="https://spiritkaizen.org">Kai Lin Zhang</a>, CodeBridge Cohort #6. <br>
+                Original <a href="https://perscholas.org">Per Scholas</a> website design by <a href="https://familiar-studio.com">Familiar</a>.</p>
+            </div>
+            </div>
+            
+            <div id = "footer_social">
+                <a href="http://cfp-dc.org/nonprofits/1621/Per-Scholas"><img src="images/cfp.png" style="width:65px;"></a>
+                <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12043#.Vmm6GRorLvs"><img src="images/charityNavigator.png"></a>
+                <br>
+                <img src="images/Blank_Space.png" style="height:35px;">
+                <a href="https://twitter.com/perscholas"><img src="images/twitter.png" style="width: 50px"></a>
+                <a href="https://www.facebook.com/PerScholas"><img src="images/facebook.png" style="width: 51px"></a>
+                <a href="https://www.instagram.com/perscholas/"><img src="images/instagram.png" style="width: 52px"></a>
+            </div>
+        
+        <script> 
+  
+          let slides_array = document.getElementsByClassName("mySlides"); 
+
+          let slideIndex = 0; 
+          showDivs(slideIndex);
+
+          function plusDivs(n) {
+            slideIndex += n; 
+
+            if (slideIndex > (slides_array.length - 1)) { 
+              slideIndex = 0; 
+            }; 
+
+            if (slideIndex < 0) { 
+              slideIndex = (slides_array.length - 1); 
+            }; 
+
+            showDivs(slideIndex); 
+          }
+
+          function showDivs() { 
+            let i; 
+
+            for (i=0; i<(slides_array.length); i++) { 
+              slides_array[i].style.display = "none"; 
+            } 
+
+            slides_array[slideIndex].style.display = "block"; 
+          } 
+
+        </script>
+
+        </footer>
+        
+    </body>
+</html>

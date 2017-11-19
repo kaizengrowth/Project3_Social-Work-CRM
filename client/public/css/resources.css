@@ -1,0 +1,131 @@
+.content_container {
+    background-color: white;
+    display: flex;
+}
+
+/*========== Side Nav Bar ==========*/
+
+.sidenav {
+    flex: 1;
+    width: 80px;
+    position: absolute;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+   .sidenav { 
+      transform: translateX(-200px);
+      transition: 1s;
+   }
+    .main_content {
+        transform: translateX(-200px);
+        width: 90%;
+    }
+}
+
+.sidenav-item {
+    width: 145px;
+    height: 25px;
+    text-align: left;
+    background-color: #09507c;
+    color: #76b7db;
+    font-family: monospace;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.sidenav-item:hover {
+    background-color: #0079c0;
+    color: #fec14f;
+}
+
+.sidenav a {
+    text-decoration: none;
+}
+
+.sidenav-item:active {
+    background: #0079c0;
+    border-left: #fec14f;
+    color: #fec14f;
+}
+
+.sidenav h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sidenav button {
+    position: relative;
+    border: 3px solid #fec14f;
+    color: cornsilk;
+    background-color: #f68832;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-size: 22px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.sidenav button:hover {
+    background-color: #fec14f;
+}
+
+/*========== Main Content ==========*/
+
+.main_content {
+    flex: 3;
+    background-color: white;
+    margin-left: 200px;
+    margin-bottom: 25px;
+    padding: 30px;
+    height: auto;
+    width: 100 vw;
+}
+
+.main-content article {
+    margin-left: 300px;
+}
+
+.main_content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.main_content p {
+    font-size: 18px;
+    font-family: sans-serif;
+}
+
+.main_content a {
+    color: #f68832;
+}
+
+.main_content a:hover {
+    color:  #fec14f;
+}
+
+/*========== FAQ Accordion ==========*/
+
+button.accordion {
+    background-color: #76b7db;
+    color: #09507c;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #c0c0c0;
+}
+
+div.panel {
+    padding: 18px;
+    background-color: white;
+    display: none;
+}
