@@ -4,11 +4,27 @@ class StudentList extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      isPriority: null,
-      isResolved: null,
-      inProgress: null,
+      listOfStudents: 'inProgress',
     }
+    // this.showInProgress = this.showInProgress.bind(this);
+    // this.showIsResolved = this.showIsResolved.bind(this);
   }
+
+  // showInProgress(){
+  //   this.setState({
+  //     listOfStudents: 'inProgress',
+  //   })
+  // }
+  //
+  // showIsResolved(){
+  //   this.setState({
+  //     listOfStudents: 'isResolved',
+  //   })
+  // }
+  //
+  //Render two buttons one each method above
+  //Depending on the state, InProgress will render or IsResolved will render
+  //Before doing all that, make sure this page is currently works.
 
   render(){
     return (
