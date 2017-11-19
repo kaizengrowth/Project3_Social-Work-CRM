@@ -7,9 +7,10 @@ class ProfileController extends React.Component {
    this.state = {
      studentList: null,
      studentDataLoaded: false,
+     selectedStudent: null,
    }
    this.getStudentList = this.getStudentList.bind(this);
-
+   this.currentProfile = this.currentProfile.bind(this);
  }
 
  componendDidMount(){
@@ -30,11 +31,31 @@ class ProfileController extends React.Component {
       }).catch(err => console.log(err));
   }
 
+  currentProfile(id){
+     let profile = this.state.studentList.find(student =>{
+       return student.studid === id
+     })
+     this.setState({
+       selectedStudent: profile,
+     })
+    // or is it better to do another fetch like below?
+
+    // fetch(`api/students/{id}`)
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     this.setState({
+    //       selectedStudent: res,
+    //     });
+    //   }).catch(err => console.log(err));
+  }
+
+  }
+
   render(){
     return(
       <div className = 'profileContainer'>
-        <StudentList studentList = {this.state.studentList} studentDataLoaded = {this.state.studentDataLoaded} />
-
+        <StudentList studentList = {this.state.studentList} studentDataLoaded = {this.state.studentDataLoaded} currentProfile = {this.currentProfile} />
+        
       </div>
     )
   }

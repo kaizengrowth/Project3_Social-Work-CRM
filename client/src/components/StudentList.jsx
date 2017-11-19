@@ -22,9 +22,9 @@ class StudentList extends React.Component{
   //   })
   // }
   //
-  //Render two buttons one each method above
+  //Need to Render two buttons one for each method above
   //Depending on the state, InProgress will render or IsResolved will render
-  //Before doing all that, make sure this page is currently works.
+  //Before doing all that, make sure this page currently works.
 
   render(){
     return (
@@ -69,9 +69,6 @@ class StudentList extends React.Component{
     )
   }
 
-
-
 }
-
 
 export default StudentList;
