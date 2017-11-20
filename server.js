@@ -36,8 +36,8 @@ app.use(express.static('public'));
 
 // const authRoutes = require('./routes/auth-routes');
 // app.use('/api/auth', authRoutes);
-// const studentRoutes = require('./routes/student-routes.js');
-// app.use('api/students', studentRoutes);
+const studentRoutes = require('./routes/student-routes.js');
+app.use('api/students', studentRoutes);
 
 app.use('*', (req, res) => {
     res.status(404).send('Not Found');
