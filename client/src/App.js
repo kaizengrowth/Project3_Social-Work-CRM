@@ -5,6 +5,7 @@ import TopNav from './components/TopNav'
 import MainNav from './components/MainNav'
 import Banner from './components/Banner'
 import AnimationHeader from './components/AnimationHeader'
+import ProfileController from './components/ProfileController'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <MainNav />
         <Banner />
         <AnimationHeader />
+        <ProfileController />
       </div>
     );
   }
