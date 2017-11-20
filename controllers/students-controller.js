@@ -4,11 +4,15 @@ const Student = require('../models/student');
 const studentsController = {};
 
 studentsController.index = (req, res) => {
-    res.json({
+  Student.findAll()
+    .then(students => {
+      res.status(200).json({
         message: 'Put a student profile page on this route',
-        data: {
-            student: req.student,
-        },
+        data: {students},
+      })
+    }).catch(err => {
+      console.log(err);
+      res.status(400).json({message: '400', err});
     });
 };
 

@@ -41,7 +41,7 @@ class StudentList extends React.Component{
                 each li will also have a button. When the button is clicked it will invoke the currentprofile method (found on profile controller)
                 and pass that student's id as an argument*/
                 <div>
-                {student.isPriority ?
+                {student.ispriority ?
                 (<li key = {student.studid}><button onClick = {() => this.props.currentProfile(student.studid)}>
                 {student.first_name +  " " + student.last_name}</button></li>)
                 : null}
@@ -56,7 +56,7 @@ class StudentList extends React.Component{
                 return (
                   /* To check if they are not a priority. */
                   <div>
-                    {student.isPriority === false ?
+                    {student.ispriority === false ?
                     (<li key = {student.studid}><button onClick = {() => this.props.currentProfile(student.studid)}>
                     {student.first_name +  " " + student.last_name}</button></li>)
                     : null}
