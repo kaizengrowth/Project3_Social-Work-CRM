@@ -14,13 +14,13 @@ class ProfileController extends React.Component {
    this.currentProfile = this.currentProfile.bind(this);
  }
 
- componendDidMount(){
+ componentDidMount(){
    this.getStudentList();
  }
 
  getStudentList() {
    //this will need to be adjusted depending on how we set up routes and server.js on backend
-    fetch('api/students')
+    fetch('/api/students')
       .then(res => res.json())
       .then(res => {
         this.setState({
