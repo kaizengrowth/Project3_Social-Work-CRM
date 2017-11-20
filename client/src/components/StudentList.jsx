@@ -4,21 +4,37 @@ class StudentList extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      isPriority: null,
-      isResolved: null,
-      inProgress: null,
+      listOfStudents: 'inProgress',
     }
+    // this.showInProgress = this.showInProgress.bind(this);
+    // this.showIsResolved = this.showIsResolved.bind(this);
   }
+
+  // showInProgress(){
+  //   this.setState({
+  //     listOfStudents: 'inProgress',
+  //   })
+  // }
+  //
+  // showIsResolved(){
+  //   this.setState({
+  //     listOfStudents: 'isResolved',
+  //   })
+  // }
+  //
+  //Need to Render two buttons one for each method above
+  //Depending on the state, InProgress will render or IsResolved will render
+  //Before doing all that, make sure this page currently works.
 
   render(){
     return (
-      <div className = 'studentList'>
+      <div className = 'student_list'>
 
         {this.props.studentDataLoaded ?
           {/* Did the data load? If so render the two types of list below*/}
 
         {/* List of students that are a priority */}
-        (<ul className = 'isPriority'>
+        (<ul className = 'is_priority'>
           {this.props.studentList.map(student => {
             return (
               {/* This will return li items for only students that are a priority. The key of each li will be the student's id and
@@ -34,7 +50,7 @@ class StudentList extends React.Component{
         </ul>
 
         {/* List of students that are not a priority */}
-        <ul className = 'notPriority'>
+        <ul className = 'not_priority'>
           {this.props.studentList.map(student => {
             return (
               {/* To check if they are not a priority. */}
@@ -53,9 +69,6 @@ class StudentList extends React.Component{
     )
   }
 
-
-
 }
-
 
 export default StudentList;
