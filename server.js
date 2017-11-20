@@ -15,3 +15,16 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 const studentRoutes = require('./routes/student-routes.js');
+app.use('api/students', studentRoutes);
+
+app.use('*', (req, res) => {
+  res.status(404).send('Not Found');
+});
+
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).json({
+    error: err,
+    message: err.message,
+  });
+});
