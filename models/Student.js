@@ -2,6 +2,10 @@ const db = require('../db/config');
 
 const Student = {};
 
+Student.findAll = () => {
+    return db.manyOrNone('SELECT * FROM students');
+  }
+
 Student.findbyUserName = userName => {
     return db.oneOrNone(`
         SELECT * FROM users
@@ -19,3 +23,5 @@ Student.create = email => {
         RETURNING *
     `, [student.first_name, student.last_name, student.phone, student.class, student.aboutme]);
 };
+
+module.exports = Student;
