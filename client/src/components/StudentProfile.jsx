@@ -17,7 +17,7 @@ let student = props.selectedStudent;
       <h3>Student Notes: {student.studentnotes}</h3>)
 
       : (<h1> No Student Selected </h1>)}
-      
+
     </div>
   )
 
