@@ -7,14 +7,14 @@ let student = props.selectedStudent;
 
     {student ?
 
-      (<img src = {student.image} alt = '' />
-      <div className = 'student_info'>
-        <h1>{{student.first_name} + ' ' + {student.last_name}}</h1>
+      (<div className = 'student_info'>
+        <img src = {student.image} alt = '' />
+        <h1>{student.first_name + ' ' + student.last_name}</h1>
         <p>Email: {student.email}</p>
         <p>Phone number: {student.phone}</p>
         <p>{student.aboutme}</p>
-      </div>
-      <h3>Student Notes: {student.studentnotes}</h3>)
+        <p>Student Notes: {student.studentnotes}</p>
+      </div>)
 
       : (<h1> No Student Selected </h1>)}
 

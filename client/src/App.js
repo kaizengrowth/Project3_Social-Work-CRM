@@ -7,6 +7,9 @@ import Banner from './components/Banner'
 import AnimationHeader from './components/AnimationHeader'
 import Home from './containers/Home'
 
+import ProfileController from './components/ProfileController'
+
+
 class App extends Component {
     constructor() {
         super();
@@ -64,11 +67,11 @@ class App extends Component {
     //         }).catch(err => console.log(err));
     // }
 
-
       render() {
         return (
             <Router>
               <div className="App">
+              <TopNav />
                 // <TopNav logout={this.logout} />
                 <MainNav />
                 <Banner />
@@ -78,5 +81,6 @@ class App extends Component {
         );
       }
     }
+
 
 export default App
