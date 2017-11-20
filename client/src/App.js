@@ -72,10 +72,11 @@ class App extends Component {
             <Router>
               <div className="App">
               <TopNav />
-                // <TopNav logout={this.logout} />
+                <TopNav logout={this.logout} />
                 <MainNav />
                 <Banner />
                 <AnimationHeader />
+                <ProfileController />
               </div>
             </Router>
         );
