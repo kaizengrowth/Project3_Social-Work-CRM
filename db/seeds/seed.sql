@@ -11,11 +11,10 @@ INSERT INTO students (first_name,last_name,email,phone, class, aboutme, ispriori
 ('The','Count','ninetynine@gmail.com','212-555-6666', '289', 'one million two thousand eight hundred and fourteen!  OR nine.', false, 'https://vignette2.wikia.nocookie.net/muppet/images/2/22/CountVonCount.png/revision/latest?cb=20150116064552', 'no student notes at this time');
 INSERT INTO intake (swid, studid, intakedate,  intakenotes,
   food,foodnotes,intclothing,finances,financenotes)
-VALUES ('1', '2', '2017-01-30', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, laudantium, ipsa. Exercitationem similique quasi voluptatibus magnam quae minus, nihil rem provident quam recusandae distinctio reiciendis eligendi. Error ratione maxime earum.', true, 'having trouble with foodstamps', true, true,'my unemployment is running out');
+VALUES (1, 2, '2017-01-30', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, laudantium, ipsa. Exercitationem similique quasi voluptatibus magnam quae minus, nihil rem provident quam recusandae distinctio reiciendis eligendi. Error ratione maxime earum.', true, 'having trouble with foodstamps', true, true,'my unemployment is running out');
 INSERT INTO intake (swid, studid, intakedate,  intakenotes,
   food,foodnotes,intclothing,finances,financenotes)
 VALUES (2, 3, '2017-05-21', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, laudantium, ipsa. Exercitationem similique quasi voluptatibus magnam quae minus, nihil rem provident quam recusandae distinctio reiciendis eligendi. Error ratione maxime earum.', true, 'having trouble with foodstamps', false, true, 'my unemployment is running out');
 INSERT INTO intake (swid, studid, intakedate,  intakenotes,
   food,foodnotes,intclothing,finances,financenotes)
 VALUES (3, 1, '2017-06-08', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quod nobis, iste adipisci soluta nulla minima sit quaerat veniam, temporibus deleniti tempore voluptatem ex dolorum nemo veritatis architecto quibusdam officia!', false,'', true, true, 'I need additional help.');
-
