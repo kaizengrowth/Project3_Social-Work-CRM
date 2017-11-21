@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 
-class RegistrationForm extend React.Component{
+class RegistrationForm extends React.Component{
   constructor(){
     super();
     this.state = {
