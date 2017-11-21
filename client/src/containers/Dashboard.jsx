@@ -56,9 +56,12 @@ class Dashboard extends React.Component {
 
   render(){
     return(
-      <div className = 'profile_container'>
-        <StudentList studentList = {this.state.studentList} studentDataLoaded = {this.state.studentDataLoaded} currentProfile = {this.currentProfile} />
-        <StudentProfile selectedStudent = {this.state.selectedStudent} />
+      <div className = 'dashboard_container'>
+        <h1>Social Worker Dashboard</h1>
+        <div className = 'profile_list_container'>
+          <StudentList studentList = {this.state.studentList} studentDataLoaded = {this.state.studentDataLoaded} currentProfile = {this.currentProfile} />
+          <StudentProfile selectedStudent = {this.state.selectedStudent} />
+        </div>
       </div>
     )
   }

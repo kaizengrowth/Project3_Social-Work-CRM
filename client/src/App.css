@@ -484,3 +484,33 @@ footer {
 #footer_copyright a:hover {
     color: #fec14f;
 }
+
+/*========== Dashboard ==========*/
+
+.profile_list_container{
+  display: flex;
+  justify-content: center;
+}
+
+.student_list{
+  margin: 20px;
+  width: 500px;
+  border: solid;
+  padding: 0;
+
+}
+
+.list_by_priority li{
+  list-style-type: none;
+}
+
+.student_profile{
+  width: 500px;
+  margin: 20px;
+}
+
+.dashboard_container h1{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
