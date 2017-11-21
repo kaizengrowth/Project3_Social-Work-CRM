@@ -1,21 +1,20 @@
 import React from 'react';
 import TopNav from '../components/TopNav'
 import MainNav from '../components/MainNav'
-import Banner from '../components/Banner'
-import AnimationHeader from '../components/AnimationHeader'
 import Footer from '../components/Footer'
+import StudentList from '../components/StudentList'
 import StudentProfile from '../components/StudentProfile'
 
-const Profile = (props) => {
+const Dashboard = (props) => {
     return (
-        <div className="profile">
+        <div className="dashboard">
             <TopNav />
             <MainNav />
-            <Banner />
-            <AnimationHeader />
+            <StudentList />
+            <StudentProfile />
             <Footer />
         </div>
     )
 }
 
-export default Profile;
+export default Dashboard;

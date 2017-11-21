@@ -68,18 +68,12 @@ class App extends Component {
       render() {
         return (
             <BrowserRouter>
-              <div className="App">
-<<<<<<< HEAD
               <TopNav />
                 // <TopNav logout={this.logout} />
                 <MainNav />
-                <Banner />
-                <AnimationHeader />
-=======
                 <Route path="/" exact component={Home} />
                 <Route path="/profile" component={StudentProfile} />
-                <Route path="/list" component={StudentList} />
->>>>>>> Set up Router on React App.js. Moved Home components to container Home.
+                <Route path="/dashboard" component={Dashboard} />
               </div>
             </BrowserRouter>
         );
