@@ -1,12 +1,12 @@
 import React from 'react'
-// import { BrowserRouter as Router, Link }
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 import '../App.css'
 
 const TopNav = () => {
     return(
         <Router>
             <div id="topnav">
-                <a href = "index.html"> 
+                <a href = "index.html">
                     <div id="topnav_left">
                         {/* <picture> */}
                             {/* <source srcset="images/logo_small.png" media="(max-width: 600px)">
@@ -24,11 +24,11 @@ const TopNav = () => {
                     <div>
                         <a href="#close" title="Close" className="close">X</a>
                         <h2>Sign In</h2><br />
-                    
+
                         <form>
                             Username:
                             <input type="text" name="Username" value="Student" /> <br />
-                                
+
                             Password:
                             <input
                                 type="password"
@@ -39,7 +39,7 @@ const TopNav = () => {
                                     <button type="button">Log In</button>
                                 </a>
                         </form><br />
-            
+
                         <a href="register.html" className="register_link">Register for an Account.</a>
                     </div>
                 </div>

@@ -12,6 +12,6 @@ studentRoutes.post('/', studentsController.create);
 
 studentRoutes.get('/:id', studentsController.show);
 studentRoutes.put('/:id', studentsController.update);
-studentRoutes.delete('/:id', studentsController.delete)
+// studentRoutes.delete('/:id', studentsController.delete)
 
 module.exports = studentRoutes;
