@@ -69,7 +69,7 @@ class App extends Component {
         return (
             <BrowserRouter>
               <TopNav />
-                // <TopNav logout={this.logout} />
+                <TopNav logout={this.logout} />
                 <MainNav />
                 <Route path="/" exact component={Home} />
                 <Route path="/profile" component={StudentProfile} />
