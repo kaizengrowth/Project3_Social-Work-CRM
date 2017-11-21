@@ -18,15 +18,15 @@ app.listen(PORT, () => {
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(methodOverride('_method'));
-// app.use(cookieParser());
-// app.use(session({
-//     secret: process.env.SECRET_KEY,
-//     resave: false,
-//     saveUninitialized: true,
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(session({
+    secret: process.env.SECRET_KEY,
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static('public'));
 
@@ -34,8 +34,8 @@ app.use(express.static('public'));
 //     res.render('index');
 // })
 
-// const authRoutes = require('./routes/auth-routes');
-// app.use('/api/auth', authRoutes);
+const authRoutes = require('./routes/auth-routes');
+app.use('/api/auth', authRoutes);
 const studentRoutes = require('./routes/student-routes.js');
 
 app.use('/api/students', studentRoutes);
