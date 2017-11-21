@@ -12,7 +12,7 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`Chillin on PORT ${PORT}`);
+    console.log(`Chillin on PORT ${PORT} 😎`);
 });
 
 app.use(logger('dev'));
