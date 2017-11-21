@@ -1,32 +1,51 @@
 import React from 'react';
 
-//THIS NEEDS TO BE A CLASS WITH APIDATALOADED STATE AND NEED TO FETCH TO API/STUDENTS/EMAIL OR SOME SHIT
-//EMAIL MUST MATCH THE USER'S EMAIL? 
+//FETCH TO API/STUDENTS/EMAIL OR SOME SHIT
+//EMAIL MUST MATCH THE USER'S EMAIL?
 
-const StudentProfileContainer = (props) => {
-let student = props.selectedStudent;
-  return (
-    <div className = 'student_profile'>
+class StudentProfileContainer extends React.Component{
+ constructor(){
+   super();
+     this.state = {
+       APIDATALOADED: false,
+       studentInfo: null,
+     }
 
+   }
 
+   // getStudentInfo() {
+   //    fetch(`/api/students/${req.students.email}`)
+   //      .then(res => res.json())
+   //      .then(JsonRes => {
+   //        this.setState({
+   //          APIDATALOADED: true,
+   //          studentInfo: res.data.students,
+   //        });
+   //      }).catch(err => console.log(err));
+   //  }
 
-    {student ?
+  render(){
+    return (
+      <div className = 'student_profile'>
 
-      (<div className = 'student_info'>
-        <img src = {student.image} alt = '' />
-        <h1>{student.first_name + ' ' + student.last_name}</h1>
-        <p>Email: {student.email}</p>
-        <p>Phone number: {student.phone}</p>
-        <p>{student.aboutme}</p>
-        <p>Student Notes: {student.studentnotes}</p>
-      </div>)
+      {this.state.studentInfo ?
 
-      : (<h1> No Student Selected </h1>)}
+        <h1>student info </h1>
+        // (<div className = 'student_info'>
+        //   <img src = {student.image} alt = '' />
+        //   <h1>{student.first_name + ' ' + student.last_name}</h1>
+        //   <p>Email: {student.email}</p>
+        //   <p>Phone number: {student.phone}</p>
+        //   <p>{student.aboutme}</p>
+        //   <p>Student Notes: {student.studentnotes}</p>
+        // </div>)
 
-    </div>
-  )
+        : (<h1> No Student Selected </h1>)}
 
+      </div>
+    )
+  }
+ }
 
-}
 
 export default StudentProfileContainer
