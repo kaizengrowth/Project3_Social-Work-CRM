@@ -34,7 +34,7 @@ const Footer = () => {
             </div>
             <br />
         
-        </footer>
+        </div>
     )
 }
 
