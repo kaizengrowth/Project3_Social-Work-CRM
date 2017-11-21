@@ -65,7 +65,7 @@ class App extends Component {
       render() {
         return (
             <Router>
-              <div>
+              <div className="App">
                 <Route path="/" exact component={Home} />
                 <ProfileController />
               </div>
