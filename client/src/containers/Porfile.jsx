@@ -4,10 +4,11 @@ import MainNav from '../components/MainNav'
 import Banner from '../components/Banner'
 import AnimationHeader from '../components/AnimationHeader'
 import Footer from '../components/Footer'
+import StudentProfile from '../components/StudentProfile'
 
-const Home = () => {
+const Profile = (props) => {
     return (
-        <div className="home">
+        <div className="profile">
             <TopNav />
             <MainNav />
             <Banner />
@@ -17,4 +18,4 @@ const Home = () => {
     )
 }
 
-export default Home;
+export default Profile;
