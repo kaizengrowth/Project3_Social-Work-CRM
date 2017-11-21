@@ -14,7 +14,7 @@ Student.findbyEmail = (email) => {
     `, [email]);
 };
 
-// TO DO - Update create model method below with password field when auth routes are done.
+// TO DO - Update create model method below with password field when auth routes are done
 
 //this was email i changed it to student
 Student.create = (student) => {
