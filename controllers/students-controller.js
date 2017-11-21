@@ -17,7 +17,7 @@ studentsController.index = (req, res) => {
 };
 
 studentsController.show = (req, res, next) => {
-  Student.findById(req.params.id)
+  Student.findByEmail(req.params.email)
     .then(student => {
       res.status(200).json({
         message: 'ok-show one student by id',
@@ -44,7 +44,7 @@ studentsController.create = (req, res, next) => {
     }).then(student => {
         req.login(student, (err) => {
             if (err) return next(err);
-            res.redirect('/student');
+            res.redirect('/intake');
         });
     }).catch(err => {
         console.log(err);
@@ -60,13 +60,15 @@ studentsController.update = (req, res, next) => {
     phone: req.body.phone,
     cycle: req.body.class,
     aboutme: req.body.aboutme,
-  }, req.params.id)
+  }, req.params.email)
     .then(student => {
       res.status(202).json({
         message: 'updated successfully',
         data: {
           student: student,
         },
+      }).then(student => {
+       res.redirect('/profile')
       });
     }).catch(err => {
         console.log(err);

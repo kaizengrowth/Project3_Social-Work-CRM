@@ -34,7 +34,11 @@ class RegistrationForm extend React.Component{
       body: JSON.stringy(data),
     }).then(res => res.json())
       .then(jsonRes => {
+<<<<<<< HEAD
       window.location.href = "http://localhost:3001/api/students/register"
+=======
+      this.props.
+>>>>>>> cd20421ecb6f791eb134976aa771743af601166a
     );
   }
 

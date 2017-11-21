@@ -69,12 +69,12 @@ class App extends Component {
         return (
             <BrowserRouter>
               <div>
-                <TopNav />
-                  // <TopNav logout={this.logout} />
-                  <MainNav />
-                  <Route path="/" exact component={Home} />
-                  <Route path="/profile" component={StudentProfile} />
-                  <Route path="/dashboard" component={Dashboard} />
+              <TopNav />
+                <TopNav logout={this.logout} />
+                <MainNav />
+                <Route path="/" exact component={Home} />
+                <Route path="/profile" component={StudentProfile} />
+                <Route path="/dashboard" component={Dashboard} />
               </div>
             </BrowserRouter>
         );
