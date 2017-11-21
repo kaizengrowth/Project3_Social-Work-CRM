@@ -1,6 +1,6 @@
 import React from 'react';
 import Dashboard from '../containers/Dashboard';
-import StudentProfile from './StudentProfile';
+import StudentProfileContainer from '../containers/StudentProfileContainer';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom'
 
 class ProfileController extends React.Component {
@@ -20,7 +20,7 @@ class ProfileController extends React.Component {
     return(
       <div>
         <Dashboard />
-        <Route path="/profile" component={StudentProfile} />
+        <Route path="/profile" component={StudentProfileContainer} />
         <Route path="/dashboard" component={Dashboard} />
       </div>
     )

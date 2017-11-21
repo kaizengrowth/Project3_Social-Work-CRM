@@ -44,8 +44,9 @@ class StudentList extends React.Component{
                   and pass that student's id as an argument*/
                   <div>
                   {student.ispriority ?
-                  (<li key = {student.studid}><button onClick = {() => this.props.currentProfile(student.studid)}>
-                  {student.first_name +  " " + student.last_name}</button></li>)
+                    (<li key = {student.studid}>
+                      <button onClick = {() => this.props.currentProfile(student.studid)}> {student.first_name +  " " + student.last_name} </button>
+                    </li>)
                   : null}
                   </div>
                 )
@@ -58,8 +59,9 @@ class StudentList extends React.Component{
                   /* To check if they are not a priority. */
                   <div>
                     {student.ispriority === false ?
-                    (<li key = {student.studid}><button onClick = {() => this.props.currentProfile(student.studid)}>
-                    {student.first_name +  " " + student.last_name}</button></li>)
+                      (<li key = {student.studid}>
+                        <button onClick = {() => this.props.currentProfile(student.studid)}> {student.first_name +  " " + student.last_name} </button>
+                       </li>)
                     : null}
                   </div>
                 )
