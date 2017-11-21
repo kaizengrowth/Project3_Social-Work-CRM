@@ -35,6 +35,7 @@ studentsController.create = (req, res, next) => {
     // const salt = bcrypt.genSaltSync();
     // const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
+        email: req.body.email,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         phone: req.body.phone,
@@ -53,6 +54,7 @@ studentsController.create = (req, res, next) => {
 
 studentsController.update = (req, res, next) => {
   Student.update({
+    email: req.body.email,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     phone: req.body.phone,

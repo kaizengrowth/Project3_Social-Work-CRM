@@ -20,8 +20,8 @@ Student.findbyUserName = (email) => {
 Student.create = (student) => {
     return db.one(`
         INSERT INTO students
-        (first_name, last_name, phone, cycle, aboutme)
-        VALUES ($1, $2, $3, $4, $5)
+        (email, first_name, last_name, phone, cycle, aboutme)
+        VALUES ($1, $2, $3, $4, $5, $6)
         RETURNING *
     `, [student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme]);
 };
@@ -29,14 +29,15 @@ Student.create = (student) => {
 Student.update = (student, id) => {
   return db.one(`
     UPDATE students SET
-    first_name = $1,
-    last_name = $2,
-    phone = $3,
-    cycle = $4,
-    aboutme = $5
-    WHERE id = $6
+    email = $1,
+    first_name = $2,
+    last_name = $3,
+    phone = $4,
+    cycle = $5,
+    aboutme = $6
+    WHERE id = $7
     RETURNING *
-  `,[student.first_name, student.last_name, student.phone, student.cycle, student.aboutme, id);
+  `,[student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme], id);
 };
 
 Student.destroy = (id) => {
