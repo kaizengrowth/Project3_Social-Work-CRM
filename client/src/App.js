@@ -1,8 +1,12 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import TopNav from './components/TopNav';
+import MainNav from './components/MainNav';
+import RegistrationForm from './containers/RegistrationForm';
+import Home from './containers/Home';
+import ProfileController from './components/ProfileController';
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 import './App.css'
-import Home from './containers/Home'
-import ProfileController from './components/ProfileController'
+
 
 
 class App extends Component {
@@ -66,7 +70,13 @@ class App extends Component {
         return (
             <Router>
               <div className="App">
+                <TopNav />
+                <MainNav />
+                <Link to='/register'>
+                  <button>Click here to Register</button>
+                </Link>
                 <Route path="/" exact component={Home} />
+                <Route path='/register' exact component={RegistrationForm} />
                 <ProfileController />
               </div>
             </Router>

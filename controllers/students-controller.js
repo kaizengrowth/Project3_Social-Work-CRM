@@ -31,9 +31,9 @@ studentsController.show = (req, res, next) => {
         });
 };
 //added next...?  do I need to add email?
-studentsController.create = (req, res, next) => {
-    const salt = bcrypt.genSaltSync();
-    const hash = bcrypt.hashSync(req.body.password, salt);
+  studentsController.create = (req, res, next) => {
+    // const salt = bcrypt.genSaltSync();
+    // const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
         email: req.body.email,
         first_name: req.body.first_name,
@@ -42,16 +42,30 @@ studentsController.create = (req, res, next) => {
         cycle: req.body.cycle,
         aboutme: req.body.aboutme,
         ispriority: false,
-    }).then(student => {
-        req.login(student, (err) => {
-            if (err) return next(err);
-            res.redirect('/intake');
-        });
-    }).catch(err => {
+      }).then(student => {
+      res.status(201).json({
+        message: 'Student added to database',
+        data: {student},
+      });
+      }).catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
-};
+        });
+  };
+
+
+
+
+//     }).then(student => {
+//         req.login(student, (err) => {
+//             if (err) return next(err);
+//             res.redirect('/intake');
+//         });
+//     }).catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// };
 
 studentsController.update = (req, res, next) => {
   Student.update({
