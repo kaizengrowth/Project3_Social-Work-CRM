@@ -4,9 +4,9 @@ const passport = require('./services/auth/local');
 const authHelpers = require('./services/auth/auth-helpers');
 const studentsController = require('../controllers/students-controller');
 
-// authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
-//     res.render('auth/login');
-// });
+authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
+    res.render('auth/login');
+});
 authRouter.post('/login', passport.authenticate('local', {
     successRedirect: '/api/auth/verify',
     failureRedirect: '/api/auth/verify',
@@ -30,9 +30,9 @@ authRouter.get('/verify', (req, res) => {
     });
 });
 
-// authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
-//     res.render('auth/register');
-// });
+authRouter.get('/register', authHelpers.loginRedirect, (req, res) => {
+    res.render('auth/register');
+});
 authRouter.post('/register', studentsController.create);
 
 authRouter.get('/logout', (req, res) => {
