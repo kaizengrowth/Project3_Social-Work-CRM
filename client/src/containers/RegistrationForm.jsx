@@ -35,7 +35,6 @@ class RegistrationForm extends React.Component{
     }).then(res => res.json())
       .then(jsonRes => {
       console.log(data);
-      console.log(jsonRes);
     })
   }
 
