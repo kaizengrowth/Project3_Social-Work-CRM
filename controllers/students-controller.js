@@ -35,7 +35,7 @@ studentsController.show = (req, res, next) => {
 //added next...?  do I need to add email?
 studentsController.create = (req, res, next) => {
     const salt = bcrypt.genSaltSync();
-    const hash = bcrypt.hashSync(req.body.password, salt);
+    const hash = bcrypt.hashSync(req.body.password_digest, salt);
     Student.create({
         email: req.body.email,
         password_digest: hash,
