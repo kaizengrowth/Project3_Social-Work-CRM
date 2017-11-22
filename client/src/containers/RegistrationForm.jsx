@@ -48,6 +48,7 @@ class RegistrationForm extends React.Component{
   render(){
     return(
       <div className = 'reg_form_container'>
+        
         <form className = 'reg_form' onSubmit = {(e => this.submitEditForm(e, this.state))} >
           <input className='reg_input' type = 'text' name = 'first_name' placeholder = 'First Name' value = {this.state.first_name} onChange = {this.handleInputChange} />
           <input className='reg_input' type = 'text' name = 'last_name' placeholder = 'Last Name' value = {this.state.last_name} onChange = {this.handleInputChange} />
