@@ -25,20 +25,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //     resave: false,
 //     saveUninitialized: true,
 // }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.static('public'));
 
 // app.get('/', (req, res) => {
 //     res.render('index');
 // })
+app.use('/api/students', studentRoutes);
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/api/auth', authRoutes);
 const studentRoutes = require('./routes/student-routes.js');
 
-app.use('/api/students', studentRoutes);
 
 
 app.use('*', (req, res) => {
