@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcryptjs');
 const Student = require('../models/student');
 
 const studentsController = {};
@@ -31,7 +31,9 @@ studentsController.show = (req, res, next) => {
         });
 };
 //added next...?  do I need to add email?
-  studentsController.create = (req, res, next) => {
+
+studentsController.create = (req, res, next) => {
+
     // const salt = bcrypt.genSaltSync();
     // const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
@@ -42,12 +44,18 @@ studentsController.show = (req, res, next) => {
         cycle: req.body.cycle,
         aboutme: req.body.aboutme,
         ispriority: false,
-      }).then(student => {
-      res.status(201).json({
-        message: 'Student added to database',
-        data: {student},
-      });
-      }).catch(err => {
+
+    }).then(student => {
+        // req.login(student, (err) => {
+        //     if (err) return next(err);
+        // res.redirect('/intake');
+        res.status(201).json({
+          message: 'student created successfully & this will redirect to intake form once it exists',
+          data: {
+            student: student,
+          }
+        });
+    }).catch(err => {
         console.log(err);
         res.status(500).json(err);
         });

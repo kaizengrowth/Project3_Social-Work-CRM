@@ -36,10 +36,11 @@ app.use(express.static('public'));
 
 // const authRoutes = require('./routes/auth-routes');
 // app.use('/api/auth', authRoutes);
-const studentRoutes = require('./routes/student-routes.js');
-
+const studentRoutes = require('./routes/student-routes');
 app.use('/api/students', studentRoutes);
 
+const intakeRoutes = require('./routes/intake-routes');
+app.use('/intake', intakeRoutes);
 
 app.use('*', (req, res) => {
     res.status(404).send('Not Found');
