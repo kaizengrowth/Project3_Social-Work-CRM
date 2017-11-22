@@ -39,8 +39,9 @@ studentsController.create = (req, res, next) => {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         phone: req.body.phone,
-        cycle: req.body.class,
+        cycle: req.body.cycle,
         aboutme: req.body.aboutme,
+        ispriority: false,
     }).then(student => {
         req.login(student, (err) => {
             if (err) return next(err);
@@ -58,7 +59,7 @@ studentsController.update = (req, res, next) => {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     phone: req.body.phone,
-    cycle: req.body.class,
+    cycle: req.body.cycle,
     aboutme: req.body.aboutme,
   }, req.params.email)
     .then(student => {
