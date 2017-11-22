@@ -24,34 +24,33 @@ class RegistrationForm extends React.Component{
     });
   }
 
-  submitEditForm(e, this.state){
+  submitEditForm(e, data){
     e.preventDefault();
-    fetch(`/api/students/`),{
+    fetch(`/api/students/`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringy(data),
+      body: JSON.stringify(data),
     }).then(res => res.json())
       .then(jsonRes => {
-<<<<<<< HEAD
-      window.location.href = "http://localhost:3001/api/students/register"
-=======
-      this.props.
->>>>>>> cd20421ecb6f791eb134976aa771743af601166a
-    );
+      console.log(data);
+      console.log(jsonRes);
+    })
   }
 
   render(){
     return(
       <div>
-        <form  onSubmit{(e => this.submitEditForm(e,this.state))} >
+        <form  onSubmit = {(e => this.submitEditForm(e, this.state))} >
           <input type = 'text' name = 'first_name' placeholder = 'First Name' value = {this.state.first_name} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'last_name' placeholder = 'Last Name' value = {this.state.last_name} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'email' placeholder = 'Email' value = {this.state.email} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'phone' placeholder = 'Phone Number' value = {this.state.phone} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'cycle' placeholder = 'Cohort Name' value = {this.state.cycle} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'aboutme' placeholder = 'Tell me about yourself' value = {this.state.aboutme} onChange = {this.handleInputChange} />
+          <input type = 'hidden' name = 'ispriority' value = {false} />
+          <input type="submit" />
         </form>
       </div>
     )

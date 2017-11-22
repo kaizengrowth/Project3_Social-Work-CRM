@@ -39,8 +39,9 @@ studentsController.create = (req, res, next) => {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         phone: req.body.phone,
-        cycle: req.body.class,
+        cycle: req.body.cycle,
         aboutme: req.body.aboutme,
+        ispriority: false,
     }).then(student => {
         req.login(student, (err) => {
             if (err) return next(err);
@@ -53,28 +54,28 @@ studentsController.create = (req, res, next) => {
 };
 
 studentsController.update = (req, res, next) => {
-    Student.update({
-            email: req.body.email,
-            first_name: req.body.first_name,
-            last_name: req.body.last_name,
-            phone: req.body.phone,
-            cycle: req.body.class,
-            aboutme: req.body.aboutme,
-        }, req.params.email)
-        .then(student => {
-            res.status(202).json({
-                message: 'updated successfully',
-                data: {
-                    student: student,
-                },
-            }).then(student => {
-                res.redirect('/profile')
-            });
-        }).catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-};
+  Student.update({
+    email: req.body.email,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    phone: req.body.phone,
+    cycle: req.body.cycle,
+    aboutme: req.body.aboutme,
+  }, req.params.email)
+    .then(student => {
+      res.status(202).json({
+        message: 'updated successfully',
+        data: {
+          student: student,
+        },
+      }).then(student => {
+       res.redirect('/profile')
+      });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+  };
 
 studentsController.delete = (req, res, next) => {
     Student.destroy(req.params.email)

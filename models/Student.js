@@ -14,16 +14,16 @@ Student.findbyEmail = (email) => {
     `, [email]);
 };
 
-// TO DO - Update create model method below with password field when auth routes are done.
+// TO DO - Update create model method below with password field when auth routes are done
 
 //this was email i changed it to student
 Student.create = (student) => {
     return db.one(`
         INSERT INTO students
-        (email, first_name, last_name, phone, cycle, aboutme)
-        VALUES ($1, $2, $3, $4, $5, $6)
+        (email, first_name, last_name, phone, cycle, aboutme, ispriority)
+        VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *
-    `, [student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme]);
+    `, [student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme, student.ispriority]);
 };
 
 Student.update = (student, email) => {
