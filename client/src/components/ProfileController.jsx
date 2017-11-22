@@ -59,8 +59,8 @@ class ProfileController extends React.Component {
     return(
       <Router>
         <div>
-          {/*<Route path="/api/students/:id" component={StudentProfileContainer} />*/}
-          <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile}/>
+          <Route path='/studentprofile' render={props => (<StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent}/>)} />
+          <Route path='/students' render={props => (<Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile}/>)} />
         </div>
       </Router>
     )
