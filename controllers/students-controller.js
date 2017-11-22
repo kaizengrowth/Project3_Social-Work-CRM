@@ -31,7 +31,9 @@ studentsController.show = (req, res, next) => {
         });
 };
 //added next...?  do I need to add email?
+
 studentsController.create = (req, res, next) => {
+
     // const salt = bcrypt.genSaltSync();
     // const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
@@ -42,6 +44,7 @@ studentsController.create = (req, res, next) => {
         cycle: req.body.cycle,
         aboutme: req.body.aboutme,
         ispriority: false,
+
     }).then(student => {
         // req.login(student, (err) => {
         //     if (err) return next(err);
@@ -55,8 +58,22 @@ studentsController.create = (req, res, next) => {
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
-    });
-};
+        });
+  };
+
+
+
+
+//     }).then(student => {
+//         req.login(student, (err) => {
+//             if (err) return next(err);
+//             res.redirect('/intake');
+//         });
+//     }).catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     });
+// };
 
 studentsController.update = (req, res, next) => {
   Student.update({
