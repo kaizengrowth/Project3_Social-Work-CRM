@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
+const jwt = require('express-jwt');
+const jwks = require('jwks-rsa');
+const cors = require('cors');
 
 const app = express();
 require('dotenv').config();
@@ -17,7 +20,21 @@ app.listen(PORT, () => {
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+
+const authCheck = jwt({
+    secret: jws.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: "https://perscholas.auth0.com/.well-known/jwks.json"
+    }),
+    audience: "https://perscholas.auth0.com/api/v2/",
+    issuer: "https://perscholas.auth0.com",
+    algorithms: ['RS256']
+})
+
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(session({
