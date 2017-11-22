@@ -8,7 +8,9 @@ studentsController.index = (req, res) => {
     .then(students => {
       res.status(200).json({
         message: 'Put a student profile page on this route',
-        data: {students},
+        data: {
+          students,
+        },
       })
     }).catch(err => {
       console.log(err);
@@ -22,7 +24,7 @@ studentsController.show = (req, res, next) => {
       res.status(200).json({
         message: 'ok-show one student by id',
         data: {
-        student: student,
+          student,
       }
     });
   }).catch(err => {
@@ -32,10 +34,11 @@ studentsController.show = (req, res, next) => {
 };
 //added next...?  do I need to add email?
 studentsController.create = (req, res, next) => {
-    // const salt = bcrypt.genSaltSync();
-    // const hash = bcrypt.hashSync(req.body.password, salt);
+    const salt = bcrypt.genSaltSync();
+    const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
         email: req.body.email,
+        password_digest: hash,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         phone: req.body.phone,
