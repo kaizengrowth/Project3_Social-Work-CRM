@@ -4,6 +4,7 @@ import MainNav from '../components/MainNav';
 import Banner from '../components/Banner';
 import AnimationHeader from '../components/AnimationHeader';
 import RegistrationForm from './RegistrationForm';
+import Login from '../components/Login';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner />
             <AnimationHeader />
             <RegistrationForm />
+            <Login />
         </div>
     )
 }
