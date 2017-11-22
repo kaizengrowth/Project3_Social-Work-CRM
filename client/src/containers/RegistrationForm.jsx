@@ -11,6 +11,8 @@ class RegistrationForm extends React.Component{
       phone: '',
       cycle: '',
       aboutme: '',
+      studentRegistered: false,
+      redirectPath: null,
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitEditForm = this.submitEditForm.bind(this);
@@ -35,6 +37,11 @@ class RegistrationForm extends React.Component{
     }).then(res => res.json())
       .then(jsonRes => {
       console.log(data);
+    }).then(() => {
+      this.setState({
+        studentRegistered: true,
+        redirectPath: '/',
+      })
     })
   }
 
@@ -51,6 +58,7 @@ class RegistrationForm extends React.Component{
           <input type = 'hidden' name = 'ispriority' value = {false} />
           <input type="submit" />
         </form>
+        {this.state.studentRegistered ? <Redirect push to={this.state.redirectPath}/> : ''}
       </div>
     )
   }
