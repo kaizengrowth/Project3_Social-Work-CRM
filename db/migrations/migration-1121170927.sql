@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS students (
   first_name VARCHAR(255),
   last_name VARCHAR(255),
   email VARCHAR(255),
+  password_digest VARCHAR(255),
   phone VARCHAR(255),
   cycle VARCHAR(255),
   aboutme TEXT,
