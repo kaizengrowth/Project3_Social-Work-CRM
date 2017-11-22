@@ -3,7 +3,7 @@ import TopNav from '../components/TopNav';
 import MainNav from '../components/MainNav';
 import Banner from '../components/Banner';
 import AnimationHeader from '../components/AnimationHeader';
-import RegistrationForm from './RegistrationForm';
+import RegistrationForm from '../components/RegistrationForm';
 
 const Home = () => {
     return (

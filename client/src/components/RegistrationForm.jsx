@@ -25,7 +25,7 @@ class RegistrationForm extends React.Component{
     });
   }
 
-  submitEditForm(e, data){
+  submitRegisterForm(e, data){
     e.preventDefault();
     fetch(`/api/students/`,{
       method: 'POST',
@@ -43,7 +43,7 @@ class RegistrationForm extends React.Component{
   render(){
     return(
       <div>
-        <form  onSubmit = {(e => this.submitEditForm(e, this.state))} >
+        <form  onSubmit = {(e => this.submitRegisterForm(e, this.state))} >
           <input type = 'text' name = 'first_name' placeholder = 'First Name' value = {this.state.first_name} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'last_name' placeholder = 'Last Name' value = {this.state.last_name} onChange = {this.handleInputChange} />
           <input type = 'text' name = 'email' placeholder = 'Email' value = {this.state.email} onChange = {this.handleInputChange} />
