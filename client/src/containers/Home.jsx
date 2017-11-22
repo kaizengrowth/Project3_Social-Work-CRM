@@ -3,6 +3,7 @@ import TopNav from '../components/TopNav';
 import MainNav from '../components/MainNav';
 import Banner from '../components/Banner';
 import AnimationHeader from '../components/AnimationHeader';
+import LoginForm from '../components/LoginForm';
 import RegistrationForm from '../components/RegistrationForm';
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <MainNav />
             <Banner />
             <AnimationHeader />
+            <LoginForm />
             <RegistrationForm />
         </div>
     )

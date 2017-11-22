@@ -34,8 +34,8 @@ app.use(express.static('public'));
 //     res.render('index');
 // })
 
-// const authRoutes = require('./routes/auth-routes');
-// app.use('/api/auth', authRoutes);
+const authRoutes = require('./routes/auth-routes');
+app.use('/api/auth', authRoutes);
 const studentRoutes = require('./routes/student-routes.js');
 
 app.use('/api/students', studentRoutes);

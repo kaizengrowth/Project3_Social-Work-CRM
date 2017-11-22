@@ -8,20 +8,20 @@ class LoginForm extends React.Component{
       password: '',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.submitLoginForm = this.submitRegisterForm.bind(this);
+    this.submitLoginForm = this.submitLoginForm.bind(this);
   }
 
   handleInputChange(e){
     const name = e.target.name;
     const value = e.target.value;
     this.setState({
-      [name]: val,
+      [name]: value,
     })
   }
 
   submitLoginForm(e, data){
     e.preventDefault();
-    fetch(`/login`,{
+    fetch(`/api/auth/login`,{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
