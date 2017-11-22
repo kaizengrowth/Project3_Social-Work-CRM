@@ -4,7 +4,7 @@ const Student = {};
 
 Student.findAll = () => {
     return db.manyOrNone('SELECT * FROM students');
-  }
+}
 
 //should this be email and not id?
 Student.findbyEmail = (email) => {
@@ -20,24 +20,38 @@ Student.findbyEmail = (email) => {
 Student.create = (student) => {
     return db.one(`
         INSERT INTO students
+<<<<<<< HEAD
         (email, first_name, last_name, phone, cycle, aboutme, ispriority)
         VALUES ($1, $2, $3, $4, $5, $6, $7)
         RETURNING *
     `, [student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme, student.ispriority]);
+=======
+<<<<<<< Updated upstream
+        (email, first_name, last_name, phone, cycle, aboutme)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        RETURNING *
+    `, [student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme]);
+=======
+        (email, password_digest, first_name, last_name, phone, cycle, aboutme, ispriority)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        RETURNING *
+    `, [student.email, student.password_digest, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme, student.ispriority]);
+>>>>>>> Stashed changes
+>>>>>>> Not sure what's wrong here, but tried to add password_digest to form
 };
 
 Student.update = (student, email) => {
-  return db.one(`
+    return db.one(`
     UPDATE students SET
     phone = $1,
     aboutme = $2
     WHERE email = $3
     RETURNING *
-  `,[student.phone, student.aboutme], email);
+  `, [student.phone, student.aboutme], email);
 };
 
 Student.destroy = (email) => {
-  return db.none('DELETE FROM students WHERE id = $1', email);
+    return db.none('DELETE FROM students WHERE id = $1', email);
 };
 
 module.exports = Student;

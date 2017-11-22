@@ -36,6 +36,7 @@ studentsController.create = (req, res, next) => {
     const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
         email: req.body.email,
+        password_digest: req.body.password,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         phone: req.body.phone,
@@ -54,6 +55,7 @@ studentsController.create = (req, res, next) => {
 };
 
 studentsController.update = (req, res, next) => {
+<<<<<<< Updated upstream
   Student.update({
     email: req.body.email,
     first_name: req.body.first_name,
@@ -76,6 +78,30 @@ studentsController.update = (req, res, next) => {
         res.status(500).json(err);
     });
   };
+=======
+    Student.update({
+            email: req.body.email,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            phone: req.body.phone,
+            cycle: req.body.cycle,
+            aboutme: req.body.aboutme,
+        }, req.params.email)
+        .then(student => {
+            res.status(202).json({
+                message: 'updated successfully',
+                data: {
+                    student: student,
+                },
+            }).then(student => {
+                res.redirect('/profile')
+            });
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+};
+>>>>>>> Stashed changes
 
 studentsController.delete = (req, res, next) => {
     Student.destroy(req.params.email)
