@@ -14,7 +14,7 @@ class RegistrationForm extends React.Component{
       aboutme: '',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.submitEditForm = this.submitEditForm.bind(this);
+    this.submitRegisterForm = this.submitRegisterForm.bind(this);
   }
 
   handleInputChange(e) {
