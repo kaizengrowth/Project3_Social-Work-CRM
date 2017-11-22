@@ -18,11 +18,11 @@ class ProfileController extends React.Component {
 
   render(){
     return(
-      <div>
-        <Dashboard />
-        <Route path="/profile" component={StudentProfileContainer} />
-        <Route path="/dashboard" component={Dashboard} />
-      </div>
+        <div>
+          <Dashboard />
+          <Route path="/profile" component={StudentProfileContainer} />
+          <Route path="/dashboard" component={Dashboard} />
+        </div>
     )
   }
 
