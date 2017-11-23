@@ -13,17 +13,6 @@ class StudentProfileContainer extends React.Component{
 
    }
 
-   // getStudentInfo() {
-   //    fetch(`/api/students/${req.students.email}`)
-   //      .then(res => res.json())
-   //      .then(JsonRes => {
-   //        this.setState({
-   //          APIDATALOADED: true,
-   //          studentInfo: res.data.students,
-   //        });
-   //      }).catch(err => console.log(err));
-   //  }
-
   render(){
     return (
       <div className = 'student_profile'>
@@ -40,7 +29,7 @@ class StudentProfileContainer extends React.Component{
         //   <p>Student Notes: {student.studentnotes}</p>
         // </div>)
 
-        : (<h1> No Student Selected </h1>)}
+        : (<h1> Loading Data arghh </h1>)}
 
       </div>
     )

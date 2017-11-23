@@ -514,3 +514,42 @@ footer {
   justify-content: center;
   margin: 20px;
 }
+
+/*========== RegistrationForm ==========*/
+
+.reg_form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.reg_form_container{
+  margin: 100px auto;
+}
+
+.reg_input{
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.reg_submit{
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+  width: 206px;
+  background-color: #DFEDF2;
+  border: 3px solid black;
+}
+
+.reg_submit:hover{
+  background-color: #0F517A;
+  color: orange;
+  margin: 5px;
+  font-size: 20px;
+  width: 206px;
+  border: 3px solid orange;
+
+}
