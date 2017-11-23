@@ -38,6 +38,7 @@ studentsController.create = (req, res, next) => {
     // const hash = bcrypt.hashSync(req.body.password, salt);
     Student.create({
         email: req.body.email,
+        password_digest: req.body.password,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         phone: req.body.phone,
