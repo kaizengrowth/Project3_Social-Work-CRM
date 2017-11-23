@@ -17,7 +17,7 @@ studentsController.index = (req, res) => {
 };
 
 studentsController.show = (req, res, next) => {
-    Student.findByEmail(req.params.email)
+    Student.findbyEmail(req.params.email)
         .then(student => {
             res.status(200).json({
                 message: 'ok-show one student by id',
@@ -50,16 +50,16 @@ studentsController.create = (req, res, next) => {
         //     if (err) return next(err);
         // res.redirect('/intake');
         res.status(201).json({
-          message: 'student created successfully & this will redirect to intake form once it exists',
-          data: {
-            student: student,
-          }
+            message: 'student created successfully & this will redirect to intake form once it exists',
+            data: {
+                student: student,
+            }
         });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
-        });
-  };
+    });
+};
 
 
 
@@ -76,28 +76,28 @@ studentsController.create = (req, res, next) => {
 // };
 
 studentsController.update = (req, res, next) => {
-  Student.update({
-    email: req.body.email,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name,
-    phone: req.body.phone,
-    cycle: req.body.cycle,
-    aboutme: req.body.aboutme,
-  }, req.params.email)
-    .then(student => {
-      res.status(202).json({
-        message: 'updated successfully',
-        data: {
-          student: student,
-        },
-      }).then(student => {
-       res.redirect('/profile')
-      });
-    }).catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-  };
+    Student.update({
+            email: req.body.email,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            phone: req.body.phone,
+            cycle: req.body.cycle,
+            aboutme: req.body.aboutme,
+        }, req.params.email)
+        .then(student => {
+            res.status(202).json({
+                message: 'updated successfully',
+                data: {
+                    student: student,
+                },
+            }).then(student => {
+                res.redirect('/profile')
+            });
+        }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+};
 
 studentsController.delete = (req, res, next) => {
     Student.destroy(req.params.email)

@@ -4,7 +4,7 @@ const Student = {};
 
 Student.findAll = () => {
     return db.manyOrNone('SELECT * FROM students');
-  }
+}
 
 //should this be email and not id?
 Student.findbyEmail = (email) => {
@@ -27,17 +27,17 @@ Student.create = (student) => {
 };
 
 Student.update = (student, email) => {
-  return db.one(`
+    return db.one(`
     UPDATE students SET
     phone = $1,
     aboutme = $2
     WHERE email = $3
     RETURNING *
-  `,[student.phone, student.aboutme], email);
+  `, [student.phone, student.aboutme], email);
 };
 
 Student.destroy = (email) => {
-  return db.none('DELETE FROM students WHERE id = $1', email);
+    return db.none('DELETE FROM students WHERE id = $1', email);
 };
 
 module.exports = Student;
