@@ -78,6 +78,7 @@ class App extends Component {
                 <Route path="/" exact component={Home} />
                 {/* INSERT CONDITIONAL TO REMOVE REGISTRATION BUTTON WHEN USER IS LOGGED IN */}
                 <Route path='/register' exact component={RegistrationForm} />
+                <Route path='/controller' exact component={ProfileController} />
                 <ProfileController />
               </div>
             </Router>

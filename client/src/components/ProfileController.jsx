@@ -1,6 +1,7 @@
 import React from 'react';
 import Dashboard from '../containers/Dashboard';
 import StudentProfileContainer from '../containers/StudentProfileContainer';
+import RegistrationForm from '../containers/RegistrationForm';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom'
 
 class ProfileController extends React.Component {
@@ -59,8 +60,12 @@ class ProfileController extends React.Component {
     return(
       <Router>
         <div>
-          <Route path='/student' render={props => (<StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent}/>)} />
-          <Route path='/dashboard' render={props => (<Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile}/>)} />
+          <Route path='/student' render={props => (
+            <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent}/>
+          )}/>
+          <Route path='/dashboard' render={props => (
+            <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile}/>
+          )}/>
         </div>
       </Router>
     )
