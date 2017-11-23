@@ -10,8 +10,8 @@ const authHelpers = require('./services/auth/auth-helpers');
 studentRoutes.get('/', studentsController.index);
 studentRoutes.post('/', studentsController.create);
 
-studentRoutes.get('/:id', studentsController.show);
-studentRoutes.put('/:id', studentsController.update);
+studentRoutes.get('/:email', studentsController.show);
+studentRoutes.put('/:email', studentsController.update);
 // studentRoutes.delete('/:id', studentsController.delete)
 
 module.exports = studentRoutes;

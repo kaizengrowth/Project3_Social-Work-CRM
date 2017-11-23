@@ -17,7 +17,7 @@ studentsController.index = (req, res) => {
 };
 
 studentsController.show = (req, res, next) => {
-    Student.findByEmail(req.params.email)
+    Student.findbyEmail(req.params.email)
         .then(student => {
             res.status(200).json({
                 message: 'ok-show one student by id',
@@ -51,16 +51,16 @@ studentsController.create = (req, res, next) => {
         //     if (err) return next(err);
         // res.redirect('/intake');
         res.status(201).json({
-          message: 'student created successfully & this will redirect to intake form once it exists',
-          data: {
-            student: student,
-          }
+            message: 'student created successfully & this will redirect to intake form once it exists',
+            data: {
+                student: student,
+            }
         });
     }).catch(err => {
         console.log(err);
         res.status(500).json(err);
-        });
-  };
+    });
+};
 
 
 
