@@ -1,7 +1,7 @@
 const express = require('express');
 const authRouter = express.Router();
-const passport = require('../services/auth/local');
-const authHelpers = require('../services/auth/auth-helpers');
+const passport = require('./services/auth/local');
+const authHelpers = require('./services/auth/auth-helpers');
 const studentsController = require('../controllers/students-controller');
 
 authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
