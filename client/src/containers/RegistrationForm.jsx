@@ -8,6 +8,7 @@ class RegistrationForm extends React.Component{
       first_name: '',
       last_name: '',
       email: '',
+      password: '',
       phone: '',
       cycle: '',
       aboutme: '',
@@ -53,6 +54,7 @@ class RegistrationForm extends React.Component{
           <input className='reg_input' type = 'text' name = 'first_name' placeholder = 'First Name' value = {this.state.first_name} onChange = {this.handleInputChange} />
           <input className='reg_input' type = 'text' name = 'last_name' placeholder = 'Last Name' value = {this.state.last_name} onChange = {this.handleInputChange} />
           <input className='reg_input' type = 'text' name = 'email' placeholder = 'Email' value = {this.state.email} onChange = {this.handleInputChange} />
+          <input className='reg_input' type = 'password' name = 'password_digest' placeholder = 'Password' value = {this.state.password} onChange = {this.handleInputChange} />
           <input className='reg_input' type = 'text' name = 'phone' placeholder = 'Phone Number' value = {this.state.phone} onChange = {this.handleInputChange} />
           <input className='reg_input' type = 'text' name = 'cycle' placeholder = 'Cohort Name' value = {this.state.cycle} onChange = {this.handleInputChange} />
           <input className='reg_input' type = 'text' name = 'aboutme' placeholder = 'Tell me about yourself' value = {this.state.aboutme} onChange = {this.handleInputChange} />
