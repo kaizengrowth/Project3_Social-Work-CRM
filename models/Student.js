@@ -20,10 +20,10 @@ Student.findbyEmail = (email) => {
 Student.create = (student) => {
     return db.one(`
         INSERT INTO students
-        (email, first_name, last_name, phone, cycle, aboutme, ispriority)
-        VALUES ($1, $2, $3, $4, $5, $6, $7)
+        (email, password_digest, first_name, last_name, phone, cycle, aboutme, ispriority)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING *
-    `, [student.email, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme, student.ispriority]);
+    `, [student.email, student.password_digest, student.first_name, student.last_name, student.phone, student.cycle, student.aboutme, student.ispriority]);
 };
 
 Student.update = (student, email) => {
