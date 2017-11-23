@@ -2,14 +2,14 @@ const passport = require('passport');
 const Student = require('../../../models/Student');
 
 module.exports = () => {
-    passport.serializeUser((user, done) => {
-        done(null, user.username);
+    passport.serializeUser((student, done) => {
+        done(null, student.email);
     });
 
-    passport.deserializeUser((username, done) => {
-        Student.findByUserName(username)
-            .then(user => {
-                done(null, user);
+    passport.deserializeUser((email, done) => {
+        Student.findbyEmail(email)
+            .then(student => {
+                done(null, student);
             }).catch(err => {
                 done(err, null);
             });
