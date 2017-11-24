@@ -8,6 +8,7 @@ const Dashboard = (props) => {
     <div className = 'dashboard_container'>
       <h1>Social Worker Dashboard</h1>
       <div className = 'profile_list_container'>
+        {console.log(props.studentList)}
         <StudentList studentList={props.studentList} studentDataLoaded={props.studentDataLoaded} selectedStudent={props.selectedStudent} currentProfile={props.currentProfile} />
         <StudentProfile selectedStudent={props.selectedStudent} />
       </div>

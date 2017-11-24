@@ -65,6 +65,13 @@ class App extends Component {
     //             auth: res.auth,
     //         }).catch(err => console.log(err));
     // }
+    //
+    // <Route exact path="/" component={Home} />
+    // <Route exact path="/ice-cream"
+    //     render={() => <IceCreamController currentPage="index" />} />
+    // <Route exact path="/ice-cream/:id" render={props => (<IceCreamController currentPage="show" currentId={props.match.params.id} />)}/>
+    // <Route exact path="/new" render={() => (<IceCreamController currentPage="new" />)} />
+    // <Route exact path="/ice-cream/edit/:id" render={props => (<IceCreamController currentPage="edit" currentId={props.match.params.id} />)} />
 
       render() {
         return (
@@ -72,14 +79,15 @@ class App extends Component {
               <div className="App">
                 <TopNav />
                 <MainNav />
+                {/* INSERT CONDITIONAL TO REMOVE REGISTRATION BUTTON WHEN USER IS LOGGED IN AND LINKS SHOULD GO INSIDE A HEADER COMPONENT*/}
                 <Link to='/register'>
                   <button>Click here to Register</button>
                 </Link>
                 <Route path="/" exact component={Home} />
-                {/* INSERT CONDITIONAL TO REMOVE REGISTRATION BUTTON WHEN USER IS LOGGED IN */}
                 <Route path='/register' exact component={RegistrationForm} />
-                <Route path='/controller' exact component={ProfileController} />
-                <ProfileController />
+                <Route exact path="/dashboard" render={props => (<ProfileController loadPage="dashboard" />)}/>
+                <Route exact path="/student/:email" render={props => (<ProfileController loadPage="student" studentEmail = {props.match.params.email}/>)}/>
+                {/* /student will take you to a page to login if you haven't or straight to your account idk*/}
               </div>
             </Router>
         );

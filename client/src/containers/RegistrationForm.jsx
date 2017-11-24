@@ -38,10 +38,9 @@ class RegistrationForm extends React.Component{
       body: JSON.stringify(data),
     }).then(res => res.json())
       .then(jsonRes => {
-      console.log(data);
-    }).then(() => {
       this.setState({
         studentRegistered: true,
+        redirectPath: jsonRes.data.student.email,
       })
     })
   }
@@ -64,7 +63,8 @@ class RegistrationForm extends React.Component{
             </form>
           </div>)
         : (<div>
-            <ProfileController />
+            <Route exact path= '/dashboard' render={props => (<ProfileController loadPage={this.state.redirectPath} />)}/>
+            <Redirect push to='/dashboard' />
           </div>)}
       </div>
       </Router>

@@ -5,12 +5,14 @@ import RegistrationForm from '../containers/RegistrationForm';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom'
 
 class ProfileController extends React.Component {
- constructor(){
-   super();
+ constructor(props){
+   super(props);
    this.state = {
      studentList: null,
      studentDataLoaded: false,
      selectedStudent: null,
+     loadPage: props.loadPage,
+     studentEmail: props.studentEmail
    }
    this.getStudentList = this.getStudentList.bind(this);
    this.currentProfile = this.currentProfile.bind(this);
@@ -55,19 +57,33 @@ class ProfileController extends React.Component {
     //   }).catch(err => console.log(err));
   }
 
+  decideWhichToRender() {
+    switch (this.state.loadPage) {
+      case 'student':
+        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList}  studentEmail={this.state.studentEmail}/>;
+        break;
+      case 'dashboard':
+        return <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile} />;
+        break;
+      // case 'new':
+      //   return <IceCreamForm isAdd={true} iceCreamSubmit={this.iceCreamSubmit} />;
+      //   break;
+      // case 'edit':
+      //   return <IceCreamForm isAdd={false} iceCreamSubmit={this.iceCreamSubmit} icecream={this.state.currentIceCream} />
+      //   break;
+      // default:
+      //   return <Redirect push to="/ice-cream" />;
+      //   break;
+    }
+  }
+
 
   render(){
     return(
-      <Router>
         <div>
-          <Route path='/student' render={props => (
-            <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent}/>
-          )}/>
-          <Route path='/dashboard' render={props => (
-            <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile}/>
-          )}/>
+        {console.log(this.state.studentList)}
+         {this.decideWhichToRender()}
         </div>
-      </Router>
     )
   }
 

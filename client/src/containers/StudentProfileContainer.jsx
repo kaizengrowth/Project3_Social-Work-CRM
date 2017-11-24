@@ -4,34 +4,47 @@ import React from 'react';
 //EMAIL MUST MATCH THE USER'S EMAIL?
 
 class StudentProfileContainer extends React.Component{
- constructor(){
-   super();
+ constructor(props){
+   super(props);
      this.state = {
-       APIDATALOADED: false,
+       studentList: props.studentList,
+       studentEmail: props.studentEmail,
+       studentDataLoaded: props.studentDataLoaded,
        studentInfo: null,
      }
 
    }
+   componentDidMount(){
+     console.log(this.state.studentList + 'should be an array?')
+   }
+
+   studentProfile() {
+     //takes data from studentList and returns the student with the studid
+     // equal to the id argument. Got this from the wine homework, single page.
+      let profile = this.state.studentList.find(student =>{
+        return student.email === this.state.studentEmail
+      })
+      this.setState({
+        studentInfo: profile,
+      })
+    }
 
   render(){
     return (
-      <div className = 'student_profile'>
+      <div>
 
       {this.state.studentInfo ?
-
-        <h1>student info </h1>
-        // (<div className = 'student_info'>
-        //   <img src = {student.image} alt = '' />
-        //   <h1>{student.first_name + ' ' + student.last_name}</h1>
-        //   <p>Email: {student.email}</p>
-        //   <p>Phone number: {student.phone}</p>
-        //   <p>{student.aboutme}</p>
-        //   <p>Student Notes: {student.studentnotes}</p>
-        // </div>)
+        (<div>
+            <h1>student info </h1>
+            <div className = 'student_info'>
+            <img src = {this.state.studentInfo.image} alt = '' />
+            <h1>{this.state.studentInfo.first_name + ' ' + this.state.studentInfo.last_name}</h1>
+            </div>
+          </div>)
 
         : (<h1> Loading Data arghh </h1>)}
 
-      </div>
+        </div>
     )
   }
  }
