@@ -1,16 +1,18 @@
 import React from 'react';
 import StudentProfile from '../components/StudentProfile';
+import Resources from '../components/Resources';
+import Referrals from '../components/Referrals';
 
 const StudentProfileContainer = (props) => {
   return (
       <div>
       {props.studentDataLoaded ?
-        (<div>
-          <div className= 'student_profile'>
-            <StudentProfile studentInfo={props.studentInfo}/>
-          </div>
 
-          </div>)
+        (<div>
+            <StudentProfile studentInfo={props.studentInfo}/>
+            <Resources />
+            <Referrals />
+        </div>)
 
         : (<h1> Loading Data arghh </h1>)}
 
