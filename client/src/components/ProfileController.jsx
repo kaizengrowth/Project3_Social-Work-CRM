@@ -48,6 +48,7 @@ class ProfileController extends React.Component {
     fetch(`/api/students/${this.state.studentEmail}`)
       .then(res => res.json())
       .then(res => {
+        console.log(this.state.studentEmail)
         this.setState({
           studentInfo: {
             first_name: res.data.student.first_name,
