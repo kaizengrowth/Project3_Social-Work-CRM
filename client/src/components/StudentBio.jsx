@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StudentProfile = (props) => {
+const StudentBio = (props) => {
 let student = props.selectedStudent;
   return (
     <div className = 'student_profile'>
@@ -24,4 +24,4 @@ let student = props.selectedStudent;
 
 }
 
-export default StudentProfile
+export default StudentBio

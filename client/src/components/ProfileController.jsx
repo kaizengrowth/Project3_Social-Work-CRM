@@ -48,7 +48,6 @@ class ProfileController extends React.Component {
     fetch(`/api/students/${this.state.studentEmail}`)
       .then(res => res.json())
       .then(res => {
-        console.log(res.data.student)
         this.setState({
           studentInfo: {
             first_name: res.data.student.first_name,
@@ -101,7 +100,6 @@ class ProfileController extends React.Component {
   render(){
     return(
         <div>
-        {console.log(this.state.studentInfo + ' student info')}
          {this.decideWhichToRender()}
         </div>
     )

@@ -4,9 +4,6 @@ import React from 'react';
 //EMAIL MUST MATCH THE USER'S EMAIL?
 
 const StudentProfileContainer = (props) => {
-  console.log(props.studentInfo.first_name + ' datainfo')
-  console.log(props.studentDataLoaded + 'data')
-
   return (
       <div>
       {props.studentDataLoaded ?
