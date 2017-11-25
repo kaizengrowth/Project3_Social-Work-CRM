@@ -9,18 +9,25 @@ class ProfileController extends React.Component {
    super(props);
    this.state = {
      studentList: null,
+     studentInfo: {},
      studentDataLoaded: false,
      selectedStudent: null,
      loadPage: props.loadPage,
-     studentEmail: props.studentEmail
+     studentEmail: props.studentEmail,
    }
    this.getStudentList = this.getStudentList.bind(this);
+   this.getStudentInfo = this.getStudentInfo.bind(this);
    this.currentProfile = this.currentProfile.bind(this);
 
  }
 
  componentDidMount(){
-   this.getStudentList();
+   if (this.state.studentEmail){
+     this.getStudentInfo();
+   }
+   else{
+     this.getStudentList();
+   }
  }
 
  getStudentList() {
@@ -37,6 +44,28 @@ class ProfileController extends React.Component {
       }).catch(err => console.log(err));
   }
 
+  getStudentInfo(){
+    fetch(`/api/students/${this.state.studentEmail}`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res.data.student)
+        this.setState({
+          studentInfo: {
+            first_name: res.data.student.first_name,
+            last_name: res.data.student.last_name,
+            phone: res.data.student.phone,
+            email:res.data.student.email,
+            cycle: res.data.student.cycle,
+            inProgress: res.data.student.inProgress,
+            ispriority: res.data.student.ispriority,
+            aboutme: res.data.student.aboutme,
+            studentnotes: res.data.student.studentnotes,
+          },
+            studentDataLoaded: true,
+        });
+      }).catch(err => console.log(err));
+  }
+
   currentProfile(id){
     //takes data from studentList and returns the student with the studid
     // equal to the id argument. Got this from the wine homework, single page.
@@ -46,21 +75,12 @@ class ProfileController extends React.Component {
      this.setState({
        selectedStudent: profile,
      })
-
-    // or is it better to do another fetch like below?
-    // fetch(`api/students/{id}`)
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     this.setState({
-    //       selectedStudent: res,
-    //     });
-    //   }).catch(err => console.log(err));
   }
 
   decideWhichToRender() {
     switch (this.state.loadPage) {
       case 'student':
-        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList}  studentEmail={this.state.studentEmail}/>;
+        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentInfo={this.state.studentInfo}/>;
         break;
       case 'dashboard':
         return <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile} />;
@@ -81,7 +101,7 @@ class ProfileController extends React.Component {
   render(){
     return(
         <div>
-        {console.log(this.state.studentList)}
+        {console.log(this.state.studentInfo + ' student info')}
          {this.decideWhichToRender()}
         </div>
     )
