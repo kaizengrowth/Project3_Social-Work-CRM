@@ -1,14 +1,14 @@
 import React from 'react';
-
-//FETCH TO API/STUDENTS/EMAIL OR SOME SHIT
-//EMAIL MUST MATCH THE USER'S EMAIL?
+import StudentProfile from '../components/StudentProfile';
 
 const StudentProfileContainer = (props) => {
   return (
       <div>
       {props.studentDataLoaded ?
         (<div>
-            <h1>student info </h1>
+          <div className= 'student_profile'>
+            <StudentProfile studentInfo={props.studentInfo}/>
+          </div>
 
           </div>)
 

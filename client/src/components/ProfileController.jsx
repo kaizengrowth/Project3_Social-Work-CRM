@@ -59,6 +59,7 @@ class ProfileController extends React.Component {
             ispriority: res.data.student.ispriority,
             aboutme: res.data.student.aboutme,
             studentnotes: res.data.student.studentnotes,
+            image: res.data.student.image,
           },
             studentDataLoaded: true,
         });
