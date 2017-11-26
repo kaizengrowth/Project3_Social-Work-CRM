@@ -20,7 +20,7 @@ authRouter.get('/verify', (req, res) => {
         message: 'ok',
         auth: true,
         data: {
-            student: req.student,
+            student: req.user,
         }
     });
     else return res.status(400).json({
