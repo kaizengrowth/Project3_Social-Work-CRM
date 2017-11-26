@@ -4,8 +4,8 @@ class Login extends Component {
     constructor(props){
         super(props);
         this.state= {
-            email: '',
-            password_digest: ''
+            username: '',
+            password: ''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         // this.logout = this.logout.bind(this);
@@ -25,7 +25,7 @@ class Login extends Component {
         .then(res => {
             this.setState({
                 auth: res.auth,
-                student: res.data.student,
+                student: res.student,
             })
         }).catch(err => console.log(err));
     }
@@ -34,8 +34,8 @@ class Login extends Component {
         return(
             <div>
                 <form onSubmit={(e) => this.props.loginSubmit(e, this.state)}>
-                    <input type="text" name="email" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
-                    <input type="password" name="password_digest" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
+                    <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
+                    <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
                     <input type="submit" value='Log in!' />
                 </form>
             </div>
