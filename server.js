@@ -6,6 +6,8 @@ const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
+// const passport = require('./routes/services/auth/local');
+const flash = require('connect-flash');
 
 const app = express();
 require('dotenv').config();
@@ -26,7 +28,9 @@ app.use(session({
     saveUninitialized: true,
 }));
 app.use(passport.initialize());
-app.use(passport.session());
+app.use(passport.session({ cookie: { maxAge: 60000 } }));
+app.use(flash());
+// app.use(app.router);
 
 app.use(express.static('public'));
 

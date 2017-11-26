@@ -10,16 +10,18 @@ const options = {};
 init();
 
 passport.use(
-    new LocalStrategy(options, (email, password, done) => {
+    new LocalStrategy( /*options, */ (email, password, done) => {
+        console.log("In local strategy: " + email + " | " + password);
         Student.findbyEmail(email)
-            .then(Student => {
+            .then(student => {
+                console.log('Found student: ' + student);
                 if (!student) {
                     return done(null, false);
                 }
                 if (!authHelpers.comparePass(password, student.password_digest)) {
                     return done(null, false);
                 } else {
-                    return done(null, user);
+                    return done(null, student);
                 }
             }).catch(err => {
                 console.log(err);

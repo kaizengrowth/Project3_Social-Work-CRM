@@ -10,11 +10,13 @@ authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
 authRouter.post('/login', passport.authenticate('local', {
     successRedirect: '/api/auth/verify',
     failureRedirect: '/api/auth/verify',
-    failureFlash: true,
+    failureFlash: true
+        // successRedirect: '/api/students',
+        // failureRedirect: '/home'
 }));
 
 authRouter.get('/verify', (req, res) => {
-    if (req.student) return res.status(200).json({
+    if (req.user) return res.status(200).json({
         message: 'ok',
         auth: true,
         data: {
