@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state= {
-            email: '',
+            username: '',
             password: ''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+        // this.logout = this.logout.bind(this);
     }
 
     handleInputChange(e) {
@@ -18,12 +19,23 @@ class Login extends Component {
         });
     }
 
+    componentDidMount() {
+        fetch('/api/auth/verify', { credentials: 'include'})
+        .then(res => res.json())
+        .then(res => {
+            this.setState({
+                auth: res.auth,
+                student: res.student,
+            })
+        }).catch(err => console.log(err));
+    }
+
     render() {
         return(
             <div>
-                <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
-                    <input type="text" name="email" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
-                    <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleInputChange} />
+                <form onSubmit={(e) => this.props.loginSubmit(e, this.state)}>
+                    <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
+                    <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
                     <input type="submit" value='Log in!' />
                 </form>
             </div>
