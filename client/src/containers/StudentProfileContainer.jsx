@@ -4,14 +4,17 @@ import Resources from '../components/Resources';
 import Referrals from '../components/Referrals';
 
 const StudentProfileContainer = (props) => {
+  console.log(props.studentInfo)
   return (
       <div>
       {props.studentDataLoaded ?
 
         (<div>
             <StudentProfile studentInfo={props.studentInfo}/>
-            <Resources />
-            <Referrals />
+            <div className= 'resources_referrals_container'>
+              <Resources studentInfo={props.studentInfo}/>
+              <Referrals />
+            </div>
         </div>)
 
         : (<h1> Loading Data arghh </h1>)}

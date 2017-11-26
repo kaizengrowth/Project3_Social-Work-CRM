@@ -552,6 +552,12 @@ footer {
   width: 206px;
   border: 3px solid orange;
 }
+/*========== StudentProfile Container ==========*/
+
+.resources_referrals_container{
+  display: flex;
+  justify-content: space-between;
+}
 
 /*========== StudentProfile Component ==========*/
 
@@ -562,6 +568,8 @@ footer {
 }
 
 .student_info{
+  display: flex;
+  justify-content: center;
   border: solid;
   padding: 20px;
   background-color: #DFEDF2
@@ -569,4 +577,18 @@ footer {
 
 .student_info img{
   border-radius: 200px;
+}
+
+/*========== Resources Component ==========*/
+
+.resources{
+  margin: 10px;
+  border: solid;
+  height: 40vh;
+  width: 50vw;
+}
+
+.resources_header{
+  margin: 10px;
+  padding: 0;
 }
