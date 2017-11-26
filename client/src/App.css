@@ -584,11 +584,25 @@ footer {
 .resources{
   margin: 10px;
   border: solid;
-  height: 40vh;
+  height: 30vh;
   width: 50vw;
 }
 
 .resources_header{
+  margin: 10px;
+  padding: 0;
+}
+
+/*========== Referrals Component ==========*/
+
+.referrals{
+  margin: 10px;
+  border: solid;
+  height: 30vh;
+  width: 50vw;
+}
+
+.referrals_header{
   margin: 10px;
   padding: 0;
 }
