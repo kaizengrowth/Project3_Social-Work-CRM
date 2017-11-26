@@ -20,10 +20,8 @@ studentsController.show = (req, res, next) => {
     Student.findbyEmail(req.params.email)
         .then(student => {
             res.status(200).json({
-                message: 'ok-show one student by id',
-                data: {
-                    student: student,
-                }
+                message: 'ok-show one student by email',
+                data: {student}
             });
         }).catch(err => {
             console.log(err);
