@@ -490,6 +490,7 @@ footer {
 .profile_list_container{
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .student_list{
@@ -497,6 +498,8 @@ footer {
   width: 500px;
   border: solid;
   padding: 0;
+  height: 400px;
+  overflow: scroll;
 
 }
 
@@ -504,16 +507,36 @@ footer {
   list-style-type: none;
 }
 
-.student_profile{
-  width: 500px;
+.student_bio{
+  width: 60vw;
   margin: 20px;
+  height: 400px;
+  border: solid;
+  text-align: center;
 }
 
-.dashboard_container h1{
+.student_bio img{
+  max-height: 300px;
+  border-radius: 200px;
+
+}
+
+.student_bio_container{
   display: flex;
   justify-content: center;
   margin: 20px;
+  
+
 }
+
+.dashboard_container h2{
+  display: flex;
+  justify-content: center;
+  margin: 2px;
+}
+
+
+
 
 /*========== RegistrationForm ==========*/
 

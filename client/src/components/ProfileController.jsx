@@ -50,20 +50,8 @@ class ProfileController extends React.Component {
       .then(res => {
         console.log(res)
         this.setState({
-          studentInfo: {
-            studid: res.data.student.studid,
-            first_name: res.data.student.first_name,
-            last_name: res.data.student.last_name,
-            phone: res.data.student.phone,
-            email:res.data.student.email,
-            cycle: res.data.student.cycle,
-            inProgress: res.data.student.inProgress,
-            ispriority: res.data.student.ispriority,
-            aboutme: res.data.student.aboutme,
-            studentnotes: res.data.student.studentnotes,
-            image: res.data.student.image,
-          },
-            studentDataLoaded: true,
+          studentInfo: res.data.student,
+          studentDataLoaded: true,
         });
       }).catch(err => console.log(err));
   }
@@ -74,9 +62,18 @@ class ProfileController extends React.Component {
      let profile = this.state.studentList.find(student =>{
        return student.studid === id
      })
+     console.log(profile)
      this.setState({
        selectedStudent: profile,
      })
+  }
+
+  getResources(){
+    fetch()
+    .then(res => res.json())
+    .then(res => {
+
+    })
   }
 
   decideWhichToRender() {
