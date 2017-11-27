@@ -5,17 +5,17 @@ import React from 'react';
 
 const Resources = (props) => {
 
-  getStudentInfo(){
-    fetch(`/intake`)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res)
-        this.setState({
-          studentInfo: res.data.intake,
-          intakeDataLoaded: true,
-        });
-      }).catch(err => console.log(err));
-  }
+  // getStudentInfo(){
+  //   fetch(`/intake`)
+  //     .then(res => res.json())
+  //     .then(res => {
+  //       console.log(res)
+  //       this.setState({
+  //         studentInfo: res.data.intake,
+  //         intakeDataLoaded: true,
+  //       });
+  //     }).catch(err => console.log(err));
+  // }
 
   let student = props.studentInfo
   return (

@@ -18,7 +18,10 @@ let student = props.selectedStudent;
         <img src = {student.image} alt = '' />
       </div>)
 
-      : (<h1> No Student Selected </h1>)}
+      : (<div>
+        console.log(process.env.SECRET_KEY)
+        <h1> No Student Selected </h1>
+      </div>)}
 
     </div>
   )
