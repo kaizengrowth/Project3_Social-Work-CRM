@@ -43,10 +43,10 @@ submitEditForm(e, data){
   e.preventDefault();
   fetch(`/api/intake/`,{
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body; JSON.stringify(data),
+    // headers: {
+    //   'Content-Type': 'application/json',
+    // },
+    body: JSON.stringify(data),
   }).then(res => res.json())
     .then(jsonRes => {
     console.log(jsonRes)
@@ -64,7 +64,7 @@ render() {
         {this.state.studentRegistered === true ?
           (<div className = 'int_form_container'>
             <form className = 'int_form' onSubmit = {(e => this.submitEditForm(e, this.state))} >
-              <input className = 'intake_input' type = 'date' name = 'intakedate' placeholder = 'Today\'s Date' value = {this.state.intakedate} onchange = {this.handleInputChange} />
+              <input className = 'intake_input' type = 'date' name = 'intakedate' placeholder = 'Todays Date' value = {this.state.intakedate} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'housing' placeholder = 'Do you need help with Housing?  Enter T or F' value = {this.state.housing} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'food' placeholder = 'Do you need help with Food? Enter T or F' value = {this.state.food} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'finances' placeholder = 'Do you need help with Finances/Benefits? Enter T or F' value = {this.state.finances} onchange = {this.handleInputChange} />
@@ -78,7 +78,7 @@ render() {
               <input className = 'intake_input' type = 'boolean' name = 'completehighschool' placeholder = 'Have you completed High School? Enter T or F' value = {this.state.completehighschool} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'completecollege' placeholder = 'Have you completed College? Enter T or F' value = {this.state.completecollege} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'advdegree' placeholder = 'Have you completed an advanced degree? Enter T or F' value = {this.state.advdegree} onchange = {this.handleInputChange} />
-              <input className = 'intake_input' type = 'boolean' name = 'transportation' placeholder = 'Do you need help with Transportation? Enter T or F' value = {this.state.transportation} onchange = {this.handleInputChange}
+              <input className = 'intake_input' type = 'boolean' name = 'transportation' placeholder = 'Do you need help with Transportation? Enter T or F' value = {this.state.transportation} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'insurance' placeholder = 'Do you need help with insurance? Enter T or F' value = {this.state.insurance} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'testingaccommodations' placeholder = 'Do you help with testing accommodations? Enter T or F' value = {this.state.testingaccommodations} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'text' name = 'studentexpectations' placeholder = 'What are your expectations?' value = {this.state.studentexpectations} onchange = {this.handleInputChange} />
@@ -89,8 +89,9 @@ render() {
             : (<div>
                 {/*<Redirect push to={this.state.redirectPath} />*/}
                 </div>)}
+            </div>
             </Router>
     )
 }
 
-
+export default Intake;
