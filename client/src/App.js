@@ -48,7 +48,6 @@ class App extends Component {
             })}).catch(err => console.log(err));
     }
 
-
       render() {
         return (
             <Router>
@@ -69,6 +68,5 @@ class App extends Component {
         );
       }
     }
-
 
 export default App

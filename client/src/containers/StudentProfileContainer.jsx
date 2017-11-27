@@ -23,6 +23,4 @@ const StudentProfileContainer = (props) => {
     )
   }
 
-
-
 export default StudentProfileContainer

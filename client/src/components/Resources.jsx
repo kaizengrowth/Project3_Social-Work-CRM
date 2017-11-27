@@ -1,9 +1,10 @@
 import React from 'react';
- 
+
 // HAVE DASHBOARD AND STUDENTPROFILECONTAINER EACH SEND A PROP EQUAL TO EITHER STUDENT OR WORKER.
 // GIVE A STATE THAT PROP. WORKER GIVES ACCESS TO AN EDIT/ADD BUTTON, STUDENT DOES CAN JUST READ?
 
 const Resources = (props) => {
+
   let student = props.studentInfo
   return (
 
@@ -15,7 +16,6 @@ const Resources = (props) => {
       : (<h1> No Student Selected </h1>)}
     </div>
   )
-
 
 }
 
