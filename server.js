@@ -46,7 +46,7 @@ const studentRoutes = require('./routes/student-routes');
 app.use('/api/students', studentRoutes);
 
 const intakeRoutes = require('./routes/intake-routes');
-app.use('/intake', intakeRoutes);
+app.use('/api/intake', intakeRoutes);
 
 app.use('*', (req, res) => {
     res.status(404).send('Not Found');

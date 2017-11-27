@@ -52,7 +52,7 @@ submitEditForm(e, data){
     console.log(jsonRes)
     this.setState({
       studentRegistered: true,
-      redirectPath: `student/${jsonRes.data.student.email}`,
+      redirectPath: `/home`,
     })
  })
 }
@@ -82,13 +82,15 @@ render() {
               <input className = 'intake_input' type = 'boolean' name = 'insurance' placeholder = 'Do you need help with insurance? Enter T or F' value = {this.state.insurance} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'boolean' name = 'testingaccommodations' placeholder = 'Do you help with testing accommodations? Enter T or F' value = {this.state.testingaccommodations} onchange = {this.handleInputChange} />
               <input className = 'intake_input' type = 'text' name = 'studentexpectations' placeholder = 'What are your expectations?' value = {this.state.studentexpectations} onchange = {this.handleInputChange} />
-
-
-
-
-                        }
+{/*              <input className='intake_input' type = 'hidden' name = 'email' value = */}
+              <input lassName = 'intake_submit' type='submit' />
+              </form>
+              </div>)
+            : (<div>
+                {/*<Redirect push to={this.state.redirectPath} />*/}
+                </div>)}
+            </Router>
     )
-}
 }
 
 
