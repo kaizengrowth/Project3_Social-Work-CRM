@@ -5,13 +5,14 @@ const Intake = {};
 //I have no idea why anyone would need to see an index of all the intake forms...but here it is?
 Intake.findAll = () => {
     return db.manyOrNone('SELECT * FROM students, intake WHERE students.studid = intake.studid');
-    conosole.log(findAll);
+    console.log(findAll);
 };
 //THIS IS NOT GOING TO WORK, SELF.  SINCE THIS IS A JOINED TABLE...?
 Intake.findbyEmail = (email) => {
     return db.oneOrNone(`
-    SELECT * FROM students, intake
-    WHERE students.studid = intake.studid AND students.email = $1
+    SELECT * FROM intake
+    JOIN students
+    ON intake.studid = students.id WHERE students.email = email
   `, [email]);
 };
 

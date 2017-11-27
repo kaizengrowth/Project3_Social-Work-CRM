@@ -19,10 +19,9 @@ intakeController.show = (req, res, next) => {
   Intake.findByEmail(req.params.email)
       .then(intake => {
         res.status(200).json({
+          console.log(res)
             message: 'ok-show one intake by email',
-            data: {
-                intake: intake,
-            }
+            data: {intake}
         });
       }).catch(err => {
         console.log(err);
