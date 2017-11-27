@@ -17,7 +17,7 @@ authRouter.post('/login', passport.authenticate('local', {
 
 authRouter.get('/verify', (req, res) => {
     if (req.user) {
-        return res.redirect(`/students/${req.user.email}`);
+        return res.redirect(`/student/${req.user.email}`);
         // return res.status(200).json({
         //     message: 'ok',
         //     auth: true,
