@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TopNav from './components/TopNav';
 import MainNav from './components/MainNav';
 import RegistrationForm from './containers/RegistrationForm';
+import Intake from './components/Intake'
 import Home from './containers/Home';
 import ProfileController from './components/ProfileController';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
@@ -60,6 +61,7 @@ class App extends Component {
                 </Link>
                 <Route path="/" exact component={Home} />
                 <Route path='/register' exact component={RegistrationForm} />
+                // <Route path='/intake' exact component={Intake} />
                 <Route exact path="/dashboard" render={props => (<ProfileController loadPage="dashboard" />)}/>
                 <Route exact path="/student/:email" render={props => (<ProfileController loadPage="student" studentEmail = {props.match.params.email}/>)}/>
                 {/* /student will take you to a page to login if you haven't or straight to your account idk*/}

@@ -525,7 +525,7 @@ footer {
   display: flex;
   justify-content: center;
   margin: 20px;
-  
+
 
 }
 
@@ -609,6 +609,7 @@ footer {
   border: solid;
   height: 30vh;
   width: 50vw;
+  overflow: scroll;
 }
 
 .resources_header{
