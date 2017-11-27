@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TopNav from './components/TopNav';
 import MainNav from './components/MainNav';
 import RegistrationForm from './containers/RegistrationForm';
+import Intake from './components/Intake'
 import Home from './containers/Home';
 import ProfileController from './components/ProfileController';
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
