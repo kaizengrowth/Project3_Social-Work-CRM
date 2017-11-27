@@ -48,7 +48,7 @@ class App extends Component {
             })}).catch(err => console.log(err));
     }
 
-    render() {
+      render() {
         return (
             <Router>
               <div className="App">

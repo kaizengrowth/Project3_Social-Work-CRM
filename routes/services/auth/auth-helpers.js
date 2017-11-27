@@ -5,7 +5,7 @@ function comparePass(userPassword, databasePassword) {
 }
 
 function loginRedirect(req, res, next) {
-    if (req.student) return res.redirect('/students');
+    if (req.student) return res.redirect(`/student/${req.user.email}`);
     return next();
 }
 
