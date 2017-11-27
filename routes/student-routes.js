@@ -7,10 +7,30 @@ const authHelpers = require('./services/auth/auth-helpers');
 // COMMENTED OUT BELOW UNTIL AUTH WORKS
 // studentRoutes.get('/', authHelpers.loginRequired, studentsController.index);
 
-studentRoutes.get('/', studentsController.index);
+function isSocialWorker(req, res, next) {
+    if (req.user.email === ccuno @perscholas.org) {
+        next();
+    } else {
+        res.status(401).send('Not Allowed');
+    }
+}
+
+studentRoutes.use('/', isSocialWorker);
+
+studentRoutes.get('/', authHelpers.loginRequired, studentsController.index);
 studentRoutes.post('/', studentsController.create);
 
-studentRoutes.get('/:email', studentsController.show);
+function isStudent(req, res, next) {
+    if (req.user.email === '/:email') {
+        next();
+    } else {
+        res.status(401).send('Not Allowed');
+    }
+}
+
+studentRoutes.use('/:email', isStudent);
+
+studentRoutes.get('/:email', authHelpers.loginRequired, studentsController.show);
 studentRoutes.put('/:email', studentsController.update);
 // studentRoutes.delete('/:id', studentsController.delete)
 
