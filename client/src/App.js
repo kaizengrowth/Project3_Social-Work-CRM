@@ -48,23 +48,25 @@ class App extends Component {
             })}).catch(err => console.log(err));
     }
 
-      render() {
+    render() {
         return (
             <Router>
               <div className="App">
                 <TopNav loginSubmit={this.handleLoginSubmit}/>
                 <MainNav />
+                {/* INSERT CONDITIONAL TO REMOVE REGISTRATION BUTTON WHEN USER IS LOGGED IN AND LINKS SHOULD GO INSIDE A HEADER COMPONENT*/}
                 <Link to='/register'>
                   <button>Click here to Register</button>
                 </Link>
                 <Route path="/" exact component={Home} />
                 <Route path='/register' exact component={RegistrationForm} />
-                <ProfileController />
+                <Route exact path="/dashboard" render={props => (<ProfileController loadPage="dashboard" />)}/>
+                <Route exact path="/student/:email" render={props => (<ProfileController loadPage="student" studentEmail = {props.match.params.email}/>)}/>
+                {/* /student will take you to a page to login if you haven't or straight to your account idk*/}
               </div>
             </Router>
         );
       }
     }
-
 
 export default App
