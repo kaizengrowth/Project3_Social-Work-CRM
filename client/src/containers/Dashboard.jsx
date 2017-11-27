@@ -16,8 +16,12 @@ const Dashboard = (props) => {
       </div>
       <div className='resources_referrals_container'>
       {console.log(props.selectedStudent)}
+      {props.selectedStudent ?
+        <div>
         <Resources studentInfo={props.selectedStudent}/>
         <Referrals />
+        </div>
+        : (<h2> No student Selected </h2>)}
       </div>
     </div>
   )
