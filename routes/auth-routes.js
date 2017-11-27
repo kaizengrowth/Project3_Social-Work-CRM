@@ -10,26 +10,30 @@ authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
 authRouter.post('/login', passport.authenticate('local', {
     successRedirect: '/api/auth/verify',
     failureRedirect: '/api/auth/verify',
+    // successRedirect: '/students/{ user.email }',
+    // failureRedirect: '/home',
     failureFlash: true
-        // successRedirect: '/api/students',
-        // failureRedirect: '/home'
 }));
 
 authRouter.get('/verify', (req, res) => {
-    if (req.user) return res.status(200).json({
-        message: 'ok',
-        auth: true,
-        data: {
-            student: req.user,
-        }
-    });
-    else return res.status(400).json({
-        message: 'Login failed',
-        auth: false,
-        data: {
-            student: null,
-        }
-    });
+    if (req.user) {
+        return res.redirect(`/student/${req.user.email}`);
+        // return res.status(200).json({
+        //     message: 'ok',
+        //     auth: true,
+        //     data: {
+        //         student: req.user,
+        //     }
+        // });
+    } else {
+        return res.status(400).json({
+            message: 'Login failed',
+            auth: false,
+            data: {
+                student: null,
+            }
+        });
+    }
 });
 
 authRouter.get('/register', (req, res) => {
