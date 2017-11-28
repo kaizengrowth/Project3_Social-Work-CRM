@@ -1,5 +1,6 @@
 import React from 'react';
 import Intake from './Intake';
+import ResourceInfo from './ResourceInfo';
 
 // HAVE DASHBOARD AND STUDENTPROFILECONTAINER EACH SEND A PROP EQUAL TO EITHER STUDENT OR WORKER.
 // GIVE A STATE THAT PROP. WORKER GIVES ACCESS TO AN EDIT/ADD BUTTON, STUDENT DOES CAN JUST READ?
@@ -8,9 +9,9 @@ class Resources extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      resource: null,
       showResources: null,
     }
+    this.showResources = this.showResources.bind(this);
   }
 
   componentDidMount(){
@@ -23,25 +24,30 @@ class Resources extends React.Component {
       .then(res => {
         console.log(res)
         this.setState({
-          resource: res.data.intake,
-          showResources: true,
+          showResources: res.data.intake,
         });
       }).catch(err => console.log(err));
   }
 
   render(){
     return (
-
       <div className= 'resources'>
-      <Intake  studentInfo = {this.props.studentInfo} />
-    {/*  {student ?
+
+      {this.state.showResources ?
+
         (<div className= 'resources_header'>
-        <h2>{student.first_name}, please see the resources below: </h2>
+          <ResourceInfo showResources = {this.state.showResources} />
         </div>)
-        : (<h1> No Student Selected </h1>)} */}
+
+        :
+
+        (<div>
+          <Intake  studentInfo = {this.props.studentInfo} showResources = {this.showResources} />
+        </div>)}
+
       </div>
     )
   }
 }
 
-export default Resources
+export default Resources;

@@ -29,6 +29,7 @@ class Intake extends React.Component{
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitEditForm = this.submitEditForm.bind(this);
   }
+
 handleInputChange(e) {
   const name = e.target.name;
   const val = e.target.value;
@@ -48,11 +49,7 @@ submitEditForm(e, data){
     body: JSON.stringify(data),
   }).then(res => res.json())
     .then(jsonRes => {
-    console.log(this.state.studid)
-    this.setState({
-      studentRegistered: true,
-
-    })
+    this.props.showResources();
  })
 }
 
