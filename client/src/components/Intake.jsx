@@ -49,7 +49,7 @@ submitEditForm(e, data){
     body: JSON.stringify(data),
   }).then(res => res.json())
     .then(jsonRes => {
-    this.props.showResources();
+    this.props.showResources(); //this should work
  })
 }
 
