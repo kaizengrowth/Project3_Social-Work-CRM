@@ -4,8 +4,8 @@ import ProfileController from '../components/ProfileController';
 import Home from '../containers/Home';
 
 class Intake extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
     housing: null,
     food: null,
@@ -23,7 +23,8 @@ class Intake extends React.Component{
     testingaccommodations: null,
     transportation: null,
     insurance: null,
-    studentexpectations: '', //this is an empty string because the data is a string in the table, or something idk
+    studentexpectations: '', //this is an empty string because the type is a string in the table, or something idk
+    studid: this.props.studentInfo.studid
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitEditForm = this.submitEditForm.bind(this);
@@ -47,7 +48,7 @@ submitEditForm(e, data){
     body: JSON.stringify(data),
   }).then(res => res.json())
     .then(jsonRes => {
-    console.log(jsonRes)
+    console.log(this.state.studid)
     this.setState({
       studentRegistered: true,
 
@@ -78,8 +79,8 @@ submitEditForm(e, data){
                 <input className = 'intake_input' type = 'boolean' name = 'transportation' placeholder = 'Do you need help with Transportation? Enter T or F' value = {this.state.transportation} onChange = {this.handleInputChange} /><br/>
                 <input className = 'intake_input' type = 'boolean' name = 'insurance' placeholder = 'Do you need help with insurance? Enter T or F' value = {this.state.insurance} onChange = {this.handleInputChange} /><br/>
                 <input className = 'intake_input' type = 'boolean' name = 'testingaccommodations' placeholder = 'Do you help with testing accommodations? Enter T or F' value = {this.state.testingaccommodations} onChange = {this.handleInputChange} /><br/>
-                <input className = 'intake_input' type = 'boolean' name = 'studentexpectations' placeholder = 'What are your expectations?' value = {this.state.studentexpectations.value} onChange = {this.handleInputChange} /><br/>
-  {/*              <input className='intake_input' type = 'hidden' name = 'email' value = */}
+                <input className = 'intake_input' type = 'text' name = 'studentexpectations' placeholder = 'What are your expectations?' value = {this.state.studentexpectations.value} onChange = {this.handleInputChange} /><br/>
+
                 <input lassName = 'intake_submit' type='submit' />
                 </form>
               </div>

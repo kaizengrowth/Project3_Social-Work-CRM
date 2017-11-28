@@ -35,6 +35,7 @@ intakeController.create = (req, res, next) => {
   Intake.create({
     // intakedate: req.body.intakedate,
     // intakenotes: req.body.intakenotes,
+    studid: req.body.studid,
     housing: req.body.housing,
     food: req.body.food,
     finances: req.body.finances,
