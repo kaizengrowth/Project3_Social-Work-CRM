@@ -17,6 +17,7 @@ class App extends Component {
             student: null,
         }
         // this.logout = this.logout.bind(this);
+        this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +29,27 @@ class App extends Component {
                 student: res.data.student,
             })
         }).catch(err => console.log(err));
+    }
+
+    handleLoginSubmit(e, data) {
+        e.preventDefault();
+        fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(data),
+            }).then(res => res.json())
+            .then(res => {
+                if (res.auth) {
+                    this.setState({
+                        email: res.email,
+                        password_digest: res.pas,
+                        doRedirect: true
+                    });
+                }
+            }).catch(err => console.log(err));
     }
 
       render() {
