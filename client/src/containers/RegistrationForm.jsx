@@ -43,6 +43,7 @@ class RegistrationForm extends React.Component{
       this.setState({
         studentRegistered: true,
         // redirectPath: `/student/${jsonRes.data.student.email}`,
+
       })
     })
   }
