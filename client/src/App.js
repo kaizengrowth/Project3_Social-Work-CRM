@@ -16,7 +16,6 @@ class App extends Component {
             auth: false,
             student: null,
         }
-        this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
         // this.logout = this.logout.bind(this);
     }
 
@@ -31,34 +30,12 @@ class App extends Component {
         }).catch(err => console.log(err));
     }
 
-    handleLoginSubmit(e, data) {
-        e.preventDefault();
-        fetch('/api/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
-            body: JSON.stringify(data),
-        }).then(res => res.json())
-        .then(res => {
-            console.log(res);
-            this.setState({
-                email: res.email,
-                password_digest: res.pas,
-            })}).catch(err => console.log(err));
-    }
-
       render() {
         return (
             <Router>
               <div className="App">
                 <TopNav loginSubmit={this.handleLoginSubmit}/>
                 <MainNav />
-                {/* INSERT CONDITIONAL TO REMOVE REGISTRATION BUTTON WHEN USER IS LOGGED IN AND LINKS SHOULD GO INSIDE A HEADER COMPONENT*/}
-                <Link to='/register'>
-                  <button>Click here to Register</button>
-                </Link>
                 <Route path="/" exact component={Home} />
                 <Route path='/register' exact component={RegistrationForm} />
                 // <Route path='/intake' exact component={Intake} />

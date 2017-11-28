@@ -1,14 +1,38 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
     constructor(props){
         super(props);
         this.state= {
             username: '',
-            password: ''
+            password: '',
+            doRedirect: false
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
         // this.logout = this.logout.bind(this);
+    }
+
+    handleLoginSubmit(e, data) {
+        e.preventDefault();
+        fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(data),
+            }).then(res => res.json())
+            .then(res => {
+                if (res.auth) {
+                    this.setState({
+                        email: res.email,
+                        password_digest: res.pas,
+                        doRedirect: true
+                    });
+                }
+            }).catch(err => console.log(err));
     }
 
     handleInputChange(e) {
@@ -31,15 +55,22 @@ class Login extends Component {
     }
 
     render() {
-        return(
-            <div>
-                <form onSubmit={(e) => this.props.loginSubmit(e, this.state)}>
-                    <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
-                    <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
-                    <input type="submit" value='Log in!' />
-                </form>
-            </div>
-        )
+        if (this.state.doRedirect) {
+            return (
+                <Redirect to={`/student/${this.state.username}`}/>
+                //TODO: Add logout button
+            );
+        } else {
+            return(
+                <div>
+                    <form onSubmit={(e) => this.handleLoginSubmit(e, this.state)}>
+                        <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} /> <br />
+                        <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
+                        <button type="button">Log in!<input type="submit" value="" /></button>
+                    </form>
+                </div>
+            )
+        }   
     }
 }
 
