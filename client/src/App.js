@@ -56,9 +56,6 @@ class App extends Component {
                 <TopNav loginSubmit={this.handleLoginSubmit}/>
                 <MainNav />
                 {/* INSERT CONDITIONAL TO REMOVE REGISTRATION BUTTON WHEN USER IS LOGGED IN AND LINKS SHOULD GO INSIDE A HEADER COMPONENT*/}
-                <Link to='/register'>
-                  <button>Click here to Register</button>
-                </Link>
                 <Route path="/" exact component={Home} />
                 <Route path='/register' exact component={RegistrationForm} />
                 // <Route path='/intake' exact component={Intake} />

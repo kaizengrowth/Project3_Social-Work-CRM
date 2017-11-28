@@ -25,9 +25,12 @@ class TopNav extends Component {
 
                     <div id="topnav_right">
                         <a href="#modal_login ">Sign In</a>
+                         <Link to='/register'>
+                            <button>Click here to Register</button>
+                        </Link>
                     </div>
 
-                    <div id="modal_login" className="modal">
+                    {/*<div id="modal_login" className="modal">
                         <div>
                             <a href="#close" title="Close" className="close">X</a>
                             <h2>Sign In</h2><br />
@@ -49,7 +52,7 @@ class TopNav extends Component {
 
                             <a href="register.html" className="register_link">Register for an Account.</a>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
             </Router>
         );
