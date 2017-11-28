@@ -1,4 +1,6 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
+import '../App.css'
 
 const MainNav = () => {
     return (
@@ -30,6 +32,10 @@ const MainNav = () => {
             <div id="nav_search" class="nav_block">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
+
+            <Link to='/register'>
+                <button className="button">Register</button>
+            </Link>
         </div>
     )
 }

@@ -61,7 +61,7 @@ class App extends Component {
                 </Link>
                 <Route path="/" exact component={Home} />
                 <Route path='/register' exact component={RegistrationForm} />
-                // <Route path='/intake' exact component={Intake} />
+                <Route path='/intake' exact component={Intake} />
                 <Route exact path="/dashboard" render={props => (<ProfileController loadPage="dashboard" />)}/>
                 <Route exact path="/student/:email" render={props => (<ProfileController loadPage="student" studentEmail = {props.match.params.email}/>)}/>
                 {/* /student will take you to a page to login if you haven't or straight to your account idk*/}
