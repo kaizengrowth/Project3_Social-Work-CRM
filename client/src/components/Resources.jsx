@@ -36,6 +36,7 @@ class Resources extends React.Component {
 
       {this.state.showResources ?
         (<div className= 'resources_header'>
+       {/*   <h3>Your Resources</h3>*/}
           <ResourceInfo showResources = {this.state.showResources} />
         </div>)
         :
