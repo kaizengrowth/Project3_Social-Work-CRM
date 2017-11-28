@@ -48,9 +48,9 @@ submitEditForm(e, data){
     },
     body: JSON.stringify(data),
   }).then(res => res.json())
-    .then(() => {
-      this.props.getResources();
-    }).catch(err => console.log(err));
+    .then(jsonRes => {
+    this.props.showResources();
+ }).catch(err => console.log(err));
 }
 
   render() {
