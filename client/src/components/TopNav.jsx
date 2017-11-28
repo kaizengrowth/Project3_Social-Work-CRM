@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 import '../App.css'
 import Login from './Login'
+import RegistrationForm from '../containers/RegistrationForm';
 
 class TopNav extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class TopNav extends Component {
                         </div>
                     </a>
 
-                    <Login loginSubmit={this.handleLoginSubmit}/>
+                    <Login />
         
                 <Link to='/register'>
                   <button>Click here to Register</button>
@@ -35,13 +36,10 @@ class TopNav extends Component {
                         <div>
                             <a href="#close" title="Close" className="close">X</a>
                             <h2>Sign In</h2><br />
-
-                            <Login loginSubmit={this.handleLoginSubmit}/>
-
-                            <br />
-
+                            <Login loginSubmit={this.handleLoginSubmit}/> <br />
+        
                             <Link to='/register'>
-                                <button>Click here to Register</button>
+                            <button>Click here to Register</button>
                             </Link>
                         </div>
                     </div>

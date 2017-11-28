@@ -58,7 +58,6 @@ class Login extends Component {
         if (this.state.doRedirect) {
             return (
                 <Redirect to={`/student/${this.state.username}`}/>
-                //TODO: Add logout button
             );
         } else {
             return(
