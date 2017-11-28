@@ -8,7 +8,7 @@ class Intake extends React.Component{
     super();
     this.state = {
     // intakedate: '',
-    intakenotes: '',
+    //intakenotes: '',
     housing: '',
     food: '',
     finances: '',
@@ -26,7 +26,7 @@ class Intake extends React.Component{
     transportation: '',
     insurance: '',
     studentexpectations: '',
-    nextsteps: '',
+    //nextsteps: '',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.submitEditForm = this.submitEditForm.bind(this);
