@@ -17,21 +17,23 @@ authRouter.post('/login', passport.authenticate('local', {
 
 authRouter.get('/verify', (req, res) => {
     if (req.user) {
-      return res.redirect(`/student/${req.user.email}`)
-    // return res.status(200).json({
-    //     message: 'ok',
-    //     auth: true,
-    //     data: {
-    //         student: req.user,
+        // return res.redirect(`/student/${req.user.email}`)
+        return res.status(200).json({
+            message: 'ok',
+            auth: true,
+            data: {
+                student: req.user,
+            }
+        })
+    } else {
+        return res.status(400).json({
+            message: 'Login failed',
+            auth: false,
+            data: {
+                student: null,
+            }
+        });
     }
-    else
-      return res.status(400).json({
-        message: 'Login failed',
-        auth: false,
-        data: {
-            student: null,
-        }
-    });
 });
 
 authRouter.get('/register', (req, res) => {

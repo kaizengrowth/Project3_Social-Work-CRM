@@ -16,8 +16,8 @@ class App extends Component {
             auth: false,
             student: null,
         }
-        this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
         // this.logout = this.logout.bind(this);
+        this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -34,19 +34,22 @@ class App extends Component {
     handleLoginSubmit(e, data) {
         e.preventDefault();
         fetch('/api/auth/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            credentials: 'include',
-            body: JSON.stringify(data),
-        }).then(res => res.json())
-        .then(res => {
-            console.log(res);
-            this.setState({
-                email: res.email,
-                password_digest: res.pas,
-            })}).catch(err => console.log(err));
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify(data),
+            }).then(res => res.json())
+            .then(res => {
+                if (res.auth) {
+                    this.setState({
+                        email: res.email,
+                        password_digest: res.pas,
+                        doRedirect: true
+                    });
+                }
+            }).catch(err => console.log(err));
     }
 
       render() {

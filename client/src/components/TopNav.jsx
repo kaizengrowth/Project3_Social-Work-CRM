@@ -9,7 +9,6 @@ class TopNav extends Component {
     }
     render() {
         return(
-            <Router>
                 <div id="topnav">
                     <a href = "index.html">
                         <div id="topnav_left">
@@ -20,6 +19,8 @@ class TopNav extends Component {
                             {/* </picture> */}
                         </div>
                     </a>
+
+                    <Login loginSubmit={this.props.handleLoginSubmit}/>
 
                     <div id="topnav_right">
                         <a href="#modal_login ">Sign In</a>
@@ -39,7 +40,6 @@ class TopNav extends Component {
                         </div>
                     </div>
                 </div>
-            </Router>
         );
     }
 }
