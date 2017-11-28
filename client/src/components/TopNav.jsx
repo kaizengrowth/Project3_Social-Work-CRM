@@ -24,7 +24,7 @@ class TopNav extends Component {
                     <Login />
 
                     <div id="topnav_right">
-                        <a href="#modal_login ">Sign In</a>
+{/*                        <a href="#modal_login ">Sign In</a>*/}
                          <Link to='/register'>
                             <button>Click here to Register</button>
                         </Link>
