@@ -41,7 +41,7 @@ class StudentList extends React.Component{
                 return (
                   /* This will return li items for only students that are a priority. The key of each li will be the student's id and
                   each li will also have a button. When the button is clicked it will invoke the currentprofile method (found on profile controller)
-                  and pass that student's id as an argument*/
+                  and pass that students id as an argument*/
                   <div>
                   {student.ispriority ?
                     (<li key = {student.studid}>
