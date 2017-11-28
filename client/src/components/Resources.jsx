@@ -8,15 +8,32 @@ class Resources extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showResources: this.props.showResources
+      resource: null,
+      showResources: null,
     }
+  }
+
+  componentDidMount(){
+    this.showResources()
+  }
+
+  showResources(){
+    fetch(`/api/intake/${this.props.studentInfo.studid}`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.setState({
+          resource: res.data.intake,
+          showResources: true,
+        });
+      }).catch(err => console.log(err));
   }
 
   render(){
     return (
 
       <div className= 'resources'>
-      <Intake  studentInfo = {this.props.studentInfo} showResourcesOrForm = {this.props.showResourcesOrForm}/>
+      <Intake  studentInfo = {this.props.studentInfo} />
     {/*  {student ?
         (<div className= 'resources_header'>
         <h2>{student.first_name}, please see the resources below: </h2>

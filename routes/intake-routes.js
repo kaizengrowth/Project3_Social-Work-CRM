@@ -7,7 +7,7 @@ const intakeController = require('../controllers/intake-controller');
 intakeRoutes.get('/', intakeController.index);
 intakeRoutes.post('/', intakeController.create);
 
-// intakeRoutes.get('/:email', intakeController.show);
+intakeRoutes.get('/:id', intakeController.show);
 // intakeRoutes.get('/:email', intakeController.update);
 // intakeRoutes.delete('/:email', intakeController.delete);
 

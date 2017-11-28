@@ -14,12 +14,10 @@ class ProfileController extends React.Component {
      selectedStudent: null,
      loadPage: props.loadPage,
      studentEmail: props.studentEmail,
-     showResources: false,
    }
    this.getStudentList = this.getStudentList.bind(this);
    this.getStudentInfo = this.getStudentInfo.bind(this);
    this.currentProfile = this.currentProfile.bind(this);
-   this.showResourcesOrForm = this.showResourcesOrForm.bind(this);
 
  }
 
@@ -70,16 +68,11 @@ class ProfileController extends React.Component {
      })
   }
 
-  showResourcesOrForm(){
-    this.setState({
-      showResources: true
-    })
-  }
 
   decideWhichToRender() {
     switch (this.state.loadPage) {
       case 'student':
-        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentInfo={this.state.studentInfo} showResourcesOrForm={this.showResourcesOrForm} showResources={this.state.showResources}/>;
+        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentInfo={this.state.studentInfo}/>;
         break;
       case 'dashboard':
         return <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile} />;

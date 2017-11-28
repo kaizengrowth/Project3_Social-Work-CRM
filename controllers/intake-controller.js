@@ -17,10 +17,10 @@ intakeController.index = (req, res)  => {
 };
 
 intakeController.show = (req, res, next) => {
-  Intake.findByEmail(req.params.email)
+  Intake.findById(req.params.id)
       .then(intake => {
         res.status(200).json({
-            message: 'ok-show one intake by email',
+            message: 'ok-show one intake by id',
             data: {
                 intake: intake,
             }

@@ -7,12 +7,8 @@ Intake.findAll = () => {
     return db.manyOrNone('SELECT * FROM intake');
 };
 //THIS IS NOT GOING TO WORK, SELF.  SINCE THIS IS A JOINED TABLE...?
-Intake.findbyEmail = (email) => {
-    return db.oneOrNone(`
-      SELECT * FROM intake
-      JOIN students
-      ON students.id = intake.studid WHERE intake.studid = $1'
-  `, [email]);
+Intake.findById = (id) => {
+    return db.oneOrNone(`SELECT * FROM intake WHERE studid = $1`, id);
 };
 
 Intake.create = (intake) => {
