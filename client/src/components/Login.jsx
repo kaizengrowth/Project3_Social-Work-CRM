@@ -55,21 +55,15 @@ class Login extends Component {
     }
 
     render() {
-        if (this.state.doRedirect) {
-            return (
-                <Redirect to={`/student/${this.state.username}`}/>
-            );
-        } else {
-            return(
-                <div>
-                    <form onSubmit={(e) => this.handleLoginSubmit(e, this.state)}>
-                        <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
-                        <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
-                        <input type="submit" value='Log in!' />
-                    </form>
-                </div>
-            )
-        }   
+        return(
+            <div>
+                <form onSubmit={(e) => this.props.loginSubmit(e, this.state)}>
+                    <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} /> <br /> <br /> 
+                    <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} /> <br /> <br />
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        )
     }
 }
 

@@ -4,24 +4,20 @@ const Intake = {};
 
 //I have no idea why anyone would need to see an index of all the intake forms...but here it is?
 Intake.findAll = () => {
-    return db.manyOrNone('SELECT * FROM students, intake WHERE students.studid = intake.studid');
-    conosole.log(findAll);
+    return db.manyOrNone('SELECT * FROM intake');
 };
 //THIS IS NOT GOING TO WORK, SELF.  SINCE THIS IS A JOINED TABLE...?
-Intake.findbyEmail = (email) => {
-    return db.oneOrNone(`
-    SELECT * FROM students, intake
-    WHERE students.studid = intake.studid AND students.email = $1
-  `, [email]);
+Intake.findById = (id) => {
+    return db.oneOrNone(`SELECT * FROM intake WHERE studid = $1`, id);
 };
 
 Intake.create = (intake) => {
   return db.one(`
     INSERT INTO intake
-    (intakedate, intakenotes, housing, food, finances, domesticviolence, childcare, mentalhealth, legalsvcs, substanceabuse, physicalhealth, jobsearch, completehighschool, completecollege, advdegree, testingaccommodations, transportation, insurance, studentexpectations, nextsteps)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+    (studid, housing, food, finances, domesticviolence, childcare, mentalhealth, legalsvcs, substanceabuse, physicalhealth, jobsearch, completehighschool, completecollege, advdegree, testingaccommodations, transportation, insurance, studentexpectations)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
     RETURNING *
-  `, [intake.intakedate, intake.intakenotes, intake.housing, intake.food, intake.fincances, intake.domesticviolence, intake.childcare, intake.mentalhealth, intake.legalsvcs, intake.substanceabuse, intake.physicalhealth, intake.jobsearch, intake.completehighschool, intake.completecollege, intake.advdegree, intake.testingaccommodations, intake.transportation, intake.insurance, intake.studentexpectations, intake.nextsteps]);
+  `, [intake.studid, intake.housing, intake.food, intake.finances, intake.domesticviolence, intake.childcare, intake.mentalhealth, intake.legalsvcs, intake.substanceabuse, intake.physicalhealth, intake.jobsearch, intake.completehighschool, intake.completecollege, intake.advdegree, intake.testingaccommodations, intake.transportation, intake.insurance, intake.studentexpectations]);
 };
 
 // //THIS IS NOT GOING TO WORK, SELF.  SINCE THIS IS A JOINED TABLE...?

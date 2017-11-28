@@ -68,13 +68,6 @@ class ProfileController extends React.Component {
      })
   }
 
-  getResources(){
-    fetch()
-    .then(res => res.json())
-    .then(res => {
-
-    })
-  }
 
   decideWhichToRender() {
     switch (this.state.loadPage) {
@@ -84,15 +77,6 @@ class ProfileController extends React.Component {
       case 'dashboard':
         return <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile} />;
         break;
-      // case 'new':
-      //   return <IceCreamForm isAdd={true} iceCreamSubmit={this.iceCreamSubmit} />;
-      //   break;
-      // case 'edit':
-      //   return <IceCreamForm isAdd={false} iceCreamSubmit={this.iceCreamSubmit} icecream={this.state.currentIceCream} />
-      //   break;
-      // default:
-      //   return <Redirect push to="/ice-cream" />;
-      //   break;
     }
   }
 
