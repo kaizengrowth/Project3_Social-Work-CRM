@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Intake from './Intake';
 import ResourceInfo from './ResourceInfo';
@@ -6,66 +7,42 @@ class Resources extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      Resources: null,
-      ResourcesDataLoaded: null,
-      renderResources: false,
+      showResources: null,
     }
-    this.getResources = this.getResources.bind(this);
     this.showResources = this.showResources.bind(this);
   }
 
   componentDidMount(){
-    this.getResources()
+    this.showResources()
   }
 
-  getResources(){
+  showResources(){
     fetch(`/api/intake/${this.props.studentInfo.studid}`)
       .then(res => res.json())
       .then(res => {
         console.log(res)
         this.setState({
-          Resources: res.data.intake,
+          showResources: res.data.intake,
         });
-      }).then(() => {
-      this.showResources();
-   }).catch(err => console.log(err));
+      }).catch(err => console.log(err));
   }
 
-  showResources(){
-    if(this.state.Resources){
-    this.setState({
-      renderResources: true,
-      ResourcesDataLoaded: true,
-    })
-  } else return null
-}
-
-
-  decideWhichToRender() {
-
-    switch (this.state.renderResources) {
-      case false:
-        return <Intake  studentInfo = {this.props.studentInfo} showResources = {this.showResources} />;
-        break;
-      case true:
-        return <ResourceInfo Resources = {this.state.Resources} ResourcesDataLoaded = {this.state.ResourcesDataLoaded} />;
-        break;
-      // case 'new':
-      //   return <IceCreamForm isAdd={true} iceCreamSubmit={this.iceCreamSubmit} />;
-      //   break;
-      // case 'edit':
-      //   return <IceCreamForm isAdd={false} iceCreamSubmit={this.iceCreamSubmit} icecream={this.state.currentIceCream} />
-      //   break;
-      // default:
-      //   return <Redirect push to="/ice-cream" />;
-      //   break;
-    }
-  }
+  //WILL GET AN ERROR MESSAGE IF THE STUDENT HAS FILLED THE INTAKE FORM MORE THAN ONCE.
+  //SO WILL ALWAYS GET THE SECOND OPTION OF THE TERNARY BELOW
 
   render(){
     return (
       <div className= 'resources'>
-        {this.decideWhichToRender()}
+
+      {this.state.showResources ?
+        (<div className= 'resources_header'>
+          <ResourceInfo showResources = {this.state.showResources} />
+        </div>)
+        :
+        (<div>
+          <Intake  studentInfo = {this.props.studentInfo} showResources = {this.showResources} />
+        </div>)}
+
       </div>
     )
   }
