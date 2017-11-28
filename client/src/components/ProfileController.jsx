@@ -14,10 +14,12 @@ class ProfileController extends React.Component {
      selectedStudent: null,
      loadPage: props.loadPage,
      studentEmail: props.studentEmail,
+     showResources: null,
    }
    this.getStudentList = this.getStudentList.bind(this);
    this.getStudentInfo = this.getStudentInfo.bind(this);
    this.currentProfile = this.currentProfile.bind(this);
+   this.getResources = this.getResources.bind(this);
 
  }
 
@@ -53,6 +55,19 @@ class ProfileController extends React.Component {
           studentInfo: res.data.student,
           studentDataLoaded: true,
         });
+      }).then(res => {
+        this.getResources(res.data.student.studid)
+      }).catch(err => console.log(err));
+  }
+
+  getResources(id){
+    fetch(`/api/intake/${id}`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.setState({
+          showResources: res.data.intake,
+        });
       }).catch(err => console.log(err));
   }
 
@@ -72,10 +87,10 @@ class ProfileController extends React.Component {
   decideWhichToRender() {
     switch (this.state.loadPage) {
       case 'student':
-        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentInfo={this.state.studentInfo}/>;
+        return <StudentProfileContainer studentDataLoaded={this.state.studentDataLoaded} studentInfo={this.state.studentInfo} getResources={this.getResources} showResources={this.state.showResources} />;
         break;
       case 'dashboard':
-        return <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile} />;
+        return <Dashboard studentDataLoaded={this.state.studentDataLoaded} studentList={this.state.studentList} selectedStudent= {this.state.selectedStudent} currentProfile={this.currentProfile} getResources={this.getResources} showResources={this.state.showResources} />;
         break;
       // case 'new':
       //   return <IceCreamForm isAdd={true} iceCreamSubmit={this.iceCreamSubmit} />;
