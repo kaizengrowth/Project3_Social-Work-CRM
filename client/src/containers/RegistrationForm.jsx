@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import ProfileController from '../components/ProfileController';
 import Home from './Home';
 
@@ -72,6 +72,7 @@ class RegistrationForm extends React.Component{
       </Router>
     )
   }
+
 }
 
 export default RegistrationForm
