@@ -617,6 +617,12 @@ footer {
   padding: 0;
 }
 
+.intake_input{
+  width: 500px;
+
+}
+
+
 /*========== Referrals Component ==========*/
 
 .referrals{

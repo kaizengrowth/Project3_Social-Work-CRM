@@ -6,7 +6,7 @@ intakeController.index = (req, res)  => {
     Intake.findAll()
       .then(intakes => {
         res.status(200).json({
-            message: 'INTAKE FORM GOES HERE',
+            message: 'Intake Info Here',
             data: { intakes },
         });
       }).catch(err => {
