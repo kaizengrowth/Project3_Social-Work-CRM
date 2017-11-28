@@ -37,7 +37,12 @@ app.use(flash());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+    //res.render('index');
+    res.send("hello world");
+})
+
+app.get('/intake', (req, res) => {
+  res.send("hello world")
 })
 
 const authRoutes = require('./routes/auth-routes');

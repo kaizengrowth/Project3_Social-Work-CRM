@@ -68,13 +68,6 @@ class ProfileController extends React.Component {
      })
   }
 
-  getResources(){
-    fetch()
-    .then(res => res.json())
-    .then(res => {
-
-    })
-  }
 
   decideWhichToRender() {
     switch (this.state.loadPage) {

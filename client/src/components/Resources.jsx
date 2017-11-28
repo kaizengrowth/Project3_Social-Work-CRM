@@ -1,36 +1,74 @@
 import React from 'react';
 import Intake from './Intake';
+import ResourceInfo from './ResourceInfo';
 
-// HAVE DASHBOARD AND STUDENTPROFILECONTAINER EACH SEND A PROP EQUAL TO EITHER STUDENT OR WORKER.
-// GIVE A STATE THAT PROP. WORKER GIVES ACCESS TO AN EDIT/ADD BUTTON, STUDENT DOES CAN JUST READ?
+class Resources extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      Resources: null,
+      ResourcesDataLoaded: null,
+      renderResources: false,
+    }
+    this.getResources = this.getResources.bind(this);
+    this.showResources = this.showResources.bind(this);
+  }
 
-const Resources = (props) => {
+  componentDidMount(){
+    this.getResources()
+  }
 
-  // getStudentInfo(){
-  //   fetch(`/intake`)
-  //     .then(res => res.json())
-  //     .then(res => {
-  //       console.log(res)
-  //       this.setState({
-  //         studentInfo: res.data.intake,
-  //         intakeDataLoaded: true,
-  //       });
-  //     }).catch(err => console.log(err));
-  // }
+  getResources(){
+    fetch(`/api/intake/${this.props.studentInfo.studid}`)
+      .then(res => res.json())
+      .then(res => {
+        console.log(res)
+        this.setState({
+          Resources: res.data.intake,
+        });
+      }).then(() => {
+      this.showResources();
+   }).catch(err => console.log(err));
+  }
 
-  let student = props.studentInfo
-  return (
-
-    <div className= 'resources'>
-    <Intake />
-  {/*  {student ?
-      (<div className= 'resources_header'>
-      <h2>{student.first_name}, please see the resources below: </h2>
-      </div>)
-      : (<h1> No Student Selected </h1>)} */}
-    </div>
-  )
-
+  showResources(){
+    if(this.state.Resources){
+    this.setState({
+      renderResources: true,
+      ResourcesDataLoaded: true,
+    })
+  } else return null
 }
 
-export default Resources
+
+  decideWhichToRender() {
+
+    switch (this.state.renderResources) {
+      case false:
+        return <Intake  studentInfo = {this.props.studentInfo} showResources = {this.showResources} />;
+        break;
+      case true:
+        return <ResourceInfo Resources = {this.state.Resources} ResourcesDataLoaded = {this.state.ResourcesDataLoaded} />;
+        break;
+      // case 'new':
+      //   return <IceCreamForm isAdd={true} iceCreamSubmit={this.iceCreamSubmit} />;
+      //   break;
+      // case 'edit':
+      //   return <IceCreamForm isAdd={false} iceCreamSubmit={this.iceCreamSubmit} icecream={this.state.currentIceCream} />
+      //   break;
+      // default:
+      //   return <Redirect push to="/ice-cream" />;
+      //   break;
+    }
+  }
+
+  render(){
+    return (
+      <div className= 'resources'>
+        {this.decideWhichToRender()}
+      </div>
+    )
+  }
+}
+
+export default Resources;
