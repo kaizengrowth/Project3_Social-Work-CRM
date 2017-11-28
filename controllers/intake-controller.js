@@ -3,6 +3,7 @@ const Intake = require('../models/Intake');
 const intakeController = {};
 
 intakeController.index = (req, res)  => {
+  console.log("inside of index controller")
     Intake.findAll()
       .then(intakes => {
         res.status(200).json({
@@ -32,8 +33,8 @@ intakeController.show = (req, res, next) => {
 
 intakeController.create = (req, res, next) => {
   Intake.create({
-    intakedate: req.body.intakedate,
-    intakenotes: req.body.intakenotes,
+    // intakedate: req.body.intakedate,
+    // intakenotes: req.body.intakenotes,
     housing: req.body.housing,
     food: req.body.food,
     finances: req.body.finances,
@@ -51,7 +52,7 @@ intakeController.create = (req, res, next) => {
     transportation: req.body.transportation,
     insurance: req.body.insurance,
     studentexpectations: req.body.studentexpectations,
-    nextsteps: req.body.nextsteps,
+    // nextsteps: req.body.nextsteps,
   }).then(intake => {
     res.status(201).json({
       message: 'intake recorded successfully--where does this route to next?',

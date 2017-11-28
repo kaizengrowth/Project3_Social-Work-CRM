@@ -18,10 +18,10 @@ Intake.findbyEmail = (email) => {
 Intake.create = (intake) => {
   return db.one(`
     INSERT INTO intake
-    (intakedate, intakenotes, housing, food, finances, domesticviolence, childcare, mentalhealth, legalsvcs, substanceabuse, physicalhealth, jobsearch, completehighschool, completecollege, advdegree, testingaccommodations, transportation, insurance, studentexpectations, nextsteps)
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20)
+    (intakenotes, housing, food, finances, domesticviolence, childcare, mentalhealth, legalsvcs, substanceabuse, physicalhealth, jobsearch, completehighschool, completecollege, advdegree, testingaccommodations, transportation, insurance, studentexpectations)
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18)
     RETURNING *
-  `, [intake.intakedate, intake.intakenotes, intake.housing, intake.food, intake.fincances, intake.domesticviolence, intake.childcare, intake.mentalhealth, intake.legalsvcs, intake.substanceabuse, intake.physicalhealth, intake.jobsearch, intake.completehighschool, intake.completecollege, intake.advdegree, intake.testingaccommodations, intake.transportation, intake.insurance, intake.studentexpectations, intake.nextsteps]);
+  `, [intake.intakesnotes, intake.housing, intake.food, intake.finances, intake.domesticviolence, intake.childcare, intake.mentalhealth, intake.legalsvcs, intake.substanceabuse, intake.physicalhealth, intake.jobsearch, intake.completehighschool, intake.completecollege, intake.advdegree, intake.testingaccommodations, intake.transportation, intake.insurance, intake.studentexpectations]);
 };
 
 // //THIS IS NOT GOING TO WORK, SELF.  SINCE THIS IS A JOINED TABLE...?
