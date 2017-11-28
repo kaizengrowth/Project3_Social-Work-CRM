@@ -9,7 +9,6 @@ class TopNav extends Component {
     }
     render() {
         return(
-            <Router>
                 <div id="topnav">
                     <a href = "index.html">
                         <div id="topnav_left">
@@ -21,7 +20,7 @@ class TopNav extends Component {
                         </div>
                     </a>
 
-                    <Login />
+                    <Login loginSubmit={this.props.handleLoginSubmit}/>
 
                     <div id="topnav_right">
                         <a href="#modal_login ">Sign In</a>
@@ -32,26 +31,15 @@ class TopNav extends Component {
                             <a href="#close" title="Close" className="close">X</a>
                             <h2>Sign In</h2><br />
 
-                            <form>
-                                Username:
-                                <input type="text" name="Username" value="Student" /> <br />
+                            <Login loginSubmit={this.handleLoginSubmit} />
+                            <br />
 
-                                Password:
-                                <input
-                                    type="password"
-                                    placeholder="*******"
-                                    pattern="\w{8}"
-                                    title="8 character password" />
-                                    <a href="user.html">
-                                        <button type="button">Log In</button>
-                                    </a>
-                            </form><br />
-
-                            <a href="register.html" className="register_link">Register for an Account.</a>
+                            <Link to='/register'>
+                                <button>Register</button>
+                            </Link>
                         </div>
                     </div>
                 </div>
-            </Router>
         );
     }
 }
