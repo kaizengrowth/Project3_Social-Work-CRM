@@ -17,6 +17,7 @@ Student.findbyEmail = (email) => {
 // TO DO - Update create model method below with password field when auth routes are done
 
 //this was email i changed it to student
+//ispriority is already set to false in the controller...
 Student.create = (student) => {
     return db.one(`
         INSERT INTO students

@@ -45,7 +45,7 @@ studentsController.create = (req, res, next) => {
     }).then(student => {
         req.login(student, (err) => {
             if (err) return next(err);
-            res.redirect(`/student/${req.user.email}`);
+            res.redirect(`/student/${req.body.email}`);
             res.status(201).json({
                 message: 'student created successfully & this will redirect to intake form once it exists',
                 data: {

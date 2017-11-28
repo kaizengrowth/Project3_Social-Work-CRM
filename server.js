@@ -32,7 +32,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session({ cookie: { maxAge: 60000 } }));
 app.use(flash());
-// app.use(app.router);
+// app.use(app.router); this was commented out...?
 
 app.use(express.static('public'));
 
@@ -49,7 +49,7 @@ const intakeRoutes = require('./routes/intake-routes');
 app.use('/api/intake', intakeRoutes);
 
 app.use('*', (req, res) => {
-    res.status(404).send('Not Found');
+   res.status(404).send('Not Found');
 });
 
 app.use((err, req, res, next) => {
