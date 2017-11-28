@@ -12,7 +12,7 @@ const StudentProfileContainer = (props) => {
         (<div>
             <StudentProfile studentInfo={props.studentInfo}/>
             <div className= 'resources_referrals_container'>
-              <Resources studentInfo={props.studentInfo} showResources = {props.showResources} showResourcesOrForm = {props.showResourcesOrForm}/>
+              <Resources studentInfo={props.studentInfo} showResources = {props.showResources} showResourcesOrForm = {props.showResourcesOrForm} getResources={props.getResources} showResources={props.showResources} />
               <Referrals />
             </div>
         </div>)
