@@ -20,8 +20,6 @@ class TopNav extends Component {
                         </div>
                     </a>
 
-                    <Login loginSubmit={this.props.handleLoginSubmit}/>
-
                     <div id="topnav_right">
                         <a href="#modal_login ">Sign In</a>
                     </div>
@@ -31,7 +29,7 @@ class TopNav extends Component {
                             <a href="#close" title="Close" className="close">X</a>
                             <h2>Sign In</h2><br />
 
-                            <Login loginSubmit={this.handleLoginSubmit} />
+                            <Login loginSubmit={this.props.loginSubmit} />
                             <br />
 
                             <Link to='/register'>

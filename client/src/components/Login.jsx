@@ -10,29 +10,8 @@ class Login extends Component {
             doRedirect: false
         }
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         // this.logout = this.logout.bind(this);
-    }
-
-    handleLoginSubmit(e, data) {
-        e.preventDefault();
-        fetch('/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                credentials: 'include',
-                body: JSON.stringify(data),
-            }).then(res => res.json())
-            .then(res => {
-                if (res.auth) {
-                    this.setState({
-                        email: res.email,
-                        password_digest: res.pas,
-                        doRedirect: true
-                    });
-                }
-            }).catch(err => console.log(err));
     }
 
     handleInputChange(e) {
@@ -54,16 +33,29 @@ class Login extends Component {
         }).catch(err => console.log(err));
     }
 
+    handleSubmit(e) {
+        this.props.loginSubmit(e, this.state);
+        this.setState({
+            doRedirect: true
+        })
+    }
+
     render() {
-        return(
-            <div>
-                <form onSubmit={(e) => this.props.loginSubmit(e, this.state)}>
-                    <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} /> <br /> <br /> 
-                    <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} /> <br /> <br />
-                    <button type="submit">Login</button>
-                </form>
-            </div>
-        )
+        if (this.state.doRedirect) {
+            return (
+                <Redirect to={`/student/${this.state.username}`}/>
+            );
+        } else {
+            return(
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} /> <br />
+                        <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
+                        <button type="submit"> Login </button>
+                    </form>
+                </div>
+            )
+        }   
     }
 }
 

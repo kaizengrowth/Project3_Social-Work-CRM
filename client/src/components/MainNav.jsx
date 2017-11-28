@@ -32,10 +32,6 @@ const MainNav = () => {
             <div id="nav_search" class="nav_block">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
-
-            <Link to='/register'>
-                <button className="button">Register</button>
-            </Link>
         </div>
     )
 }

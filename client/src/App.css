@@ -76,6 +76,15 @@ h3 {
     color: #f68832;
 }
 
+#topnav input {
+    width: 80%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
 
 /*========== Main Nav ==========*/
 
