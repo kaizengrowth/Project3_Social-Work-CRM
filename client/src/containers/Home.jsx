@@ -12,7 +12,6 @@ const Home = () => {
         <div className="home">
             <Banner />
             <AnimationHeader />
-            <RegistrationForm />
             <Intake />
         </div>
     )

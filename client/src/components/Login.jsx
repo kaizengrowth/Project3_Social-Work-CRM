@@ -58,14 +58,15 @@ class Login extends Component {
         if (this.state.doRedirect) {
             return (
                 <Redirect to={`/student/${this.state.username}`}/>
+                //TODO: Add logout button
             );
         } else {
             return(
                 <div>
                     <form onSubmit={(e) => this.handleLoginSubmit(e, this.state)}>
-                        <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} />
+                        <input type="text" name="username" value={this.state.email} placeholder="Email" onChange={this.handleInputChange} /> <br />
                         <input type="password" name="password" value={this.state.password_digest} placeholder="Password" onChange={this.handleInputChange} />
-                        <input type="submit" value='Log in!' />
+                        <button type="button">Log in!<input type="submit" value="" /></button>
                     </form>
                 </div>
             )
