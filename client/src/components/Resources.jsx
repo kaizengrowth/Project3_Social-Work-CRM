@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Intake from './Intake';
 import ResourceInfo from './ResourceInfo';
@@ -28,7 +27,7 @@ class Resources extends React.Component {
   }
 
   //WILL GET AN ERROR MESSAGE IF THE STUDENT HAS FILLED THE INTAKE FORM MORE THAN ONCE.
-  //SO WILL ALWAYS GET THE SECOND OPTION OF THE TERNARY BELOW.
+  //SO WILL ALWAYS GET THE SECOND OPTION OF THE TERNARY BELOW
 
   render(){
     return (
