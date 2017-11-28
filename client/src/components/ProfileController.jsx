@@ -64,7 +64,7 @@ class ProfileController extends React.Component {
     fetch(`/api/intake/${id}`)
       .then(res => res.json())
       .then(res => {
-        console.log(res)
+        console.log(res.data)
         this.setState({
           showResources: res.data.intake,
         });
@@ -78,6 +78,7 @@ class ProfileController extends React.Component {
        return student.studid === id
      })
      console.log(profile)
+     this.getResources(id)
      this.setState({
        selectedStudent: profile,
      })

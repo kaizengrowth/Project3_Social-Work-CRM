@@ -35,7 +35,7 @@ class Resources extends React.Component {
 
       {this.props.showResources ?
         (<div className= 'resources_header'>
-          <ResourceInfo showResources = {this.state.showResources} />
+          <ResourceInfo showResources = {this.props.showResources} />
         </div>)
         :
         (<div>
