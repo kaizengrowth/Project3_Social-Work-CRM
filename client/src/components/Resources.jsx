@@ -6,45 +6,66 @@ class Resources extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      showResources: null,
+      Resources: null,
+      ResourcesDataLoaded: null,
+      renderResources: false,
     }
+    this.getResources = this.getResources.bind(this);
     this.showResources = this.showResources.bind(this);
   }
 
   componentDidMount(){
-    this.showResources()
+    this.getResources()
   }
 
-  showResources(){
+  getResources(){
     fetch(`/api/intake/${this.props.studentInfo.studid}`)
       .then(res => res.json())
       .then(res => {
         console.log(res)
         this.setState({
-          showResources: res.data.intake,
+          Resources: res.data.intake,
         });
-      }).catch(err => console.log(err));
+      }).then(() => {
+      this.showResources();
+   }).catch(err => console.log(err));
   }
 
-  //WILL GET AN ERROR MESSAGE IF THE STUDENT HAS FILLED THE INTAKE FORM MORE THAN ONCE.
-  //SO WILL ALWAYS GET THE SECOND OPTION OF THE TERNARY BELOW
+  showResources(){
+    if(this.state.Resources){
+    this.setState({
+      renderResources: true,
+      ResourcesDataLoaded: true,
+    })
+  } else return null
+}
+
+
+  decideWhichToRender() {
+
+    switch (this.state.renderResources) {
+      case false:
+        return <Intake  studentInfo = {this.props.studentInfo} showResources = {this.showResources} />;
+        break;
+      case true:
+        return <ResourceInfo Resources = {this.state.Resources} ResourcesDataLoaded = {this.state.ResourcesDataLoaded} />;
+        break;
+      // case 'new':
+      //   return <IceCreamForm isAdd={true} iceCreamSubmit={this.iceCreamSubmit} />;
+      //   break;
+      // case 'edit':
+      //   return <IceCreamForm isAdd={false} iceCreamSubmit={this.iceCreamSubmit} icecream={this.state.currentIceCream} />
+      //   break;
+      // default:
+      //   return <Redirect push to="/ice-cream" />;
+      //   break;
+    }
+  }
 
   render(){
     return (
       <div className= 'resources'>
-
-      {this.state.showResources ?
-
-        (<div className= 'resources_header'>
-          <ResourceInfo showResources = {this.state.showResources} />
-        </div>)
-
-        :
-
-        (<div>
-          <Intake  studentInfo = {this.props.studentInfo} showResources = {this.showResources} />
-        </div>)}
-
+        {this.decideWhichToRender()}
       </div>
     )
   }
