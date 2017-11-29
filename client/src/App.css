@@ -592,6 +592,8 @@ footer {
 /*========== StudentProfile Component ==========*/
 
 .student_profile {
+/*    display: flex;
+    justify-content: space-around;*/
     margin: 0 auto;
     width: 100vw;
     text-align: center;
@@ -606,7 +608,8 @@ footer {
 
 .student_info {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     line-height: 30px;
     border: solid rgba(0,0,0,0.3);
     color: #434343; /*dk gry*/
@@ -684,7 +687,7 @@ footer {
     padding: 0;
 }
 
-.referrals_header h2 {
+.referrals_header {
     margin: 10px;
     padding: 0;
     font-size: 25px;
