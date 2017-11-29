@@ -1,4 +1,6 @@
 INSERT INTO social_workers (first_name,last_name,email,phone) VALUES (
+'Claire','Cuno','ClaireCuno@email.com','212-555-1111');
+INSERT INTO social_workers (first_name,last_name,email,phone) VALUES (
 'Phoebe','Buffay','pheebs@email.com','212-555-1111');
 INSERT INTO social_workers (first_name,last_name,email,phone) VALUES
 ('Joey','Tribbiani','imdisgusting@email.com','212-555-2222');
