@@ -7,6 +7,7 @@ module.exports = () => {
     });
 
     passport.deserializeUser((email, done) => {
+        console.log("deserialize user: " + email);
         Student.findbyEmail(email)
             .then(student => {
                 done(null, student);
