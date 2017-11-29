@@ -15,7 +15,7 @@ class TopNav extends Component {
                             {/* <picture> */}
                                 {/* <source srcset="images/logo_small.png" media="(max-width: 600px)">
                                     <source srcset="images/logo_header.svg"> */}
-                                        <img src="images/logo_header.svg" alt="Per Scholas Logo" />
+                                        <img src="/images/logo_header.svg" alt="Per Scholas Logo" />
                             {/* </picture> */}
                         </div>
                     </a>

@@ -3,6 +3,7 @@ import StudentList from '../components/StudentList';
 import StudentBio from '../components/StudentBio';
 import Referrals from '../components/Referrals';
 import Resources from '../components/Resources';
+import Footer from '../components/Footer';
 
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 
@@ -23,6 +24,7 @@ const Dashboard = (props) => {
         </div>
         : (<h2> No student Selected </h2>)}
       </div>
+      <Footer />
     </div>
   )
 }

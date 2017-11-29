@@ -4,7 +4,7 @@ const Referrals = (props) => {
   return(
     <div className= 'referrals'>
       <div className='referrals_header'>
-        <h2> Referrals Section </h2>
+        <h2> Your Referrals </h2> <br /> <hr />
       </div>
     </div>
   )

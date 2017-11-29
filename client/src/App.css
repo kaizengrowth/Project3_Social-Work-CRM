@@ -405,6 +405,8 @@ h3 {
 footer {
     width: 100%;
     height: auto;
+    bottom: 0;
+    position: absolute;
     padding: 20px 50px;
     margin-top: 30px;
     background-color: #09507c;
@@ -502,15 +504,28 @@ footer {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    background-color: rgb(243, 236, 236);
 }
 
 .student_list {
     margin: 20px;
     width: 500px;
     border: solid;
-    padding: 0;
+    padding-left: 30px;
+    padding-top: -50px;
     height: 400px;
     overflow: scroll;
+    background-color: white;
+}
+
+.student_list button {
+    background-color: #fec14f;
+    padding: 10px;
+    margin: 3px;
+    font-size: 15px;
+    color: rgb(104, 102, 102);
+    font-weight: 500;
+    border-radius: 25px;
 }
 
 .list_by_priority li {
@@ -523,6 +538,7 @@ footer {
     height: 400px;
     border: solid;
     text-align: center;
+    background-color: #fec14f;
 }
 
 .student_bio img {
@@ -586,6 +602,7 @@ footer {
 .resources_referrals_container {
     display: flex;
     justify-content: space-between;
+    background-color: rgb(243, 236, 236);
 }
 
 
@@ -602,11 +619,15 @@ footer {
     justify-content: center;
     border: solid;
     padding: 20px;
-    background-color: #DFEDF2
+    background-color: #fec14f;
 }
 
 .student_info img {
     border-radius: 200px;
+}
+
+#bold {
+    font-weight: 900;
 }
 
 
@@ -614,10 +635,12 @@ footer {
 
 .resources {
     margin: 10px;
+    padding-left: 15px;
     border: solid;
     height: 30vh;
     width: 50vw;
     overflow: scroll;
+    background-color: white;
 }
 
 .resources_header {
@@ -635,8 +658,10 @@ footer {
 .referrals {
     margin: 10px;
     border: solid;
+    padding-left: 15px;
     height: 30vh;
     width: 50vw;
+    background-color: white;
 }
 
 .referrals_header {
