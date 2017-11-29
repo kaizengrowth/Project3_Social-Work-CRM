@@ -50,7 +50,7 @@ submitEditForm(e, data){
   }).then(res => res.json())
     .then(jsonRes => {
     this.props.showResources();
- }).catch(err => console.log(err));
+ })
 }
 
   render() {
@@ -77,7 +77,8 @@ submitEditForm(e, data){
                 <input className = 'intake_input' type = 'boolean' name = 'insurance' placeholder = 'Do you need help with insurance? Enter T or F' value = {this.state.insurance} onChange = {this.handleInputChange} /><br/>
                 <input className = 'intake_input' type = 'boolean' name = 'testingaccommodations' placeholder = 'Do you help with testing accommodations? Enter T or F' value = {this.state.testingaccommodations} onChange = {this.handleInputChange} /><br/>
                 <input className = 'intake_input' type = 'text' name = 'studentexpectations' placeholder = 'What are your expectations?' value = {this.state.studentexpectations.value} onChange = {this.handleInputChange} /><br/>
-                <input className = 'intake_submit' type='submit' />
+
+                <input lassName = 'intake_submit' type='submit' />
                 </form>
               </div>
             </div>

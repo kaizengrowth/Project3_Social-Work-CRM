@@ -20,7 +20,14 @@ const ResourceInfo = (props) => {
 
 
 
-      {props.showResources.finances ? <p>Here is finances housing program</p> : null}
+      {props.showResources.finances ?
+        <div className = 'resource_group'>
+          <h4>Assistance with Finances:</h4>
+          <a href="http://www1.nyc.gov/site/hra/help/snap-benefits-food-program.page">HRA Cash Assistance</a><br/>
+        </div>
+        : null}
+
+
       {props.showResources.childcare ? <p>Here is childcare program</p> : null}
       {props.showResources.transportation ? <p>Here is transportation program</p> : null}
       {props.showResources.insurance ? <p>Here is insurance program</p> : null}

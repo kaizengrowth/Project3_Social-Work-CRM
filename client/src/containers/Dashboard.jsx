@@ -11,14 +11,14 @@ const Dashboard = (props) => {
     <div className = 'dashboard_container'>
       <h2>Social Worker Dashboard</h2>
       <div className = 'profile_list_container'>
-        <StudentList studentList={props.studentList} studentDataLoaded={props.studentDataLoaded} selectedStudent={props.selectedStudent} currentProfile={props.currentProfile} />
+        <StudentList studentList={props.studentList}  studentDataLoaded={props.studentDataLoaded} selectedStudent={props.selectedStudent} currentProfile={props.currentProfile} />
         <StudentBio selectedStudent={props.selectedStudent} />
       </div>
       <div className='resources_referrals_container'>
       {console.log(props.selectedStudent)}
       {props.selectedStudent ?
         <div>
-        <Resources studentInfo={props.selectedStudent}/>
+        <Resources studentInfo={props.selectedStudent} showResources={props.showResources} getResources={props.getResources} />
         <Referrals />
         </div>
         : (<h2> No student Selected </h2>)}
