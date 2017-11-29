@@ -65,8 +65,7 @@ class App extends Component {
     }).then(res => res.json())
       .then(jsonRes => {
       this.setState({
-        studentRegistered: true,
-        redirectPath: `/student/${jsonRes.data.student.email}`,
+        studentRegistered: true
       });
     }).catch(err => console.log(err));
   }
@@ -77,22 +76,17 @@ class App extends Component {
     }).then(res => res.json())
       .then(res => {
         this.setState({
-          auth: res.auth,
+          auth: false,
+          redirectPath: '/',
         })
       }).catch(err => console.log(err));
   }
 
       render() {
-        // const RegForm = (props) => {
-        //     return (
-        //         <RegistrationForm submitEditForm={this.submitEditForm.bind(this)}/>
-        //         )
-        // }
-
         return (
             <Router>
               <div className="App">
-                <TopNav loginSubmit={this.handleLoginSubmit}/>
+                <TopNav loginSubmit={this.handleLoginSubmit} logout={this.logout} auth={this.state.auth}/>
                 <MainNav />
                 <Route path="/" exact component={Home} />
                 <Route path='/register' exact render={props => (<RegistrationForm submitEditForm={this.submitEditForm}/>)} />
@@ -100,6 +94,7 @@ class App extends Component {
                 <Route exact path="/dashboard" render={props => (<ProfileController loadPage="dashboard" />)}/>
                 <Route exact path="/student/:email" render={props => (<ProfileController loadPage="student" studentEmail = {props.match.params.email}/>)}/>
                 {/* /student will take you to a page to login if you haven't or straight to your account idk*/}
+                {this.state.redirectPath && <Redirect to={this.state.redirectPath}/>}
               </div>
             </Router>
         );

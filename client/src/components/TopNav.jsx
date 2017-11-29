@@ -2,26 +2,26 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Redirect, Link } from 'react-router-dom';
 import '../App.css'
 import Login from './Login'
+import Logout from './Logout'
 
 class TopNav extends Component {
     constructor(props) {
         super(props);
     }
     render() {
+        const topRight = this.props.auth ? <Logout logout={this.props.logout} />
+    : (<a href="#modal_login ">Sign In</a>);
+
         return(
                 <div id="topnav">
                     <Link to='/'>
                         <div id="topnav_left">
-                            {/* <picture> */}
-                                {/* <source srcset="images/logo_small.png" media="(max-width: 600px)">
-                                    <source srcset="images/logo_header.svg"> */}
-                                        <img src="/images/logo_header.svg" alt="Per Scholas Logo" />
-                            {/* </picture> */}
+                            <img src="/images/logo_header.svg" alt="Per Scholas Logo" />
                         </div>
                     </Link>
 
-                    <div id="topnav_right">
-                        <a href="#modal_login ">Sign In</a>
+                    <div id="topnav_right">    
+                        {topRight}
                     </div>
 
                     <div id="modal_login" className="modal">
