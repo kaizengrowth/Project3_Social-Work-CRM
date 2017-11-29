@@ -597,16 +597,25 @@ footer {
     text-align: center;
 }
 
+.student_info h1 {
+    color: #09507c; /*navy*/
+    margin: 10px;
+    padding: 12px;
+
+}
+
 .student_info {
     display: flex;
     justify-content: center;
-    border: solid;
+    line-height: 30px;
+    border: solid rgba(0,0,0,0.3);
+    color: #434343; /*dk gry*/
     padding: 20px;
-    background-color: #DFEDF2
+    /*background-color: #DFEDF2*/
 }
 
 .student_info img {
-    border-radius: 200px;
+    border-radius: 8px;
 }
 
 
@@ -614,7 +623,7 @@ footer {
 
 .resources {
     margin: 10px;
-    border: solid;
+    border: solid rgba(0,0,0,0.3);
     height: 30vh;
     width: 50vw;
     overflow: scroll;
@@ -624,17 +633,48 @@ footer {
     margin: 10px;
     padding: 0;
 }
+/*========== Resources Component--Andrea--need to clean up ==========*/
+/*.resource_assistance {
+    border: solid rgba(0,0,0,0.3);
+}
+*/
+.resource_group {
+    margin: 10px;
+    padding: 12px;
+    color:  #09507c; /*navy*/
+
+}
+
+.resource_group a {
+    color: #434343; /*dk gry*/
+    font-size: 18px;
+    text-decoration: none;
+}
+/*need to attach to anchor not other element*/
+
+.resource_header {
+    margin: 10px;
+    padding: 0;
+    font-size: 25px;
+    color:  #09507c; /*navy*/
+}
+
+.resource_subheader {
+    /*text-decoration: none;*/
+    margin: 10px;
+    padding: 0;
+    font-size: 20px;
+    color: orange;
+}
 
 .intake_input {
     width: 500px;
 }
-
-
 /*========== Referrals Component ==========*/
 
 .referrals {
     margin: 10px;
-    border: solid;
+    border: solid rgba(0,0,0,0.3);
     height: 30vh;
     width: 50vw;
 }
@@ -642,4 +682,11 @@ footer {
 .referrals_header {
     margin: 10px;
     padding: 0;
+}
+
+.referrals_header h2 {
+    margin: 10px;
+    padding: 0;
+    font-size: 25px;
+    color:  #09507c; /*navy*/
 }
