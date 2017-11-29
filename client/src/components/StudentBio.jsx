@@ -9,7 +9,7 @@ let student = props.selectedStudent;
 
       (<div className= 'student_bio_container'>
         <div className= 'student_bio_text'>
-          <h1>{student.first_name + ' ' + student.last_name}</h1> <br /><hr />
+          <h1>{student.first_name + ' ' + student.last_name}</h1> <br /><hr /><br />
           <p>Email: {student.email}</p>
           <p>Phone number: {student.phone}</p>
           <p>{student.aboutme}</p>

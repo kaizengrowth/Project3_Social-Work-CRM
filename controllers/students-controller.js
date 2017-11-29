@@ -3,6 +3,15 @@ const Student = require('../models/student');
 
 const studentsController = {};
 
+const studentAuth = (req, res, next) => {
+    console.log('studentAuth: ' + req.url);
+    // if (req.params.email === res.user.email) {
+    next();
+    // } else {
+    //     res.status(401).send('You are not authorized to view this page.');
+    // }
+}
+
 studentsController.index = (req, res) => {
     Student.findAll()
         .then(students => {

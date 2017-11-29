@@ -16,7 +16,9 @@ authRouter.post('/login', passport.authenticate('local', {
 }));
 
 authRouter.get('/verify', (req, res) => {
+    console.log('In /verify')
     if (req.user) {
+        console.log('/verify: found user, sending back 200');
         // return res.redirect(`/student/${req.user.email}`)
         return res.status(200).json({
             message: 'ok',
@@ -26,6 +28,7 @@ authRouter.get('/verify', (req, res) => {
             }
         })
     } else {
+        console.log('/verify: didn\'t find user, sending back 400');
         return res.status(400).json({
             message: 'Login failed',
             auth: false,

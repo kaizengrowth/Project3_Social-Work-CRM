@@ -58,6 +58,16 @@ h3 {
     height: 50px;
 }
 
+#logout {
+    background-color: #f68832;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-top: -5px;
+}
+
 #topnav a {
     color: white;
     text-decoration: none;
