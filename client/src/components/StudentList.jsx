@@ -36,7 +36,7 @@ class StudentList extends React.Component{
         /* List of students that are a priority */
         (<ul className = 'list_by_priority'>
             <div className = 'is_priority'>
-              <h3>Students with Priority</h3>
+              <h2>Students with Priority</h2><br />
               {this.props.studentList.map(student => {
                 return (
                   /* This will return li items for only students that are a priority. The key of each li will be the student's id and
@@ -52,8 +52,11 @@ class StudentList extends React.Component{
                 )
               })}
             </div>
+            <br />
+            <hr />
+            <br />
             <div className = 'not_priority'>
-              <h3>Students without Priority</h3>
+              <h2>Students without Priority</h2><br />
               {this.props.studentList.map(student => {
                 return (
                   /* To check if they are not a priority. */

@@ -8,14 +8,15 @@ const StudentProfile = (props) => {
       (<div className='student_info'>
         <div>
           <h1>{student.first_name + ' ' + student.last_name}</h1>
-          <p>{'E-mail: ' + student.email + '   ' + 'Phone: ' + student.phone}</p>
+          <br />
+          <p>{'E-mail: ' + student.email}</p>
+          <p>{'Phone: ' + student.phone}</p>
+          <br />
           <p>{student.aboutme}</p>
-          {/* ACTUALLY MAYBE THIS WILL ONLY SHOW UP ON THE SOCIAL WORKERS PAGE?? */}
-          <p>{student.studentnotes}</p>
         </div>
         <img src={student.image} alt='' />
       </div>)
-      : (<h1> Loading Student Information </h1>)}
+      : (<h3> Loading Student Information </h3>)}
     </div>
   )
 }

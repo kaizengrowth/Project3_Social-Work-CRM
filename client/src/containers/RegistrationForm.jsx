@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
 import ProfileController from '../components/ProfileController';
 import Home from './Home';
+import Footer from '../components/Footer';
 
 class RegistrationForm extends React.Component{
   constructor(){
@@ -69,6 +70,8 @@ class RegistrationForm extends React.Component{
           : (<div>
               <Redirect push to={this.state.redirectPath} />
             </div>)}
+
+            <Footer />
         </div>
       </Router>
     )

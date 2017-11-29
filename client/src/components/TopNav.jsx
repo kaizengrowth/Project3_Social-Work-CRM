@@ -10,15 +10,15 @@ class TopNav extends Component {
     render() {
         return(
                 <div id="topnav">
-                    <a href = "index.html">
+                    <Link to='/'>
                         <div id="topnav_left">
                             {/* <picture> */}
                                 {/* <source srcset="images/logo_small.png" media="(max-width: 600px)">
                                     <source srcset="images/logo_header.svg"> */}
-                                        <img src="images/logo_header.svg" alt="Per Scholas Logo" />
+                                        <img src="/images/logo_header.svg" alt="Per Scholas Logo" />
                             {/* </picture> */}
                         </div>
-                    </a>
+                    </Link>
 
                     <div id="topnav_right">
                         <a href="#modal_login ">Sign In</a>

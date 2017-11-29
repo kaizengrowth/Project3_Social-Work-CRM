@@ -1,148 +1,156 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Per Scholas: Support Portal</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <style>
-            .user_container {
-                margin: 15px;
-            }
-            .user_container form {
-                margin-top: 35px;
-                font-size: 1em;
-                font-family: sans-serif;
-                line-height: 2em;
-            }
-            .user_container input {
-                font-size: 0.5em;
-            }
-            .user_container input:focus {
-                background-color: #fec14f;
-            }
-            .user_container button {
-                font-size: 1em;
-                padding: 0.5em 1em;
-                border-radius: 0.3em;
-                background-color: #f68832;
-                margin-top: 1em;
-            }
-        </style>
-    </head>
-    
-    <body>
+
+<head>
+    <title>Per Scholas: Support Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <style>
+        .user_container {
+            margin: 15px;
+        }
         
-<!-- ========= Top Navigation Bar ========= -->
-        <a href="index.html">
-            <nav id="topnav">
-                <div id="topnav_left">
-                    <picture> 
-                        <source srcset="images/logo_small.png" media="(max-width: 600px)">
-                        <source srcset="images/logo_header.svg">
-                        <img src="images/logo_header.svg" alt="Per Scholas Logo">
-                    </picture>
-                </div>
-                
-                <div id="topnav_right">
-                    <a href="#modal_login ">Sign In</a>
-                </div>
-                
-                <div id="modal_login" class="modal">
+        .user_container form {
+            margin-top: 35px;
+            font-size: 1em;
+            font-family: sans-serif;
+            line-height: 2em;
+        }
+        
+        .user_container input {
+            font-size: 0.5em;
+        }
+        
+        .user_container input:focus {
+            background-color: #fec14f;
+        }
+        
+        .user_container button {
+            font-size: 1em;
+            padding: 0.5em 1em;
+            border-radius: 0.3em;
+            background-color: #f68832;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========= Top Navigation Bar ========= -->
+    <a href="/">
+        <nav id="topnav">
+            <div id="topnav_left">
+                <picture>
+                    <source srcset="images/logo_small.png" media="(max-width: 600px)">
+                    <source srcset="images/logo_header.svg">
+                    <img src="images/logo_header.svg" alt="Per Scholas Logo">
+                </picture>
+            </div>
+
+            <div id="topnav_right">
+                <a href="#modal_login ">Sign In</a>
+            </div>
+
+            <div id="modal_login" class="modal">
                 <div>
                     <a href="#close" title="Close" class="close">X</a>
                     <h2>Sign In</h2><br>
                     <form>
-                        Username: <input type="text" name="Username" value="Student"><br>
-                        Password: <input type=password placeholder = "*******" pattern="\w{8}" title="8 character password">
+                        Username: <input type="text" name="Username" value="Student"><br> Password: <input type=password placeholder="*******" pattern="\w{8}" title="8 character password">
                         <button type="submit">Log In</button>
                     </form><br>
                     <a href="register.html" class="register_link">Register for an Account.</a>
-                    </div>
                 </div>
-            </nav>
-        </a>
- 
-<!-- ========= Main Nav Bar ========= -->
-        
-        <nav id="main_nav">
-            <a href="resources.html">
-                <div id="nav_resources" class="nav_block">
-                    <a href="#">Find <br> Resources</a>
-                </div>
-            </a>
-            
-            <a href="support.html"><div id="nav_support" class="nav_block">
-                Get <br> Support
-            </div></a>
-            
-            <a href="skills.html"><div id="nav_skills" class="nav_block">
-                Share <br> Skills
-            </div></a>
-            
-            <a href="network.html"><div id="nav_network" class="nav_block">
-                Build <br> Network
-            </div></a>
-            
-            <div id="nav_search" class="nav_block">
-                <i class="fa fa-search" aria-hidden="true"></i>
             </div>
-            
         </nav>
+    </a>
 
-<!-- ========= User Page ========= -->
-<div class="user_container">
-    <h2>Register for a Member Account</h2>
-    <form action="mailto: kaizen.agility@gmail.com" method="post" enctype="text/plain">
-        First name: <input type="text" name="FirstName" value="YOUR"><br>
-        Last name: <input type="text" name="FirstName" value="NAME"><br>
-        Per Scholas year: <input type="text" name="Year" maxlength=4; value="2017"><br>
-        Class number: <input type="text" name="Year" maxlength=2; value="18"><br>
-        Email address: <input type="text" name="Email" value="username == email"><br>
-        <button type="submit" onclick="alert()">Submit</button>     
-    </form>
-    
-    <script>
-        function alert() {
-            alert("You are now registered. Please await your email confirmation.")
-        }
-    </script>
-    
-</div>
+    <!-- ========= Main Nav Bar ========= -->
 
-<!-- ========= Footer ========= -->
-        
-        <footer>
-            
-            <div id="footer_contact">
-                <a href="index.html"><img src="images/logo_header.svg"></a>
-                <h3>NEW YORK</h3>
-                <p>804 E 138th St Bronx, NY 10454 <br> 630 Flushing Ave Brooklyn, NY 11206</p>
+    <nav id="main_nav">
+        <a href="resources.html">
+            <div id="nav_resources" class="nav_block">
+                <a href="#">Find <br> Resources</a>
             </div>
-            
-            <div id="footer_links">
-                <a href="resources.html">Find Resources.</a><br>
-                <a href="support.html">Get Support.</a><br>
-                <a href="skills.html">Share Skills.</a><br>
-                <a href="network.html">Build Network.</a><br>
-<!--
+        </a>
+
+        <a href="support.html">
+            <div id="nav_support" class="nav_block">
+                Get <br> Support
+            </div>
+        </a>
+
+        <a href="skills.html">
+            <div id="nav_skills" class="nav_block">
+                Share <br> Skills
+            </div>
+        </a>
+
+        <a href="network.html">
+            <div id="nav_network" class="nav_block">
+                Build <br> Network
+            </div>
+        </a>
+
+        <div id="nav_search" class="nav_block">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </div>
+
+    </nav>
+
+    <!-- ========= User Page ========= -->
+    <div class="user_container">
+        <h2>Register for a Member Account</h2>
+        <form action="mailto: kaizen.agility@gmail.com" method="post" enctype="text/plain">
+            First name: <input type="text" name="FirstName" value="YOUR"><br> Last name: <input type="text" name="FirstName" value="NAME"><br> Per Scholas year: <input type="text" name="Year" maxlength=4; value="2017"><br> Class number: <input type="text"
+                name="Year" maxlength=2; value="18"><br> Email address: <input type="text" name="Email" value="username == email"><br>
+            <button type="submit" onclick="alert()">Submit</button>
+        </form>
+
+        <script>
+            function alert() {
+                alert("You are now registered. Please await your email confirmation.")
+            }
+        </script>
+
+    </div>
+
+    <!-- ========= Footer ========= -->
+
+    <footer>
+
+        <div id="footer_contact">
+            <a href="index.html"><img src="images/logo_header.svg"></a>
+            <h3>NEW YORK</h3>
+            <p>804 E 138th St Bronx, NY 10454 <br> 630 Flushing Ave Brooklyn, NY 11206</p>
+        </div>
+
+        <div id="footer_links">
+            <a href="resources.html">Find Resources.</a><br>
+            <a href="support.html">Get Support.</a><br>
+            <a href="skills.html">Share Skills.</a><br>
+            <a href="network.html">Build Network.</a><br>
+            <!--
                 <div id = "footer_copyright">
                 <p>By <a href="https://spiritkaizen.org">Kai Lin Zhang</a>, CodeBridge Cohort #6. <br>
                 Original <a href="https://perscholas.org">Per Scholas</a> website design by <a href="https://familiar-studio.com">Familiar</a>.</p>
             </div>
 -->
-            </div>
-            
-            <div id = "footer_social">
-                <a href="http://cfp-dc.org/nonprofits/1621/Per-Scholas"><img src="images/cfp.png" style="width:65px;"></a>
-                <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12043#.Vmm6GRorLvs"><img src="images/charityNavigator.png"></a>
-                <br>
-                <img src="images/Blank_Space.png" style="height:35px;">
-                <a href="https://twitter.com/perscholas"><img src="images/twitter.png" style="width: 50px"></a>
-                <a href="https://www.facebook.com/PerScholas"><img src="images/facebook.png" style="width: 51px"></a>
-                <a href="https://www.instagram.com/perscholas/"><img src="images/instagram.png" style="width: 52px"></a>
-            </div>
-            
-        </footer>
-        
-    </body>
+        </div>
+
+        <div id="footer_social">
+            <a href="http://cfp-dc.org/nonprofits/1621/Per-Scholas"><img src="images/cfp.png" style="width:65px;"></a>
+            <a href="https://www.charitynavigator.org/index.cfm?bay=search.summary&orgid=12043#.Vmm6GRorLvs"><img src="images/charityNavigator.png"></a>
+            <br>
+            <img src="images/Blank_Space.png" style="height:35px;">
+            <a href="https://twitter.com/perscholas"><img src="images/twitter.png" style="width: 50px"></a>
+            <a href="https://www.facebook.com/PerScholas"><img src="images/facebook.png" style="width: 51px"></a>
+            <a href="https://www.instagram.com/perscholas/"><img src="images/instagram.png" style="width: 52px"></a>
+        </div>
+
+    </footer>
+
+</body>
+
 </html>

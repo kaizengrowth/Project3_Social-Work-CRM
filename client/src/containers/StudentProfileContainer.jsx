@@ -2,6 +2,7 @@ import React from 'react';
 import StudentProfile from '../components/StudentProfile';
 import Resources from '../components/Resources';
 import Referrals from '../components/Referrals';
+import Footer from '../components/Footer';
 
 const StudentProfileContainer = (props) => {
   console.log(props.studentInfo)
@@ -19,6 +20,7 @@ const StudentProfileContainer = (props) => {
 
         : (<h1> Loading Data arghh </h1>)}
 
+            <Footer />
         </div>
     )
   }
